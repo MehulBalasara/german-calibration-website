@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>German Calibration — NABL Accredited Calibration Lab, Rajkot</title>
+  <meta name="description" content="NABL accredited calibration laboratory in Rajkot, Gujarat. ISO/IEC 17025:2017 certified. 91+ instrument types. Certificate CC-4038. Trusted by Tata, L&T, SKF and India's leading manufacturers." />
+
+  <!-- Fonts: DM Serif Display (display) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50:  '#E6F2F0',
+              100: '#D8EAE7',
+              200: '#C2DDD9',
+              300: '#8BBDB7',
+              400: '#5E9E97',
+              500: '#47857A',
+              600: '#3A6E64',
+              700: '#2D5D54',
+              800: '#224845',
+              900: '#1A3832',
+              ink: '#0F1E1C',
+              'ink-light': '#4A6663',
+              white: '#FBFEFD',
+            },
+          },
+          fontFamily: {
+            serif: ['"DM Serif Display"', 'Georgia', 'serif'],
+            sans:  ['Inter', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            'teal-sm': '0 1px 2px rgba(71,133,122,0.06)',
+            'teal-md': '0 4px 6px rgba(71,133,122,0.07), 0 2px 4px rgba(71,133,122,0.04)',
+            'teal-lg': '0 10px 15px rgba(71,133,122,0.08), 0 4px 6px rgba(71,133,122,0.05)',
+            'teal-xl': '0 20px 25px rgba(71,133,122,0.10), 0 8px 10px rgba(71,133,122,0.06)',
+          },
+          letterSpacing: {
+            display: '-0.03em',
+            heading: '-0.02em',
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    /* ── Base ── */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { font-family: 'Inter', system-ui, sans-serif; }
+    body {
+      background-color: #FBFEFD;
+      color: #0F1E1C;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Hero background ── */
+    .hero-bg {
+      position: relative;
+      background-color: #1A3832;
+      overflow: hidden;
+    }
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(71,133,122,0.18) 0%, transparent 60%),
+        radial-gradient(circle at 80% 20%, rgba(45,93,84,0.22) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    /* Subtle precision grid overlay */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(71,133,122,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(71,133,122,0.06) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    /* ── Scroll reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ── Header scroll state ── */
+    #site-header {
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    #site-header.scrolled {
+      background-color: rgba(26, 56, 50, 0.97);
+      box-shadow: 0 1px 24px rgba(0,0,0,0.18);
+      backdrop-filter: blur(8px);
+    }
+
+    /* ── Nav link hover ── */
+    .nav-link {
+      position: relative;
+      transition: color 0.2s;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -2px;
+      width: 0; height: 2px;
+      background: #47857A;
+      transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .nav-link:hover::after { width: 100%; }
+
+    /* ── CTA button styles ── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #47857A;
+      color: #FBFEFD;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      padding: 14px 28px;
+      border-radius: 6px;
+      letter-spacing: -0.01em;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      text-decoration: none;
+    }
+    .btn-primary:hover {
+      background: #2D5D54;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(71,133,122,0.28);
+    }
+    .btn-primary:active { transform: translateY(0); }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: #FBFEFD;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      padding: 13px 27px;
+      border: 1.5px solid rgba(251,254,253,0.45);
+      border-radius: 6px;
+      letter-spacing: -0.01em;
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+      text-decoration: none;
+    }
+    .btn-outline:hover {
+      background: rgba(251,254,253,0.1);
+      border-color: rgba(251,254,253,0.8);
+      transform: translateY(-1px);
+    }
+
+    /* ── Mobile menu ── */
+    #mobile-menu {
+      transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                  opacity 0.3s ease;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+    }
+    #mobile-menu.open {
+      max-height: 480px;
+      opacity: 1;
+    }
+
+    /* ── Hero image overlay ── */
+    .hero-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        105deg,
+        rgba(26,56,50,0.96) 0%,
+        rgba(26,56,50,0.88) 45%,
+        rgba(26,56,50,0.55) 100%
+      );
+      z-index: 1;
+    }
+
+    /* ── Scroll indicator pulse ── */
+    .scroll-line {
+      animation: scrollPulse 2.2s ease-in-out infinite;
+      transform-origin: top;
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.25; transform: scaleY(1); }
+      50%       { opacity: 0.7;  transform: scaleY(1.15); }
+    }
+
+    /* ── Logo marquee ── */
+    .logo-track {
+      animation: marquee 32s linear infinite;
+    }
+    .logo-track:hover { animation-play-state: paused; }
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .logo-item {
+      flex-shrink: 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: #4A6663;
+      opacity: 0.45;
+      padding: 10px 24px;
+      border: 1.5px solid #C2DDD9;
+      border-radius: 8px;
+      background: #fff;
+      transition: opacity 0.25s, color 0.25s, border-color 0.25s;
+      cursor: default;
+      white-space: nowrap;
+    }
+    .logo-item:hover {
+      opacity: 1;
+      color: #2D5D54;
+      border-color: #47857A;
+    }
+
+    /* ── Accent badge ── */
+    .nabl-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(71,133,122,0.2);
+      border: 1px solid rgba(71,133,122,0.4);
+      color: #8BBDB7;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body class="bg-brand-white">
+
+  <!-- ═══════════════════════════════════════════════
+       HEADER — Sticky navigation
+  ══════════════════════════════════════════════════ -->
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-brand-900/95">
+    <nav class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-18">
+
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3 flex-shrink-0" aria-label="German Calibration — Home">
+          <img
+            src="brand items/german_logo.svg"
+            alt="German Calibration Logo"
+            class="h-9 w-auto"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
+          />
+          <!-- Fallback text logo if SVG not found -->
+          <span style="display:none" class="items-center gap-2">
+            <span class="w-8 h-8 bg-brand-500 rounded flex items-center justify-center text-brand-white font-serif text-sm font-bold">GC</span>
+            <span class="font-serif text-brand-white text-lg leading-tight">German<br><span class="text-brand-300 text-xs font-sans font-medium tracking-widest uppercase">Calibration</span></span>
+          </span>
+        </a>
+
+        <!-- Desktop nav -->
+        <div class="hidden lg:flex items-center gap-7">
+          <a href="services.html" class="nav-link text-brand-100/80 hover:text-brand-white text-sm font-medium">Services</a>
+          <a href="industries.html" class="nav-link text-brand-100/80 hover:text-brand-white text-sm font-medium">Industries</a>
+          <a href="accreditation.html" class="nav-link text-brand-100/80 hover:text-brand-white text-sm font-medium">Accreditation</a>
+          <a href="about.html" class="nav-link text-brand-100/80 hover:text-brand-white text-sm font-medium">About</a>
+        </div>
+
+        <!-- Desktop utility -->
+        <div class="hidden lg:flex items-center gap-4">
+          <!-- Phone -->
+          <a href="tel:+919276551009" class="flex items-center gap-1.5 text-brand-100/70 hover:text-brand-white text-sm font-medium transition-colors" aria-label="Call us">
+            <svg class="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 8V5z"/>
+            </svg>
+            +91 92765 51009
+          </a>
+
+          <!-- Client Portal -->
+          <a href="https://portal.germancalibration.com" class="flex items-center gap-1.5 text-brand-100/80 hover:text-brand-white text-sm font-medium border border-brand-700 hover:border-brand-500 px-3 py-1.5 rounded-md transition-all" target="_blank" rel="noopener">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+            Client Portal
+          </a>
+
+          <!-- CTA -->
+          <a href="contact.html" class="btn-primary py-2 px-5 text-sm">
+            Get a Quote
+          </a>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <button
+          id="menu-toggle"
+          class="lg:hidden p-2 rounded-md text-brand-100/80 hover:text-brand-white hover:bg-brand-800 transition-colors"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg id="icon-menu" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile menu dropdown -->
+      <div id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+        <div class="border-t border-brand-800 py-4 space-y-1">
+          <a href="services.html" class="block px-3 py-2.5 text-brand-100/80 hover:text-brand-white hover:bg-brand-800 rounded-md text-sm font-medium transition-colors">Services</a>
+          <a href="industries.html" class="block px-3 py-2.5 text-brand-100/80 hover:text-brand-white hover:bg-brand-800 rounded-md text-sm font-medium transition-colors">Industries</a>
+          <a href="accreditation.html" class="block px-3 py-2.5 text-brand-100/80 hover:text-brand-white hover:bg-brand-800 rounded-md text-sm font-medium transition-colors">Accreditation</a>
+          <a href="about.html" class="block px-3 py-2.5 text-brand-100/80 hover:text-brand-white hover:bg-brand-800 rounded-md text-sm font-medium transition-colors">About</a>
+
+          <div class="pt-3 border-t border-brand-800 space-y-2">
+            <a href="tel:+919276551009" class="flex items-center gap-2 px-3 py-2 text-brand-300 text-sm font-medium">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 8V5z"/></svg>
+              +91 92765 51009
+            </a>
+            <a href="https://portal.germancalibration.com" class="flex items-center gap-2 px-3 py-2 text-brand-300 text-sm font-medium" target="_blank" rel="noopener">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+              Client Portal
+            </a>
+            <a href="contact.html" class="block mx-3 btn-primary text-center text-sm">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 1 — HERO
+  ══════════════════════════════════════════════════ -->
+  <section class="hero-bg min-h-screen flex items-center pt-16" aria-label="Hero">
+
+    <!-- Background image (placeholder until real lab photo) -->
+    <img
+      src="https://placehold.co/1920x1080/1A3832/47857A?text=Lab+Photo"
+      alt="German Calibration Lab — precision measuring equipment in a controlled environment"
+      class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30"
+      loading="eager"
+      aria-hidden="true"
+    />
+
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-5 lg:px-8 py-24 lg:py-32">
+      <div class="max-w-3xl">
+
+        <!-- NABL badge -->
+        <div class="reveal mb-8">
+          <span class="nabl-badge">
+            <svg class="w-3 h-3" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
+              <path d="M6 0L7.854 4.146 12 4.618 9 7.54 9.708 12 6 9.854 2.292 12 3 7.54 0 4.618 4.146 4.146z"/>
+            </svg>
+            NABL Accredited · CC-4038 · ISO/IEC 17025:2017
+          </span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="reveal reveal-delay-1 font-serif text-brand-white leading-tight mb-6" style="font-size: clamp(2.5rem, 5.5vw, 4rem); letter-spacing: -0.03em;">
+          Precision Calibration.<br />
+          <em class="not-italic text-brand-300">NABL Accredited.</em>
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="reveal reveal-delay-2 text-brand-100/75 text-lg lg:text-xl leading-relaxed mb-10 max-w-xl" style="font-weight: 400;">
+          ISO/IEC 17025:2017 certified lab in Rajkot with 91+ instrument types under NABL scope.
+          Trusted by India's leading manufacturers — Tata, L&T, SKF and more.
+        </p>
+
+        <!-- CTAs -->
+        <div class="reveal reveal-delay-3 flex flex-wrap gap-4">
+          <a href="contact.html" class="btn-primary">
+            Request a Quote
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+          <a href="accreditation.html" class="btn-outline">
+            View Our Scope
+          </a>
+        </div>
+
+        <!-- Quick trust stats row -->
+        <div class="reveal reveal-delay-4 mt-14 pt-10 border-t border-brand-700/50 grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div>
+            <div class="font-serif text-brand-white text-3xl" style="letter-spacing: -0.02em;">91+</div>
+            <div class="text-brand-100/55 text-xs font-medium mt-1 uppercase tracking-widest">Instrument Types</div>
+          </div>
+          <div>
+            <div class="font-serif text-brand-white text-3xl" style="letter-spacing: -0.02em;">700<span class="text-xl text-brand-300"> bar</span></div>
+            <div class="text-brand-100/55 text-xs font-medium mt-1 uppercase tracking-widest">Pressure Range</div>
+          </div>
+          <div>
+            <div class="font-serif text-brand-white text-3xl" style="letter-spacing: -0.02em;">16+</div>
+            <div class="text-brand-100/55 text-xs font-medium mt-1 uppercase tracking-widest">Years of Precision</div>
+          </div>
+          <div>
+            <div class="font-serif text-brand-white text-3xl" style="letter-spacing: -0.02em;">2029</div>
+            <div class="text-brand-100/55 text-xs font-medium mt-1 uppercase tracking-widest">NABL Valid Until</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-brand-100/40" aria-hidden="true">
+      <span class="text-xs uppercase tracking-widest font-medium">Scroll</span>
+      <div class="w-px h-10 bg-gradient-to-b from-brand-100/40 to-transparent scroll-line"></div>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 2 — TRUST BAR
+  ══════════════════════════════════════════════════ -->
+  <section class="bg-brand-900 border-t border-brand-800" aria-label="Accreditation highlights">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 py-5">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-0 lg:divide-x lg:divide-brand-800">
+
+        <!-- NABL Accredited -->
+        <div class="reveal flex items-center gap-3 lg:px-8 lg:first:pl-0">
+          <!-- NABL shield icon -->
+          <div class="flex-shrink-0 w-9 h-9 rounded-lg bg-brand-700/50 flex items-center justify-center">
+            <svg class="w-5 h-5 text-brand-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="text-brand-white text-sm font-semibold leading-tight">NABL Accredited</div>
+            <div class="text-brand-100/50 text-xs mt-0.5">National Accreditation Board</div>
+          </div>
+        </div>
+
+        <!-- ISO/IEC 17025 -->
+        <div class="reveal reveal-delay-1 flex items-center gap-3 lg:px-8">
+          <div class="flex-shrink-0 w-9 h-9 rounded-lg bg-brand-700/50 flex items-center justify-center">
+            <svg class="w-5 h-5 text-brand-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+            </svg>
+          </div>
+          <div>
+            <div class="text-brand-white text-sm font-semibold leading-tight">ISO/IEC 17025:2017</div>
+            <div class="text-brand-100/50 text-xs mt-0.5">International Standard</div>
+          </div>
+        </div>
+
+        <!-- Certificate CC-4038 -->
+        <div class="reveal reveal-delay-2 flex items-center gap-3 lg:px-8">
+          <div class="flex-shrink-0 w-9 h-9 rounded-lg bg-brand-700/50 flex items-center justify-center">
+            <svg class="w-5 h-5 text-brand-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="text-brand-white text-sm font-semibold leading-tight">Certificate CC-4038</div>
+            <div class="text-brand-100/50 text-xs mt-0.5">Valid until Aug 2029</div>
+          </div>
+        </div>
+
+        <!-- Since 2010 -->
+        <div class="reveal reveal-delay-3 flex items-center gap-3 lg:px-8">
+          <div class="flex-shrink-0 w-9 h-9 rounded-lg bg-brand-700/50 flex items-center justify-center">
+            <svg class="w-5 h-5 text-brand-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="text-brand-white text-sm font-semibold leading-tight">Established 2010</div>
+            <div class="text-brand-100/50 text-xs mt-0.5">16+ years of precision</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 3 — SERVICES OVERVIEW
+  ══════════════════════════════════════════════════ -->
+  <section class="bg-brand-white py-20 lg:py-28" aria-label="Our services">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+      <!-- Section header -->
+      <div class="reveal mb-14 max-w-2xl">
+        <p class="text-brand-500 text-sm font-semibold uppercase tracking-widest mb-3">What We Do</p>
+        <h2 class="font-serif text-brand-ink leading-tight mb-4" style="font-size: clamp(2rem, 4vw, 2.75rem); letter-spacing: -0.03em;">
+          Our Services
+        </h2>
+        <p class="text-brand-ink-light text-lg leading-relaxed">
+          From dimensional and pressure calibration to on-site service and advanced CMM inspection —
+          a complete precision measurement solution for Indian manufacturing.
+        </p>
+      </div>
+
+      <!-- Cards grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <!-- Card 1: Dimensional Calibration -->
+        <a href="services.html#dimensional" class="reveal group relative bg-white rounded-2xl p-7 border border-brand-100 shadow-teal-sm hover:shadow-teal-lg hover:border-brand-200 hover:-translate-y-1 transition-all duration-300 flex flex-col" aria-label="Learn about Dimensional Calibration">
+          <!-- NABL badge -->
+          <span class="absolute top-5 right-5 nabl-badge text-xs">NABL</span>
+
+          <!-- Icon -->
+          <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center mb-5 group-hover:bg-brand-500 transition-colors duration-300">
+            <svg class="w-6 h-6 text-brand-500 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>
+            </svg>
+          </div>
+
+          <h3 class="text-brand-ink text-lg mb-2 leading-snug font-bold">Dimensional Calibration</h3>
+          <p class="text-brand-ink-light text-sm leading-relaxed flex-1">
+            91+ instrument types under NABL scope — calipers, micrometers, gauges, surface plates, CMM fixtures and more.
+          </p>
+          <div class="mt-5 flex items-center gap-1.5 text-brand-500 text-sm font-semibold group-hover:gap-2.5 transition-all">
+            Learn more
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Card 2: Pressure Calibration -->
+        <a href="services.html#pressure" class="reveal reveal-delay-1 group relative bg-white rounded-2xl p-7 border border-brand-100 shadow-teal-sm hover:shadow-teal-lg hover:border-brand-200 hover:-translate-y-1 transition-all duration-300 flex flex-col" aria-label="Learn about Pressure Calibration">
+          <span class="absolute top-5 right-5 nabl-badge text-xs">NABL</span>
+
+          <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center mb-5 group-hover:bg-brand-500 transition-colors duration-300">
+            <svg class="w-6 h-6 text-brand-500 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
+          </div>
+
+          <h3 class="font-sans text-brand-ink text-lg mb-2 leading-snug" style="font-weight: 700;">Pressure Calibration</h3>
+          <p class="text-brand-ink-light text-sm leading-relaxed flex-1">
+            Pneumatic (0–25 bar), hydraulic (0–700 bar) and vacuum pressure devices — one of the widest pressure ranges in the region.
+          </p>
+          <div class="mt-5 flex items-center gap-1.5 text-brand-500 text-sm font-semibold group-hover:gap-2.5 transition-all">
+            Learn more
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Card 3: On-Site Calibration -->
+        <a href="services.html#onsite" class="reveal reveal-delay-2 group relative bg-white rounded-2xl p-7 border border-brand-100 shadow-teal-sm hover:shadow-teal-lg hover:border-brand-200 hover:-translate-y-1 transition-all duration-300 flex flex-col" aria-label="Learn about On-Site Calibration">
+          <span class="absolute top-5 right-5 nabl-badge text-xs">NABL</span>
+
+          <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center mb-5 group-hover:bg-brand-500 transition-colors duration-300">
+            <svg class="w-6 h-6 text-brand-500 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+
+          <h3 class="font-sans text-brand-ink text-lg mb-2 leading-snug" style="font-weight: 700;">On-Site Calibration</h3>
+          <p class="text-brand-ink-light text-sm leading-relaxed flex-1">
+            NABL-accredited calibration performed directly at your facility — ideal for large or fixed instruments that can't be moved.
+          </p>
+          <div class="mt-5 flex items-center gap-1.5 text-brand-500 text-sm font-semibold group-hover:gap-2.5 transition-all">
+            Learn more
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Card 4: Third Party Inspection / CMM (NOT NABL) -->
+        <a href="services.html#cmm" class="reveal reveal-delay-1 group relative bg-white rounded-2xl p-7 border border-brand-100 shadow-teal-sm hover:shadow-teal-lg hover:border-brand-200 hover:-translate-y-1 transition-all duration-300 flex flex-col" aria-label="Learn about Third Party Inspection">
+          <!-- No NABL badge on this card -->
+          <span class="absolute top-5 right-5 inline-flex items-center gap-1.5 bg-amber-50 border border-amber-200 text-amber-700 text-xs font-semibold uppercase tracking-wider px-2.5 py-1 rounded">
+            CoE
+          </span>
+
+          <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center mb-5 group-hover:bg-brand-500 transition-colors duration-300">
+            <svg class="w-6 h-6 text-brand-500 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+            </svg>
+          </div>
+
+          <h3 class="font-sans text-brand-ink text-lg mb-2 leading-snug" style="font-weight: 700;">Third Party Inspection</h3>
+          <p class="text-brand-ink-light text-sm leading-relaxed flex-1">
+            ZEISS CONTURA CMM (900×1200×800 mm) for precision component inspection, contour measurement and surface roughness — a core German Center of Excellence capability.
+          </p>
+          <div class="mt-5 flex items-center gap-1.5 text-brand-500 text-sm font-semibold group-hover:gap-2.5 transition-all">
+            Learn more
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Card 5: Repair & Maintenance (NOT NABL) -->
+        <a href="services.html#repair" class="reveal reveal-delay-2 group relative bg-white rounded-2xl p-7 border border-brand-100 shadow-teal-sm hover:shadow-teal-lg hover:border-brand-200 hover:-translate-y-1 transition-all duration-300 flex flex-col" aria-label="Learn about Repair and Maintenance">
+          <span class="absolute top-5 right-5 inline-flex items-center gap-1.5 bg-amber-50 border border-amber-200 text-amber-700 text-xs font-semibold uppercase tracking-wider px-2.5 py-1 rounded">
+            CoE
+          </span>
+
+          <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center mb-5 group-hover:bg-brand-500 transition-colors duration-300">
+            <svg class="w-6 h-6 text-brand-500 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+
+          <h3 class="font-sans text-brand-ink text-lg mb-2 leading-snug" style="font-weight: 700;">Repair &amp; Maintenance</h3>
+          <p class="text-brand-ink-light text-sm leading-relaxed flex-1">
+            Expert repair of measuring instruments — micrometers, dial gauges, bore gauges, verniers and electronic measuring devices.
+          </p>
+          <div class="mt-5 flex items-center gap-1.5 text-brand-500 text-sm font-semibold group-hover:gap-2.5 transition-all">
+            Learn more
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Card 6: View all services CTA card -->
+        <a href="services.html" class="reveal reveal-delay-3 group relative bg-brand-900 rounded-2xl p-7 hover:bg-brand-800 transition-all duration-300 flex flex-col justify-between" aria-label="View all services">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-700/60 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-brand-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+              </svg>
+            </div>
+            <h3 class="font-serif text-brand-white text-xl mb-2 leading-snug">See All Services</h3>
+            <p class="text-brand-100/60 text-sm leading-relaxed">
+              View the complete list of calibration services, instrument scope and accreditation details.
+            </p>
+          </div>
+          <div class="mt-8 flex items-center gap-2 text-brand-300 text-sm font-semibold group-hover:gap-3 transition-all">
+            View full services
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Badge legend -->
+      <div class="reveal mt-8 flex flex-wrap gap-4 items-center text-xs text-brand-ink-light">
+        <div class="flex items-center gap-2">
+          <span class="nabl-badge">NABL</span>
+          <span>Services accredited under NABL Certificate CC-4038</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="inline-flex items-center bg-amber-50 border border-amber-200 text-amber-700 text-xs font-semibold uppercase tracking-wider px-2.5 py-1 rounded">CoE</span>
+          <span>German Center of Excellence — advanced inspection &amp; measurement services</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 4 — WHY GERMAN CALIBRATION
+  ══════════════════════════════════════════════════ -->
+  <section class="bg-brand-50 py-20 lg:py-28 overflow-hidden" aria-label="Why choose German Calibration">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+      <!-- Section header — no eyebrow, headline carries the weight -->
+      <div class="reveal mb-14 max-w-2xl">
+        <h2 class="font-serif text-brand-ink leading-tight mb-4" style="font-size: clamp(2rem, 4vw, 2.75rem); letter-spacing: -0.03em;">
+          Why Leading Manufacturers<br/>Trust Us
+        </h2>
+        <p class="text-brand-ink-light text-lg leading-relaxed">
+          Not all calibration labs are equal. Here's what sets German Calibration apart
+          from every other lab in Gujarat.
+        </p>
+      </div>
+
+      <!-- Two-column layout: stat cards left, lab image right -->
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+        <!-- Left: differentiator grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+          <!-- Stat 1 -->
+          <div class="reveal group bg-white rounded-2xl p-6 border border-brand-100 shadow-teal-sm hover:shadow-teal-md hover:border-brand-200 transition-all">
+            <div class="font-serif text-brand-500 mb-1 leading-none" style="font-size: 2.5rem; letter-spacing: -0.04em;">20°C</div>
+            <div class="text-brand-ink font-semibold text-sm mb-1">± 0.1°C Controlled</div>
+            <div class="text-brand-ink-light text-xs leading-relaxed">Temperature-controlled cleanroom environment — eliminates thermal errors that plague ordinary labs.</div>
+          </div>
+
+          <!-- Stat 2 -->
+          <div class="reveal reveal-delay-1 group bg-white rounded-2xl p-6 border border-brand-100 shadow-teal-sm hover:shadow-teal-md hover:border-brand-200 transition-all">
+            <div class="font-serif text-brand-500 mb-1 leading-none" style="font-size: 2.5rem; letter-spacing: -0.04em;">10K</div>
+            <div class="text-brand-ink font-semibold text-sm mb-1">Class 10,000 Cleanroom</div>
+            <div class="text-brand-ink-light text-xs leading-relaxed">Certified cleanroom facility with 40–50% RH control — calibration in conditions that match the standard.</div>
+          </div>
+
+          <!-- Stat 3 -->
+          <div class="reveal reveal-delay-2 group bg-white rounded-2xl p-6 border border-brand-100 shadow-teal-sm hover:shadow-teal-md hover:border-brand-200 transition-all">
+            <div class="font-serif text-brand-500 mb-1 leading-none" style="font-size: 2.5rem; letter-spacing: -0.04em;">91+</div>
+            <div class="text-brand-ink font-semibold text-sm mb-1">Instrument Types</div>
+            <div class="text-brand-ink-light text-xs leading-relaxed">The broadest NABL-accredited dimensional scope in the region — one lab for virtually all your instruments.</div>
+          </div>
+
+          <!-- Stat 4 -->
+          <div class="reveal reveal-delay-3 group bg-white rounded-2xl p-6 border border-brand-100 shadow-teal-sm hover:shadow-teal-md hover:border-brand-200 transition-all">
+            <div class="font-serif text-brand-500 mb-1 leading-none" style="font-size: 2.5rem; letter-spacing: -0.04em;">700</div>
+            <div class="text-brand-ink font-semibold text-sm mb-1">Bar Pressure Range</div>
+            <div class="text-brand-ink-light text-xs leading-relaxed">Hydraulic pressure calibration up to 700 bar — covering even the most demanding industrial applications.</div>
+          </div>
+
+          <!-- Stat 5 -->
+          <div class="reveal group bg-white rounded-2xl p-6 border border-brand-100 shadow-teal-sm hover:shadow-teal-md hover:border-brand-200 transition-all">
+            <div class="font-serif text-brand-500 mb-1 leading-none" style="font-size: 2.5rem; letter-spacing: -0.04em;">2×</div>
+            <div class="text-brand-ink font-semibold text-sm mb-1">Lab + On-Site NABL</div>
+            <div class="text-brand-ink-light text-xs leading-relaxed">Both permanent lab and on-site facility are NABL accredited — a rare distinction that most labs can't offer.</div>
+          </div>
+
+          <!-- Stat 6 -->
+          <div class="reveal reveal-delay-1 group bg-brand-900 rounded-2xl p-6 shadow-teal-sm hover:bg-brand-800 transition-all">
+            <div class="font-serif text-brand-300 mb-1 leading-none" style="font-size: 2.5rem; letter-spacing: -0.04em;">ZEISS</div>
+            <div class="text-brand-white font-semibold text-sm mb-1">CONTURA CMM</div>
+            <div class="text-brand-100/60 text-xs leading-relaxed">900×1200×800 mm measurement volume. German-engineered precision for component inspection at the highest level.</div>
+          </div>
+
+        </div>
+
+        <!-- Right: lab image + overlay text -->
+        <div class="reveal reveal-delay-2 relative">
+          <div class="relative rounded-2xl overflow-hidden">
+            <img
+              src="https://placehold.co/720x820/1A3832/47857A?text=Lab+Environment"
+              alt="German Calibration Lab — Class 10,000 cleanroom with precision measurement equipment"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+            <!-- Overlay card -->
+            <div class="absolute bottom-6 left-6 right-6 bg-brand-900/90 backdrop-blur-sm rounded-xl p-5 border border-brand-700/50">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-brand-500/20 border border-brand-500/30 flex items-center justify-center">
+                  <svg class="w-5 h-5 text-brand-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-brand-white text-sm font-semibold mb-0.5">ILAC-MRA Recognised</div>
+                  <div class="text-brand-100/60 text-xs leading-relaxed">Part of the international mutual recognition arrangement — your calibration certificates are accepted globally.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating accent -->
+          <div class="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-brand-500/10 border border-brand-500/20 -z-10"></div>
+          <div class="absolute -bottom-4 -left-4 w-16 h-16 rounded-full bg-brand-700/20 -z-10"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 5 — INDUSTRIES SERVED
+  ══════════════════════════════════════════════════ -->
+  <section class="bg-brand-white py-20 lg:py-28" aria-label="Industries we serve">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+      <!-- Section header — numbered badge treatment instead of eyebrow -->
+      <div class="reveal mb-14 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+        <div class="max-w-2xl">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="font-serif text-brand-500 text-5xl leading-none" style="letter-spacing: -0.04em;">06</span>
+            <div class="w-px h-10 bg-brand-200"></div>
+            <span class="text-brand-ink-light text-sm leading-tight">Industries<br/>Served</span>
+          </div>
+          <h2 class="font-serif text-brand-ink leading-tight mb-4" style="font-size: clamp(2rem, 4vw, 2.75rem); letter-spacing: -0.03em;">
+            Industries We Serve
+          </h2>
+          <p class="text-brand-ink-light text-lg leading-relaxed">
+            From automotive giants to precision machining shops — we calibrate the instruments
+            that keep India's manufacturing running to spec.
+          </p>
+        </div>
+        <a href="industries.html" class="flex-shrink-0 flex items-center gap-2 text-brand-500 font-semibold text-sm hover:text-brand-700 transition-colors">
+          View all industries
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Industry cards — horizontal layout, distinct from service cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+        <!-- Automotive -->
+        <a href="industries.html#automotive" class="reveal group flex items-start gap-5 bg-white rounded-2xl p-6 border border-brand-100 shadow-teal-sm hover:shadow-teal-lg hover:border-brand-300 hover:bg-brand-50 transition-all duration-300">
+          <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-900 flex items-center justify-center group-hover:bg-brand-500 transition-colors duration-300">
+            <svg class="w-5 h-5 text-brand-300 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10l2 2h8zm0 0l2-5h5l-2 5h-5z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-brand-ink font-bold text-base mb-1 group-hover:text-brand-700 transition-colors">Automotive Manufacturing</h3>
+            <p class="text-brand-ink-light text-sm leading-relaxed">Gauges, fixtures, measuring tools and component inspection for OEMs and tier-1 suppliers.</p>
+          </div>
+        </a>
+
+        <!-- Bearing -->
+        <a href="industries.html#bearing" class="reveal reveal-delay-1 group flex items-start gap-5 bg-white rounded-2xl p-6 border border-brand-100 shadow-teal-sm hover:shadow-teal-lg hover:border-brand-300 hover:bg-brand-50 transition-all duration-300">
+          <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-900 flex items-center justify-center group-hover:bg-brand-500 transition-colors duration-300">
+            <svg class="w-5 h-5 text-brand-300 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <circle cx="12" cy="12" r="9" stroke-width="1.8"/>
+              <circle cx="12" cy="12" r="3" stroke-width="1.8"/>
+              <path stroke-linecap="round" stroke-width="1.8" d="M12 3v2M12 19v2M3 12h2M19 12h2"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-brand-ink font-bold text-base mb-1 group-hover:text-brand-700 transition-colors">Bearing Manufacturing</h3>
+            <p class="text-brand-ink-light text-sm leading-relaxed">Micrometers, bore gauges, snap gauges and roundness measurement for SKF, FAG and more.</p>
+          </div>
+        </a>
+
+        <!-- Gear -->
+        <a href="industries.html#gear" class="reveal group flex items-start gap-5 bg-white rounded-2xl p-6 border border-brand-100 shadow-teal-sm hover:shadow-teal-lg hover:border-brand-300 hover:bg-brand-50 transition-all duration-300">
+          <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-900 flex items-center justify-center group-hover:bg-brand-500 transition-colors duration-300">
+            <svg class="w-5 h-5 text-brand-300 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-brand-ink font-bold text-base mb-1 group-hover:text-brand-700 transition-colors">Gear Manufacturing</h3>
+            <p class="text-brand-ink-light text-sm leading-relaxed">Form gauges, lead gauges, CMM inspection and thread gauges for precision gear manufacturers.</p>
+          </div>
+        </a>
+
+        <!-- Precision Machining -->
+        <a href="industries.html#machining" class="reveal reveal-delay-1 group flex items-start gap-5 bg-white rounded-2xl p-6 border border-brand-100 shadow-teal-sm hover:shadow-teal-lg hover:border-brand-300 hover:bg-brand-50 transition-all duration-300">
+          <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-900 flex items-center justify-center group-hover:bg-brand-500 transition-colors duration-300">
+            <svg class="w-5 h-5 text-brand-300 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-brand-ink font-bold text-base mb-1 group-hover:text-brand-700 transition-colors">Precision Machining</h3>
+            <p class="text-brand-ink-light text-sm leading-relaxed">Full range of dimensional tools and surface roughness calibration for high-tolerance operations.</p>
+          </div>
+        </a>
+
+        <!-- Heavy Engineering -->
+        <a href="industries.html#heavy" class="reveal group flex items-start gap-5 bg-white rounded-2xl p-6 border border-brand-100 shadow-teal-sm hover:shadow-teal-lg hover:border-brand-300 hover:bg-brand-50 transition-all duration-300">
+          <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-900 flex items-center justify-center group-hover:bg-brand-500 transition-colors duration-300">
+            <svg class="w-5 h-5 text-brand-300 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-brand-ink font-bold text-base mb-1 group-hover:text-brand-700 transition-colors">Heavy Engineering</h3>
+            <p class="text-brand-ink-light text-sm leading-relaxed">Large micrometers (up to 1000 mm), surface plates (2000×2000 mm) and high-range pressure gauges.</p>
+          </div>
+        </a>
+
+        <!-- Electrical Equipment -->
+        <a href="industries.html#electrical" class="reveal reveal-delay-1 group flex items-start gap-5 bg-white rounded-2xl p-6 border border-brand-100 shadow-teal-sm hover:shadow-teal-lg hover:border-brand-300 hover:bg-brand-50 transition-all duration-300">
+          <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-900 flex items-center justify-center group-hover:bg-brand-500 transition-colors duration-300">
+            <svg class="w-5 h-5 text-brand-300 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-brand-ink font-bold text-base mb-1 group-hover:text-brand-700 transition-colors">Electrical Equipment</h3>
+            <p class="text-brand-ink-light text-sm leading-relaxed">Calipers, thickness gauges and pressure devices for Legrand, Anchor, Adani and more.</p>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 6 — CLIENT LOGOS
+  ══════════════════════════════════════════════════ -->
+  <section class="bg-brand-50 py-16 lg:py-20 overflow-hidden" aria-label="Our clients">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+      <div class="reveal text-center mb-10">
+        <p class="text-brand-ink-light text-sm font-medium uppercase tracking-widest">Trusted by India's Industry Leaders</p>
+      </div>
+
+      <!-- Logo strip — two rows on mobile, marquee scroll on desktop -->
+      <div class="reveal relative">
+        <!-- Fade edges -->
+        <div class="absolute left-0 top-0 bottom-0 w-16 lg:w-24 bg-gradient-to-r from-brand-50 to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-16 lg:w-24 bg-gradient-to-l from-brand-50 to-transparent z-10 pointer-events-none"></div>
+
+        <!-- Scrolling track -->
+        <div class="overflow-hidden">
+          <div class="logo-track flex items-center gap-8 lg:gap-12 w-max">
+            <!-- Each logo is a styled text pill — grayscale, full colour on hover -->
+            <!-- Row duplicated for seamless loop -->
+            <div class="logo-item">Tata</div>
+            <div class="logo-item">Reliance</div>
+            <div class="logo-item">SKF</div>
+            <div class="logo-item">L&amp;T</div>
+            <div class="logo-item">Mahindra</div>
+            <div class="logo-item">Atlas Copco</div>
+            <div class="logo-item">Legrand</div>
+            <div class="logo-item">Anchor</div>
+            <div class="logo-item">Adani</div>
+            <div class="logo-item">Faurecia</div>
+            <div class="logo-item">Sony</div>
+            <div class="logo-item">FAG</div>
+            <div class="logo-item">Bharat Gear</div>
+            <div class="logo-item">Atlas Corporation</div>
+            <!-- Duplicate for seamless loop -->
+            <div class="logo-item" aria-hidden="true">Tata</div>
+            <div class="logo-item" aria-hidden="true">Reliance</div>
+            <div class="logo-item" aria-hidden="true">SKF</div>
+            <div class="logo-item" aria-hidden="true">L&amp;T</div>
+            <div class="logo-item" aria-hidden="true">Mahindra</div>
+            <div class="logo-item" aria-hidden="true">Atlas Copco</div>
+            <div class="logo-item" aria-hidden="true">Legrand</div>
+            <div class="logo-item" aria-hidden="true">Anchor</div>
+            <div class="logo-item" aria-hidden="true">Adani</div>
+            <div class="logo-item" aria-hidden="true">Faurecia</div>
+            <div class="logo-item" aria-hidden="true">Sony</div>
+            <div class="logo-item" aria-hidden="true">FAG</div>
+            <div class="logo-item" aria-hidden="true">Bharat Gear</div>
+            <div class="logo-item" aria-hidden="true">Atlas Corporation</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 7 — ACCREDITATION SNAPSHOT
+  ══════════════════════════════════════════════════ -->
+  <section class="bg-brand-white py-20 lg:py-28" aria-label="NABL Accreditation">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+        <!-- Left: certificate card -->
+        <div class="reveal relative">
+          <!-- Certificate display card -->
+          <div class="relative bg-brand-900 rounded-2xl p-8 lg:p-10 overflow-hidden">
+
+            <!-- Background pattern -->
+            <div class="absolute inset-0 opacity-5" style="background-image: repeating-linear-gradient(45deg, #47857A 0, #47857A 1px, transparent 0, transparent 50%); background-size: 12px 12px;"></div>
+
+            <!-- Top row: NABL + ILAC -->
+            <div class="relative flex items-center justify-between mb-8">
+              <div>
+                <div class="text-brand-300 text-xs font-semibold uppercase tracking-widest mb-1">Accreditation Body</div>
+                <div class="text-brand-white font-bold text-lg leading-tight">NABL</div>
+                <div class="text-brand-100/50 text-xs">National Accreditation Board for<br/>Testing and Calibration Laboratories</div>
+              </div>
+              <div class="w-14 h-14 rounded-xl bg-brand-700/50 border border-brand-600/40 flex items-center justify-center">
+                <svg class="w-7 h-7 text-brand-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="relative border-t border-brand-700/60 mb-8"></div>
+
+            <!-- Certificate details -->
+            <div class="relative grid grid-cols-2 gap-6 mb-8">
+              <div>
+                <div class="text-brand-100/40 text-xs uppercase tracking-widest mb-1">Certificate No.</div>
+                <div class="text-brand-white font-bold text-xl font-serif" style="letter-spacing: -0.02em;">CC-4038</div>
+              </div>
+              <div>
+                <div class="text-brand-100/40 text-xs uppercase tracking-widest mb-1">Standard</div>
+                <div class="text-brand-white font-semibold text-sm leading-snug">ISO/IEC 17025:2017</div>
+              </div>
+              <div>
+                <div class="text-brand-100/40 text-xs uppercase tracking-widest mb-1">Issued</div>
+                <div class="text-brand-white font-semibold text-sm">28 August 2025</div>
+              </div>
+              <div>
+                <div class="text-brand-100/40 text-xs uppercase tracking-widest mb-1">Valid Until</div>
+                <div class="text-brand-300 font-bold text-sm">27 August 2029</div>
+              </div>
+              <div>
+                <div class="text-brand-100/40 text-xs uppercase tracking-widest mb-1">Scope Pages</div>
+                <div class="text-brand-white font-semibold text-sm">18 pages</div>
+              </div>
+              <div>
+                <div class="text-brand-100/40 text-xs uppercase tracking-widest mb-1">Instruments</div>
+                <div class="text-brand-white font-semibold text-sm">91+ permanent · 16 on-site</div>
+              </div>
+            </div>
+
+            <!-- ILAC-MRA note -->
+            <div class="relative bg-brand-800/60 rounded-xl px-4 py-3 border border-brand-700/40">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-brand-600/40 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-4 h-4 text-brand-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-brand-white text-xs font-semibold">ILAC-MRA Signatory</div>
+                  <div class="text-brand-100/50 text-xs">Internationally recognised — certificates accepted worldwide</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Decorative accent -->
+          <div class="absolute -bottom-5 -right-5 w-20 h-20 rounded-full bg-brand-100 -z-10"></div>
+        </div>
+
+        <!-- Right: content + CTAs -->
+        <div>
+          <div class="reveal mb-3">
+            <p class="text-brand-500 text-sm font-semibold uppercase tracking-widest">Fully Accredited</p>
+          </div>
+          <h2 class="reveal reveal-delay-1 font-serif text-brand-ink leading-tight mb-5" style="font-size: clamp(1.875rem, 3.5vw, 2.5rem); letter-spacing: -0.03em;">
+            NABL Accredited Laboratory
+          </h2>
+          <p class="reveal reveal-delay-1 text-brand-ink-light text-lg leading-relaxed mb-6">
+            German Calibration holds an active NABL accreditation under ISO/IEC 17025:2017 —
+            the international gold standard for calibration laboratory competence.
+          </p>
+          <p class="reveal reveal-delay-2 text-brand-ink-light leading-relaxed mb-8 text-base">
+            Every calibration report we issue carries the NABL mark, giving your quality team,
+            customers and auditors the confidence that measurements are traceable to national standards.
+            As an ILAC-MRA signatory, our certificates are recognised in over 100 countries.
+          </p>
+
+          <!-- What NABL means — 3 points -->
+          <div class="reveal reveal-delay-2 space-y-4 mb-10">
+            <div class="flex items-start gap-3">
+              <div class="flex-shrink-0 w-5 h-5 rounded-full bg-brand-500 flex items-center justify-center mt-0.5">
+                <svg class="w-3 h-3 text-white" viewBox="0 0 12 12" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 6l3 3 5-5"/>
+                </svg>
+              </div>
+              <p class="text-brand-ink-light text-sm leading-relaxed"><span class="text-brand-ink font-semibold">Measurement traceability</span> — results linked to national and international measurement standards.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="flex-shrink-0 w-5 h-5 rounded-full bg-brand-500 flex items-center justify-center mt-0.5">
+                <svg class="w-3 h-3 text-white" viewBox="0 0 12 12" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 6l3 3 5-5"/>
+                </svg>
+              </div>
+              <p class="text-brand-ink-light text-sm leading-relaxed"><span class="text-brand-ink font-semibold">Audit-ready reports</span> — accepted by quality auditors, IATF 16949, ISO 9001 and regulatory bodies.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="flex-shrink-0 w-5 h-5 rounded-full bg-brand-500 flex items-center justify-center mt-0.5">
+                <svg class="w-3 h-3 text-white" viewBox="0 0 12 12" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 6l3 3 5-5"/>
+                </svg>
+              </div>
+              <p class="text-brand-ink-light text-sm leading-relaxed"><span class="text-brand-ink font-semibold">Uncertainty quantified</span> — every result includes calibration measurement capability (CMC) values.</p>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="reveal reveal-delay-3 flex flex-wrap gap-4">
+            <a href="accreditation.html" class="btn-primary" style="background:#47857A; color:#FBFEFD;">
+              View Accreditation Details
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+            <a href="https://nablwp.qci.org.in/CertificateScopenew?x=kaVU2dy+CC4XwknIk4p9iQ==&src=P"
+               class="inline-flex items-center gap-2 text-brand-500 font-semibold text-sm hover:text-brand-700 transition-colors"
+               target="_blank" rel="noopener noreferrer">
+              Verify on NABL website
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 8 — CLIENT PORTAL PROMO
+  ══════════════════════════════════════════════════ -->
+  <section class="bg-brand-900 py-20 lg:py-28 overflow-hidden relative" aria-label="Client portal">
+
+    <!-- Background grid -->
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image: linear-gradient(#47857A 1px, transparent 1px), linear-gradient(90deg, #47857A 1px, transparent 1px); background-size: 48px 48px;"></div>
+    <!-- Radial glow -->
+    <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 60% 70% at 70% 50%, rgba(71,133,122,0.14) 0%, transparent 70%);"></div>
+
+    <div class="relative max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+        <!-- Left: content -->
+        <div>
+          <div class="reveal mb-3">
+            <span class="inline-flex items-center gap-2 bg-brand-700/50 border border-brand-600/40 text-brand-300 text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+              </svg>
+              Client Portal
+            </span>
+          </div>
+
+          <h2 class="reveal reveal-delay-1 font-serif text-brand-white leading-tight mb-5" style="font-size: clamp(1.875rem, 3.5vw, 2.75rem); letter-spacing: -0.03em;">
+            Access Your Calibration<br/>Reports Online
+          </h2>
+          <p class="reveal reveal-delay-1 text-brand-100/65 text-lg leading-relaxed mb-8">
+            Download NABL certificates, search by instrument or date, and track your full calibration history — available 24/7 from any device.
+          </p>
+
+          <!-- Feature list -->
+          <div class="reveal reveal-delay-2 space-y-3 mb-10">
+            <div class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-brand-500/30 border border-brand-500/50 flex items-center justify-center flex-shrink-0">
+                <svg class="w-3 h-3 text-brand-300" viewBox="0 0 12 12" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 6l3 3 5-5"/>
+                </svg>
+              </div>
+              <span class="text-brand-100/70 text-sm">Download calibration certificates as PDF</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-brand-500/30 border border-brand-500/50 flex items-center justify-center flex-shrink-0">
+                <svg class="w-3 h-3 text-brand-300" viewBox="0 0 12 12" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 6l3 3 5-5"/>
+                </svg>
+              </div>
+              <span class="text-brand-100/70 text-sm">Search by instrument type, report ID or date</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-brand-500/30 border border-brand-500/50 flex items-center justify-center flex-shrink-0">
+                <svg class="w-3 h-3 text-brand-300" viewBox="0 0 12 12" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 6l3 3 5-5"/>
+                </svg>
+              </div>
+              <span class="text-brand-100/70 text-sm">Full calibration history for each instrument</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-5 h-5 rounded-full bg-brand-500/30 border border-brand-500/50 flex items-center justify-center flex-shrink-0">
+                <svg class="w-3 h-3 text-brand-300" viewBox="0 0 12 12" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 6l3 3 5-5"/>
+                </svg>
+              </div>
+              <span class="text-brand-100/70 text-sm">Your reports only — secure and private</span>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div class="reveal reveal-delay-3 flex flex-wrap items-center gap-4">
+            <a href="https://portal.germancalibration.com" target="_blank" rel="noopener" class="btn-primary">
+              Login to Portal
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+            <span class="inline-flex items-center gap-2 bg-brand-700/40 border border-brand-600/30 text-brand-300 text-xs font-semibold px-3 py-2 rounded-lg">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              Coming Soon
+            </span>
+          </div>
+        </div>
+
+        <!-- Right: portal mockup illustration -->
+        <div class="reveal reveal-delay-2">
+          <div class="relative">
+            <!-- Browser chrome mockup -->
+            <div class="bg-brand-800 rounded-2xl border border-brand-700/60 overflow-hidden shadow-teal-xl">
+              <!-- Browser bar -->
+              <div class="flex items-center gap-2 px-4 py-3 bg-brand-700/40 border-b border-brand-700/40">
+                <div class="w-3 h-3 rounded-full bg-brand-600/60"></div>
+                <div class="w-3 h-3 rounded-full bg-brand-600/60"></div>
+                <div class="w-3 h-3 rounded-full bg-brand-600/60"></div>
+                <div class="flex-1 mx-4 bg-brand-700/60 rounded px-3 py-1 text-brand-100/40 text-xs font-mono">
+                  portal.germancalibration.com
+                </div>
+              </div>
+              <!-- Portal UI mockup -->
+              <div class="p-6">
+                <!-- Header row -->
+                <div class="flex items-center justify-between mb-5">
+                  <div>
+                    <div class="text-brand-white text-sm font-semibold mb-0.5">My Reports</div>
+                    <div class="text-brand-100/40 text-xs">12 calibration certificates</div>
+                  </div>
+                  <div class="bg-brand-500/20 border border-brand-500/30 text-brand-300 text-xs px-3 py-1.5 rounded-lg">Download All</div>
+                </div>
+                <!-- Search bar -->
+                <div class="bg-brand-700/40 border border-brand-600/30 rounded-lg px-4 py-2.5 text-brand-100/30 text-xs mb-4 flex items-center gap-2">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                  Search by instrument or date...
+                </div>
+                <!-- Report rows -->
+                <div class="space-y-2.5">
+                  <div class="flex items-center justify-between bg-brand-700/30 rounded-xl px-4 py-3 border border-brand-600/20">
+                    <div class="flex items-center gap-3">
+                      <div class="w-7 h-7 rounded-lg bg-brand-500/20 flex items-center justify-center">
+                        <svg class="w-3.5 h-3.5 text-brand-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                      </div>
+                      <div>
+                        <div class="text-brand-white text-xs font-medium">External Micrometer</div>
+                        <div class="text-brand-100/40 text-xs">12 Mar 2026 · CC-4038</div>
+                      </div>
+                    </div>
+                    <div class="text-brand-300 text-xs font-medium">PDF ↓</div>
+                  </div>
+                  <div class="flex items-center justify-between bg-brand-700/30 rounded-xl px-4 py-3 border border-brand-600/20">
+                    <div class="flex items-center gap-3">
+                      <div class="w-7 h-7 rounded-lg bg-brand-500/20 flex items-center justify-center">
+                        <svg class="w-3.5 h-3.5 text-brand-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                      </div>
+                      <div>
+                        <div class="text-brand-white text-xs font-medium">Vernier Caliper</div>
+                        <div class="text-brand-100/40 text-xs">10 Mar 2026 · CC-4038</div>
+                      </div>
+                    </div>
+                    <div class="text-brand-300 text-xs font-medium">PDF ↓</div>
+                  </div>
+                  <div class="flex items-center justify-between bg-brand-700/30 rounded-xl px-4 py-3 border border-brand-600/20">
+                    <div class="flex items-center gap-3">
+                      <div class="w-7 h-7 rounded-lg bg-brand-500/20 flex items-center justify-center">
+                        <svg class="w-3.5 h-3.5 text-brand-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                      </div>
+                      <div>
+                        <div class="text-brand-white text-xs font-medium">Pressure Gauge</div>
+                        <div class="text-brand-100/40 text-xs">05 Mar 2026 · CC-4038</div>
+                      </div>
+                    </div>
+                    <div class="text-brand-300 text-xs font-medium">PDF ↓</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Glow under card -->
+            <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 w-3/4 h-12 bg-brand-500/20 blur-2xl rounded-full -z-10"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 9 — QUOTE FORM + CONTACT INFO
+  ══════════════════════════════════════════════════ -->
+  <section class="bg-brand-white py-20 lg:py-28" id="quote" aria-label="Get a quote">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+      <!-- Section header -->
+      <div class="reveal mb-14 max-w-2xl">
+        <p class="text-brand-500 text-sm font-semibold uppercase tracking-widest mb-3">Let's Work Together</p>
+        <h2 class="font-serif text-brand-ink leading-tight mb-4" style="font-size: clamp(2rem, 4vw, 2.75rem); letter-spacing: -0.03em;">
+          Get a Quote
+        </h2>
+        <p class="text-brand-ink-light text-lg leading-relaxed">
+          Tell us what needs calibrating. We'll get back to you within one business day.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-5 gap-10 lg:gap-16">
+
+        <!-- Form — takes 3/5 columns -->
+        <div class="lg:col-span-3">
+          <form class="reveal space-y-5" name="quote-request" id="quote-form" novalidate>
+
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="company" class="block text-brand-ink text-sm font-semibold mb-2">Company Name <span class="text-brand-500">*</span></label>
+                <input type="text" id="company" name="company" required placeholder="e.g. Acme Industries Ltd."
+                  class="w-full px-4 py-3 bg-white border border-brand-200 rounded-xl text-brand-ink placeholder-brand-ink-light/50 text-sm focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/15 transition-all" />
+              </div>
+              <div>
+                <label for="contact" class="block text-brand-ink text-sm font-semibold mb-2">Contact Person <span class="text-brand-500">*</span></label>
+                <input type="text" id="contact" name="contact" required placeholder="Your name"
+                  class="w-full px-4 py-3 bg-white border border-brand-200 rounded-xl text-brand-ink placeholder-brand-ink-light/50 text-sm focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/15 transition-all" />
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="email" class="block text-brand-ink text-sm font-semibold mb-2">Email Address <span class="text-brand-500">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="you@company.com"
+                  class="w-full px-4 py-3 bg-white border border-brand-200 rounded-xl text-brand-ink placeholder-brand-ink-light/50 text-sm focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/15 transition-all" />
+              </div>
+              <div>
+                <label for="phone" class="block text-brand-ink text-sm font-semibold mb-2">Phone Number <span class="text-brand-500">*</span></label>
+                <input type="tel" id="phone" name="phone" required placeholder="+91 98765 43210"
+                  class="w-full px-4 py-3 bg-white border border-brand-200 rounded-xl text-brand-ink placeholder-brand-ink-light/50 text-sm focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/15 transition-all" />
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="instrument" class="block text-brand-ink text-sm font-semibold mb-2">Instrument Type(s)</label>
+                <input type="text" id="instrument" name="instrument" placeholder="e.g. Micrometers, Calipers"
+                  class="w-full px-4 py-3 bg-white border border-brand-200 rounded-xl text-brand-ink placeholder-brand-ink-light/50 text-sm focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/15 transition-all" />
+              </div>
+              <div>
+                <label for="quantity" class="block text-brand-ink text-sm font-semibold mb-2">Approx. Quantity</label>
+                <input type="text" id="quantity" name="quantity" placeholder="e.g. 25 instruments"
+                  class="w-full px-4 py-3 bg-white border border-brand-200 rounded-xl text-brand-ink placeholder-brand-ink-light/50 text-sm focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/15 transition-all" />
+              </div>
+            </div>
+
+            <div>
+              <label for="service" class="block text-brand-ink text-sm font-semibold mb-2">Preferred Service</label>
+              <select id="service" name="service"
+                class="w-full px-4 py-3 bg-white border border-brand-200 rounded-xl text-brand-ink text-sm focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/15 transition-all appearance-none" style="background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234A6663'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E\"); background-repeat: no-repeat; background-position: right 14px center; background-size: 16px;">
+                <option value="">Select a service...</option>
+                <option value="lab">Lab Calibration (bring instruments to us)</option>
+                <option value="onsite">On-Site Calibration (we come to you)</option>
+                <option value="cmm">Third Party Inspection / CMM</option>
+                <option value="repair">Repair &amp; Maintenance</option>
+                <option value="training">CMM Training</option>
+                <option value="other">Other / Not sure</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message" class="block text-brand-ink text-sm font-semibold mb-2">Additional Notes <span class="text-brand-ink-light font-normal">(optional)</span></label>
+              <textarea id="message" name="message" rows="4" placeholder="Any specific requirements, urgency, or questions..."
+                class="w-full px-4 py-3 bg-white border border-brand-200 rounded-xl text-brand-ink placeholder-brand-ink-light/50 text-sm focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/15 transition-all resize-none"></textarea>
+            </div>
+
+            <button type="submit"
+              class="w-full btn-primary justify-center py-3.5 text-base rounded-xl">
+              Send Quote Request
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+              </svg>
+            </button>
+
+            <!-- Success message (hidden by default) -->
+            <div id="form-success" class="hidden bg-brand-50 border border-brand-200 rounded-xl px-5 py-4 text-brand-700 text-sm font-medium text-center">
+              Thank you! We've received your request and will be in touch within one business day.
+            </div>
+
+          </form>
+        </div>
+
+        <!-- Contact info — takes 2/5 columns -->
+        <div class="lg:col-span-2">
+          <div class="reveal reveal-delay-1 space-y-6">
+
+            <div class="bg-brand-50 rounded-2xl p-6 border border-brand-100">
+              <h3 class="font-semibold text-brand-ink text-sm uppercase tracking-widest mb-5">Contact Information</h3>
+
+              <!-- Address -->
+              <div class="flex items-start gap-3 mb-5">
+                <div class="w-8 h-8 rounded-lg bg-brand-500/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-brand-ink font-semibold text-sm mb-0.5">Address</div>
+                  <div class="text-brand-ink-light text-sm leading-relaxed">Plot No. 10B, Umakant Pandit,<br/>Udhyog Nagar 2, Rajkot,<br/>Gujarat, India</div>
+                  <a href="https://maps.app.goo.gl/doezCLm5DbpFEQcc7?g_st=ac" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-brand-500 text-xs font-semibold mt-2 hover:text-brand-700 transition-colors">
+                    Open in Maps
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Phone -->
+              <div class="flex items-start gap-3 mb-5">
+                <div class="w-8 h-8 rounded-lg bg-brand-500/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 8V5z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-brand-ink font-semibold text-sm mb-0.5">Phone</div>
+                  <a href="tel:+919276551009" class="text-brand-500 text-sm font-medium hover:text-brand-700 transition-colors">+91 92765 51009</a>
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="flex items-start gap-3 mb-5">
+                <div class="w-8 h-8 rounded-lg bg-brand-500/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-brand-ink font-semibold text-sm mb-0.5">Email</div>
+                  <a href="mailto:lab@germancalibration.com" class="text-brand-500 text-sm font-medium hover:text-brand-700 transition-colors">lab@germancalibration.com</a>
+                </div>
+              </div>
+
+              <!-- Hours -->
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-brand-500/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-brand-ink font-semibold text-sm mb-0.5">Working Hours</div>
+                  <div class="text-brand-ink-light text-sm">Monday – Saturday<br/>9:00 AM – 6:00 PM</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick links -->
+            <div class="bg-brand-50 rounded-2xl p-6 border border-brand-100">
+              <h3 class="font-semibold text-brand-ink text-sm uppercase tracking-widest mb-4">Quick Links</h3>
+              <div class="space-y-2.5">
+                <a href="brand items/Certificate CC-4038.pdf.pdf" class="flex items-center gap-2 text-brand-500 text-sm font-medium hover:text-brand-700 transition-colors" target="_blank" rel="noopener">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                  Download NABL Certificate
+                </a>
+                <a href="brand items/Scop 4038 .pdf" class="flex items-center gap-2 text-brand-500 text-sm font-medium hover:text-brand-700 transition-colors" target="_blank" rel="noopener">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                  Download Scope of Accreditation
+                </a>
+                <a href="https://nablwp.qci.org.in/CertificateScopenew?x=kaVU2dy+CC4XwknIk4p9iQ==&src=P" class="flex items-center gap-2 text-brand-500 text-sm font-medium hover:text-brand-700 transition-colors" target="_blank" rel="noopener">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  Verify on NABL Website
+                </a>
+                <a href="https://portal.germancalibration.com" class="flex items-center gap-2 text-brand-500 text-sm font-medium hover:text-brand-700 transition-colors" target="_blank" rel="noopener">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                  Client Portal Login
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 10 — FOOTER
+  ══════════════════════════════════════════════════ -->
+  <footer class="bg-brand-900 pt-16 pb-8" aria-label="Site footer">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+      <!-- Main footer grid -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-brand-800">
+
+        <!-- Column 1: Brand -->
+        <div class="col-span-2 lg:col-span-1">
+          <a href="index.html" class="inline-flex items-center gap-3 mb-4" aria-label="German Calibration">
+            <img src="brand items/german_logo.svg" alt="German Calibration" class="h-9 w-auto"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+            <span style="display:none" class="items-center gap-2">
+              <span class="w-8 h-8 bg-brand-500 rounded flex items-center justify-center text-brand-white font-serif text-sm font-bold">GC</span>
+              <span class="font-serif text-brand-white text-base">German Calibration</span>
+            </span>
+          </a>
+          <p class="text-brand-100/50 text-sm leading-relaxed mb-5">
+            Highly accurate &amp; reliable NABL accredited calibration laboratory in Rajkot, Gujarat.
+          </p>
+          <div class="space-y-1.5 text-xs text-brand-100/40">
+            <div>NABL Certificate: <span class="text-brand-300 font-medium">CC-4038</span></div>
+            <div>Standard: <span class="text-brand-300 font-medium">ISO/IEC 17025:2017</span></div>
+            <div>Valid until: <span class="text-brand-300 font-medium">27 August 2029</span></div>
+          </div>
+        </div>
+
+        <!-- Column 2: Services -->
+        <div>
+          <h4 class="text-brand-white text-sm font-semibold uppercase tracking-widest mb-5">Services</h4>
+          <ul class="space-y-2.5">
+            <li><a href="services.html#dimensional" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors">Dimensional Calibration</a></li>
+            <li><a href="services.html#pressure" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors">Pressure Calibration</a></li>
+            <li><a href="services.html#onsite" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors">On-Site Calibration</a></li>
+            <li><a href="services.html#cmm" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors">Third Party Inspection</a></li>
+            <li><a href="services.html#repair" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors">Repair &amp; Maintenance</a></li>
+            <li><a href="services.html#training" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors">CMM Training</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Quick Links -->
+        <div>
+          <h4 class="text-brand-white text-sm font-semibold uppercase tracking-widest mb-5">Quick Links</h4>
+          <ul class="space-y-2.5">
+            <li><a href="accreditation.html" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors">Accreditation</a></li>
+            <li><a href="about.html" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors">About Us</a></li>
+            <li><a href="industries.html" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors">Industries</a></li>
+            <li><a href="brand items/Certificate CC-4038.pdf.pdf" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors" target="_blank" rel="noopener">Download Certificate</a></li>
+            <li><a href="brand items/Scop 4038 .pdf" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors" target="_blank" rel="noopener">Download Scope PDF</a></li>
+            <li><a href="https://nablwp.qci.org.in/CertificateScopenew?x=kaVU2dy+CC4XwknIk4p9iQ==&src=P" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors" target="_blank" rel="noopener">NABL Verification</a></li>
+            <li><a href="https://portal.germancalibration.com" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors" target="_blank" rel="noopener">Client Portal</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact -->
+        <div>
+          <h4 class="text-brand-white text-sm font-semibold uppercase tracking-widest mb-5">Contact</h4>
+          <ul class="space-y-4">
+            <li class="text-brand-100/50 text-sm leading-relaxed">
+              Plot No. 10B, Umakant Pandit,<br/>Udhyog Nagar 2, Rajkot,<br/>Gujarat, India
+            </li>
+            <li>
+              <a href="tel:+919276551009" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors">+91 92765 51009</a>
+            </li>
+            <li>
+              <a href="mailto:lab@germancalibration.com" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors">lab@germancalibration.com</a>
+            </li>
+            <li class="text-brand-100/50 text-sm">
+              Mon–Sat · 9:00 AM – 6:00 PM
+            </li>
+            <li>
+              <a href="https://maps.app.goo.gl/doezCLm5DbpFEQcc7?g_st=ac" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-brand-300 text-sm font-medium hover:text-brand-400 transition-colors">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                View on Google Maps
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-brand-100/35 text-xs text-center sm:text-left">
+          © 2026 German Calibration Lab LLP. All rights reserved.
+        </p>
+        <p class="text-brand-100/25 text-xs text-center sm:text-right">
+          NABL Certificate: CC-4038 &nbsp;·&nbsp; ISO/IEC 17025:2017 &nbsp;·&nbsp; Valid till 27 Aug 2029
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════════
+       JAVASCRIPT
+  ══════════════════════════════════════════════════ -->
+  <script>
+    // ── Mobile menu toggle ──
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconMenu   = document.getElementById('icon-menu');
+    const iconClose  = document.getElementById('icon-close');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+      iconMenu.classList.toggle('hidden', isOpen);
+      iconClose.classList.toggle('hidden', !isOpen);
+    });
+
+    // Close mobile menu on outside click
+    document.addEventListener('click', (e) => {
+      if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        iconMenu.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+      }
+    });
+
+    // ── Header scroll effect ──
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // ── Scroll reveal ──
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    // Hero elements start visible on load (they're above fold)
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.hero-bg .reveal').forEach((el, i) => {
+        setTimeout(() => el.classList.add('visible'), 100 + i * 120);
+      });
+    });
+
+    // ── Quote form — basic client-side feedback ──
+    const form = document.getElementById('quote-form');
+    const successMsg = document.getElementById('form-success');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Basic required field check
+        const required = form.querySelectorAll('[required]');
+        let valid = true;
+        required.forEach(field => {
+          field.classList.remove('border-red-400', 'ring-red-400/20');
+          if (!field.value.trim()) {
+            field.classList.add('border-red-400', 'ring-2', 'ring-red-400/20');
+            valid = false;
+          }
+        });
+        if (!valid) return;
+        // Show success (wire to backend/Formspree when ready)
+        form.style.opacity = '0.4';
+        form.style.pointerEvents = 'none';
+        successMsg.classList.remove('hidden');
+        successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    }
+  </script>
+
+</body>
+</html>
