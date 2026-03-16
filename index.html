@@ -66,7 +66,7 @@
     /* ── Hero background ── */
     .hero-bg {
       position: relative;
-      background-color: #1A3832;
+      background-color: #EAF3F1;
       overflow: hidden;
     }
     .hero-bg::before {
@@ -74,8 +74,8 @@
       position: absolute;
       inset: 0;
       background-image:
-        radial-gradient(circle at 20% 50%, rgba(71,133,122,0.18) 0%, transparent 60%),
-        radial-gradient(circle at 80% 20%, rgba(45,93,84,0.22) 0%, transparent 55%);
+        radial-gradient(circle at 20% 50%, rgba(71,133,122,0.14) 0%, transparent 60%),
+        radial-gradient(circle at 80% 20%, rgba(71,133,122,0.10) 0%, transparent 55%);
       pointer-events: none;
     }
     /* Subtle precision grid overlay */
@@ -84,8 +84,8 @@
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(71,133,122,0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(71,133,122,0.06) 1px, transparent 1px);
+        linear-gradient(rgba(71,133,122,0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(71,133,122,0.10) 1px, transparent 1px);
       background-size: 40px 40px;
       pointer-events: none;
     }
@@ -111,8 +111,8 @@
       transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
     #site-header.scrolled {
-      background-color: rgba(26, 56, 50, 0.97);
-      box-shadow: 0 1px 24px rgba(0,0,0,0.18);
+      background-color: rgba(251, 254, 253, 0.97);
+      box-shadow: 0 1px 16px rgba(71,133,122,0.10);
       backdrop-filter: blur(8px);
     }
 
@@ -158,19 +158,19 @@
       align-items: center;
       gap: 8px;
       background: transparent;
-      color: #FBFEFD;
+      color: #0F1E1C;
       font-weight: 600;
       font-size: 0.9375rem;
       padding: 13px 27px;
-      border: 1.5px solid rgba(251,254,253,0.45);
+      border: 1.5px solid rgba(71,133,122,0.45);
       border-radius: 6px;
       letter-spacing: -0.01em;
       transition: background 0.2s, border-color 0.2s, transform 0.15s;
       text-decoration: none;
     }
     .btn-outline:hover {
-      background: rgba(251,254,253,0.1);
-      border-color: rgba(251,254,253,0.8);
+      background: rgba(71,133,122,0.08);
+      border-color: rgba(71,133,122,0.75);
       transform: translateY(-1px);
     }
 
@@ -193,9 +193,9 @@
       inset: 0;
       background: linear-gradient(
         105deg,
-        rgba(26,56,50,0.96) 0%,
-        rgba(26,56,50,0.88) 45%,
-        rgba(26,56,50,0.55) 100%
+        rgba(234,243,241,0.92) 0%,
+        rgba(234,243,241,0.80) 45%,
+        rgba(234,243,241,0.40) 100%
       );
       z-index: 1;
     }
@@ -246,9 +246,9 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(71,133,122,0.2);
-      border: 1px solid rgba(71,133,122,0.4);
-      color: #8BBDB7;
+      background: rgba(71,133,122,0.12);
+      border: 1px solid rgba(71,133,122,0.35);
+      color: #2D5D54;
       font-size: 0.75rem;
       font-weight: 600;
       letter-spacing: 0.08em;
@@ -264,7 +264,7 @@
   <!-- ═══════════════════════════════════════════════
        HEADER — Sticky navigation
   ══════════════════════════════════════════════════ -->
-  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-brand-900/95">
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-brand-white/95 border-b border-brand-100 backdrop-blur-md">
     <nav class="max-w-7xl mx-auto px-5 lg:px-8">
       <div class="flex items-center justify-between h-16 lg:h-18">
 
@@ -279,30 +279,30 @@
           <!-- Fallback text logo if SVG not found -->
           <span style="display:none" class="items-center gap-2">
             <span class="w-8 h-8 bg-brand-500 rounded flex items-center justify-center text-brand-white font-serif text-sm font-bold">GC</span>
-            <span class="font-serif text-brand-white text-lg leading-tight">German<br><span class="text-brand-300 text-xs font-sans font-medium tracking-widest uppercase">Calibration</span></span>
+            <span class="font-serif text-brand-ink text-lg leading-tight">German<br><span class="text-brand-500 text-xs font-sans font-medium tracking-widest uppercase">Calibration</span></span>
           </span>
         </a>
 
         <!-- Desktop nav -->
         <div class="hidden lg:flex items-center gap-7">
-          <a href="services.html" class="nav-link text-brand-100/80 hover:text-brand-white text-sm font-medium">Services</a>
-          <a href="industries.html" class="nav-link text-brand-100/80 hover:text-brand-white text-sm font-medium">Industries</a>
-          <a href="accreditation.html" class="nav-link text-brand-100/80 hover:text-brand-white text-sm font-medium">Accreditation</a>
-          <a href="about.html" class="nav-link text-brand-100/80 hover:text-brand-white text-sm font-medium">About</a>
+          <a href="services.html" class="nav-link text-brand-ink/70 hover:text-brand-ink text-sm font-medium">Services</a>
+          <a href="industries.html" class="nav-link text-brand-ink/70 hover:text-brand-ink text-sm font-medium">Industries</a>
+          <a href="accreditation.html" class="nav-link text-brand-ink/70 hover:text-brand-ink text-sm font-medium">Accreditation</a>
+          <a href="about.html" class="nav-link text-brand-ink/70 hover:text-brand-ink text-sm font-medium">About</a>
         </div>
 
         <!-- Desktop utility -->
         <div class="hidden lg:flex items-center gap-4">
           <!-- Phone -->
-          <a href="tel:+919276551009" class="flex items-center gap-1.5 text-brand-100/70 hover:text-brand-white text-sm font-medium transition-colors" aria-label="Call us">
-            <svg class="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <a href="tel:+919276551009" class="flex items-center gap-1.5 text-brand-ink/60 hover:text-brand-ink text-sm font-medium transition-colors" aria-label="Call us">
+            <svg class="w-4 h-4 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 8V5z"/>
             </svg>
             +91 92765 51009
           </a>
 
           <!-- Client Portal -->
-          <a href="https://portal.germancalibration.com" class="flex items-center gap-1.5 text-brand-100/80 hover:text-brand-white text-sm font-medium border border-brand-700 hover:border-brand-500 px-3 py-1.5 rounded-md transition-all" target="_blank" rel="noopener">
+          <a href="https://portal.germancalibration.com" class="flex items-center gap-1.5 text-brand-ink/70 hover:text-brand-ink text-sm font-medium border border-brand-200 hover:border-brand-500 px-3 py-1.5 rounded-md transition-all" target="_blank" rel="noopener">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
             </svg>
@@ -318,7 +318,7 @@
         <!-- Mobile hamburger -->
         <button
           id="menu-toggle"
-          class="lg:hidden p-2 rounded-md text-brand-100/80 hover:text-brand-white hover:bg-brand-800 transition-colors"
+          class="lg:hidden p-2 rounded-md text-brand-ink/70 hover:text-brand-ink hover:bg-brand-50 transition-colors"
           aria-label="Toggle navigation menu"
           aria-expanded="false"
           aria-controls="mobile-menu"
@@ -334,18 +334,18 @@
 
       <!-- Mobile menu dropdown -->
       <div id="mobile-menu" role="navigation" aria-label="Mobile navigation">
-        <div class="border-t border-brand-800 py-4 space-y-1">
-          <a href="services.html" class="block px-3 py-2.5 text-brand-100/80 hover:text-brand-white hover:bg-brand-800 rounded-md text-sm font-medium transition-colors">Services</a>
-          <a href="industries.html" class="block px-3 py-2.5 text-brand-100/80 hover:text-brand-white hover:bg-brand-800 rounded-md text-sm font-medium transition-colors">Industries</a>
-          <a href="accreditation.html" class="block px-3 py-2.5 text-brand-100/80 hover:text-brand-white hover:bg-brand-800 rounded-md text-sm font-medium transition-colors">Accreditation</a>
-          <a href="about.html" class="block px-3 py-2.5 text-brand-100/80 hover:text-brand-white hover:bg-brand-800 rounded-md text-sm font-medium transition-colors">About</a>
+        <div class="border-t border-brand-100 py-4 space-y-1">
+          <a href="services.html" class="block px-3 py-2.5 text-brand-ink/70 hover:text-brand-ink hover:bg-brand-50 rounded-md text-sm font-medium transition-colors">Services</a>
+          <a href="industries.html" class="block px-3 py-2.5 text-brand-ink/70 hover:text-brand-ink hover:bg-brand-50 rounded-md text-sm font-medium transition-colors">Industries</a>
+          <a href="accreditation.html" class="block px-3 py-2.5 text-brand-ink/70 hover:text-brand-ink hover:bg-brand-50 rounded-md text-sm font-medium transition-colors">Accreditation</a>
+          <a href="about.html" class="block px-3 py-2.5 text-brand-ink/70 hover:text-brand-ink hover:bg-brand-50 rounded-md text-sm font-medium transition-colors">About</a>
 
-          <div class="pt-3 border-t border-brand-800 space-y-2">
-            <a href="tel:+919276551009" class="flex items-center gap-2 px-3 py-2 text-brand-300 text-sm font-medium">
+          <div class="pt-3 border-t border-brand-100 space-y-2">
+            <a href="tel:+919276551009" class="flex items-center gap-2 px-3 py-2 text-brand-500 text-sm font-medium">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 8V5z"/></svg>
               +91 92765 51009
             </a>
-            <a href="https://portal.germancalibration.com" class="flex items-center gap-2 px-3 py-2 text-brand-300 text-sm font-medium" target="_blank" rel="noopener">
+            <a href="https://portal.germancalibration.com" class="flex items-center gap-2 px-3 py-2 text-brand-500 text-sm font-medium" target="_blank" rel="noopener">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
               Client Portal
             </a>
@@ -384,13 +384,13 @@
         </div>
 
         <!-- Headline -->
-        <h1 class="reveal reveal-delay-1 font-serif text-brand-white leading-tight mb-6" style="font-size: clamp(2.5rem, 5.5vw, 4rem); letter-spacing: -0.03em;">
+        <h1 class="reveal reveal-delay-1 font-serif text-brand-ink leading-tight mb-6" style="font-size: clamp(2.5rem, 5.5vw, 4rem); letter-spacing: -0.03em;">
           Precision Calibration.<br />
-          <em class="not-italic text-brand-300">NABL Accredited.</em>
+          <em class="not-italic text-brand-500">NABL Accredited.</em>
         </h1>
 
         <!-- Subheadline -->
-        <p class="reveal reveal-delay-2 text-brand-100/75 text-lg lg:text-xl leading-relaxed mb-10 max-w-xl" style="font-weight: 400;">
+        <p class="reveal reveal-delay-2 text-brand-ink-light text-lg lg:text-xl leading-relaxed mb-10 max-w-xl" style="font-weight: 400;">
           ISO/IEC 17025:2017 certified lab in Rajkot with 91+ instrument types under NABL scope.
           Trusted by India's leading manufacturers — Tata, L&T, SKF and more.
         </p>
@@ -409,22 +409,22 @@
         </div>
 
         <!-- Quick trust stats row -->
-        <div class="reveal reveal-delay-4 mt-14 pt-10 border-t border-brand-700/50 grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="reveal reveal-delay-4 mt-14 pt-10 border-t border-brand-200 grid grid-cols-2 md:grid-cols-4 gap-6">
           <div>
-            <div class="font-serif text-brand-white text-3xl" style="letter-spacing: -0.02em;">91+</div>
-            <div class="text-brand-100/55 text-xs font-medium mt-1 uppercase tracking-widest">Instrument Types</div>
+            <div class="font-serif text-brand-ink text-3xl" style="letter-spacing: -0.02em;">91+</div>
+            <div class="text-brand-ink-light/70 text-xs font-medium mt-1 uppercase tracking-widest">Instrument Types</div>
           </div>
           <div>
-            <div class="font-serif text-brand-white text-3xl" style="letter-spacing: -0.02em;">700<span class="text-xl text-brand-300"> bar</span></div>
-            <div class="text-brand-100/55 text-xs font-medium mt-1 uppercase tracking-widest">Pressure Range</div>
+            <div class="font-serif text-brand-ink text-3xl" style="letter-spacing: -0.02em;">700<span class="text-xl text-brand-500"> bar</span></div>
+            <div class="text-brand-ink-light/70 text-xs font-medium mt-1 uppercase tracking-widest">Pressure Range</div>
           </div>
           <div>
-            <div class="font-serif text-brand-white text-3xl" style="letter-spacing: -0.02em;">16+</div>
-            <div class="text-brand-100/55 text-xs font-medium mt-1 uppercase tracking-widest">Years of Precision</div>
+            <div class="font-serif text-brand-ink text-3xl" style="letter-spacing: -0.02em;">16+</div>
+            <div class="text-brand-ink-light/70 text-xs font-medium mt-1 uppercase tracking-widest">Years of Precision</div>
           </div>
           <div>
-            <div class="font-serif text-brand-white text-3xl" style="letter-spacing: -0.02em;">2029</div>
-            <div class="text-brand-100/55 text-xs font-medium mt-1 uppercase tracking-widest">NABL Valid Until</div>
+            <div class="font-serif text-brand-ink text-3xl" style="letter-spacing: -0.02em;">2029</div>
+            <div class="text-brand-ink-light/70 text-xs font-medium mt-1 uppercase tracking-widest">NABL Valid Until</div>
           </div>
         </div>
 
@@ -432,9 +432,9 @@
     </div>
 
     <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-brand-100/40" aria-hidden="true">
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-brand-ink/30" aria-hidden="true">
       <span class="text-xs uppercase tracking-widest font-medium">Scroll</span>
-      <div class="w-px h-10 bg-gradient-to-b from-brand-100/40 to-transparent scroll-line"></div>
+      <div class="w-px h-10 bg-gradient-to-b from-brand-ink/20 to-transparent scroll-line"></div>
     </div>
 
   </section>
@@ -442,60 +442,60 @@
   <!-- ═══════════════════════════════════════════════
        SECTION 2 — TRUST BAR
   ══════════════════════════════════════════════════ -->
-  <section class="bg-brand-900 border-t border-brand-800" aria-label="Accreditation highlights">
+  <section class="bg-[#F0F7F5] border-t border-brand-100" aria-label="Accreditation highlights">
     <div class="max-w-7xl mx-auto px-5 lg:px-8 py-5">
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-0 lg:divide-x lg:divide-brand-800">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-0 lg:divide-x lg:divide-brand-200">
 
         <!-- NABL Accredited -->
         <div class="reveal flex items-center gap-3 lg:px-8 lg:first:pl-0">
           <!-- NABL shield icon -->
-          <div class="flex-shrink-0 w-9 h-9 rounded-lg bg-brand-700/50 flex items-center justify-center">
-            <svg class="w-5 h-5 text-brand-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <div class="flex-shrink-0 w-9 h-9 rounded-lg bg-brand-500/15 flex items-center justify-center">
+            <svg class="w-5 h-5 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
             </svg>
           </div>
           <div>
-            <div class="text-brand-white text-sm font-semibold leading-tight">NABL Accredited</div>
-            <div class="text-brand-100/50 text-xs mt-0.5">National Accreditation Board</div>
+            <div class="text-brand-ink text-sm font-semibold leading-tight">NABL Accredited</div>
+            <div class="text-brand-ink-light/70 text-xs mt-0.5">National Accreditation Board</div>
           </div>
         </div>
 
         <!-- ISO/IEC 17025 -->
         <div class="reveal reveal-delay-1 flex items-center gap-3 lg:px-8">
-          <div class="flex-shrink-0 w-9 h-9 rounded-lg bg-brand-700/50 flex items-center justify-center">
-            <svg class="w-5 h-5 text-brand-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <div class="flex-shrink-0 w-9 h-9 rounded-lg bg-brand-500/15 flex items-center justify-center">
+            <svg class="w-5 h-5 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
             </svg>
           </div>
           <div>
-            <div class="text-brand-white text-sm font-semibold leading-tight">ISO/IEC 17025:2017</div>
-            <div class="text-brand-100/50 text-xs mt-0.5">International Standard</div>
+            <div class="text-brand-ink text-sm font-semibold leading-tight">ISO/IEC 17025:2017</div>
+            <div class="text-brand-ink-light/70 text-xs mt-0.5">International Standard</div>
           </div>
         </div>
 
         <!-- Certificate CC-4038 -->
         <div class="reveal reveal-delay-2 flex items-center gap-3 lg:px-8">
-          <div class="flex-shrink-0 w-9 h-9 rounded-lg bg-brand-700/50 flex items-center justify-center">
-            <svg class="w-5 h-5 text-brand-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <div class="flex-shrink-0 w-9 h-9 rounded-lg bg-brand-500/15 flex items-center justify-center">
+            <svg class="w-5 h-5 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
             </svg>
           </div>
           <div>
-            <div class="text-brand-white text-sm font-semibold leading-tight">Certificate CC-4038</div>
-            <div class="text-brand-100/50 text-xs mt-0.5">Valid until Aug 2029</div>
+            <div class="text-brand-ink text-sm font-semibold leading-tight">Certificate CC-4038</div>
+            <div class="text-brand-ink-light/70 text-xs mt-0.5">Valid until Aug 2029</div>
           </div>
         </div>
 
         <!-- Since 2010 -->
         <div class="reveal reveal-delay-3 flex items-center gap-3 lg:px-8">
-          <div class="flex-shrink-0 w-9 h-9 rounded-lg bg-brand-700/50 flex items-center justify-center">
-            <svg class="w-5 h-5 text-brand-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <div class="flex-shrink-0 w-9 h-9 rounded-lg bg-brand-500/15 flex items-center justify-center">
+            <svg class="w-5 h-5 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
           </div>
           <div>
-            <div class="text-brand-white text-sm font-semibold leading-tight">Established 2010</div>
-            <div class="text-brand-100/50 text-xs mt-0.5">16+ years of precision</div>
+            <div class="text-brand-ink text-sm font-semibold leading-tight">Established 2010</div>
+            <div class="text-brand-ink-light/70 text-xs mt-0.5">16+ years of precision</div>
           </div>
         </div>
 
@@ -645,19 +645,19 @@
         </a>
 
         <!-- Card 6: View all services CTA card -->
-        <a href="services.html" class="reveal reveal-delay-3 group relative bg-brand-900 rounded-2xl p-7 hover:bg-brand-800 transition-all duration-300 flex flex-col justify-between" aria-label="View all services">
+        <a href="services.html" class="reveal reveal-delay-3 group relative bg-brand-500 rounded-2xl p-7 hover:bg-brand-600 transition-all duration-300 flex flex-col justify-between" aria-label="View all services">
           <div>
-            <div class="w-12 h-12 rounded-xl bg-brand-700/60 flex items-center justify-center mb-5">
-              <svg class="w-6 h-6 text-brand-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+            <div class="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
               </svg>
             </div>
-            <h3 class="font-serif text-brand-white text-xl mb-2 leading-snug">See All Services</h3>
-            <p class="text-brand-100/60 text-sm leading-relaxed">
+            <h3 class="font-serif text-white text-xl mb-2 leading-snug">See All Services</h3>
+            <p class="text-white/70 text-sm leading-relaxed">
               View the complete list of calibration services, instrument scope and accreditation details.
             </p>
           </div>
-          <div class="mt-8 flex items-center gap-2 text-brand-300 text-sm font-semibold group-hover:gap-3 transition-all">
+          <div class="mt-8 flex items-center gap-2 text-white text-sm font-semibold group-hover:gap-3 transition-all">
             View full services
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -741,10 +741,10 @@
           </div>
 
           <!-- Stat 6 -->
-          <div class="reveal reveal-delay-1 group bg-brand-900 rounded-2xl p-6 shadow-teal-sm hover:bg-brand-800 transition-all">
-            <div class="font-serif text-brand-300 mb-1 leading-none" style="font-size: 2.5rem; letter-spacing: -0.04em;">ZEISS</div>
-            <div class="text-brand-white font-semibold text-sm mb-1">CONTURA CMM</div>
-            <div class="text-brand-100/60 text-xs leading-relaxed">900×1200×800 mm measurement volume. German-engineered precision for component inspection at the highest level.</div>
+          <div class="reveal reveal-delay-1 group bg-brand-500 rounded-2xl p-6 shadow-teal-sm hover:bg-brand-600 transition-all">
+            <div class="font-serif text-white mb-1 leading-none" style="font-size: 2.5rem; letter-spacing: -0.04em;">ZEISS</div>
+            <div class="text-white font-semibold text-sm mb-1">CONTURA CMM</div>
+            <div class="text-white/70 text-xs leading-relaxed">900×1200×800 mm measurement volume. German-engineered precision for component inspection at the highest level.</div>
           </div>
 
         </div>
@@ -759,16 +759,16 @@
               loading="lazy"
             />
             <!-- Overlay card -->
-            <div class="absolute bottom-6 left-6 right-6 bg-brand-900/90 backdrop-blur-sm rounded-xl p-5 border border-brand-700/50">
+            <div class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-sm rounded-xl p-5 border border-brand-200">
               <div class="flex items-start gap-4">
-                <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-brand-500/20 border border-brand-500/30 flex items-center justify-center">
-                  <svg class="w-5 h-5 text-brand-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-brand-500/15 border border-brand-500/25 flex items-center justify-center">
+                  <svg class="w-5 h-5 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                   </svg>
                 </div>
                 <div>
-                  <div class="text-brand-white text-sm font-semibold mb-0.5">ILAC-MRA Recognised</div>
-                  <div class="text-brand-100/60 text-xs leading-relaxed">Part of the international mutual recognition arrangement — your calibration certificates are accepted globally.</div>
+                  <div class="text-brand-ink text-sm font-semibold mb-0.5">ILAC-MRA Recognised</div>
+                  <div class="text-brand-ink-light text-xs leading-relaxed">Part of the international mutual recognition arrangement — your calibration certificates are accepted globally.</div>
                 </div>
               </div>
             </div>
@@ -819,8 +819,8 @@
 
         <!-- Automotive -->
         <a href="industries.html#automotive" class="reveal group flex items-start gap-5 bg-white rounded-2xl p-6 border border-brand-100 shadow-teal-sm hover:shadow-teal-lg hover:border-brand-300 hover:bg-brand-50 transition-all duration-300">
-          <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-900 flex items-center justify-center group-hover:bg-brand-500 transition-colors duration-300">
-            <svg class="w-5 h-5 text-brand-300 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center group-hover:bg-brand-500 transition-colors duration-300">
+            <svg class="w-5 h-5 text-brand-700 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"/>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10l2 2h8zm0 0l2-5h5l-2 5h-5z"/>
             </svg>
@@ -833,8 +833,8 @@
 
         <!-- Bearing -->
         <a href="industries.html#bearing" class="reveal reveal-delay-1 group flex items-start gap-5 bg-white rounded-2xl p-6 border border-brand-100 shadow-teal-sm hover:shadow-teal-lg hover:border-brand-300 hover:bg-brand-50 transition-all duration-300">
-          <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-900 flex items-center justify-center group-hover:bg-brand-500 transition-colors duration-300">
-            <svg class="w-5 h-5 text-brand-300 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center group-hover:bg-brand-500 transition-colors duration-300">
+            <svg class="w-5 h-5 text-brand-700 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <circle cx="12" cy="12" r="9" stroke-width="1.8"/>
               <circle cx="12" cy="12" r="3" stroke-width="1.8"/>
               <path stroke-linecap="round" stroke-width="1.8" d="M12 3v2M12 19v2M3 12h2M19 12h2"/>
@@ -848,8 +848,8 @@
 
         <!-- Gear -->
         <a href="industries.html#gear" class="reveal group flex items-start gap-5 bg-white rounded-2xl p-6 border border-brand-100 shadow-teal-sm hover:shadow-teal-lg hover:border-brand-300 hover:bg-brand-50 transition-all duration-300">
-          <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-900 flex items-center justify-center group-hover:bg-brand-500 transition-colors duration-300">
-            <svg class="w-5 h-5 text-brand-300 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center group-hover:bg-brand-500 transition-colors duration-300">
+            <svg class="w-5 h-5 text-brand-700 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
             </svg>
@@ -862,8 +862,8 @@
 
         <!-- Precision Machining -->
         <a href="industries.html#machining" class="reveal reveal-delay-1 group flex items-start gap-5 bg-white rounded-2xl p-6 border border-brand-100 shadow-teal-sm hover:shadow-teal-lg hover:border-brand-300 hover:bg-brand-50 transition-all duration-300">
-          <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-900 flex items-center justify-center group-hover:bg-brand-500 transition-colors duration-300">
-            <svg class="w-5 h-5 text-brand-300 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center group-hover:bg-brand-500 transition-colors duration-300">
+            <svg class="w-5 h-5 text-brand-700 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
             </svg>
           </div>
@@ -875,8 +875,8 @@
 
         <!-- Heavy Engineering -->
         <a href="industries.html#heavy" class="reveal group flex items-start gap-5 bg-white rounded-2xl p-6 border border-brand-100 shadow-teal-sm hover:shadow-teal-lg hover:border-brand-300 hover:bg-brand-50 transition-all duration-300">
-          <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-900 flex items-center justify-center group-hover:bg-brand-500 transition-colors duration-300">
-            <svg class="w-5 h-5 text-brand-300 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center group-hover:bg-brand-500 transition-colors duration-300">
+            <svg class="w-5 h-5 text-brand-700 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
             </svg>
           </div>
@@ -888,8 +888,8 @@
 
         <!-- Electrical Equipment -->
         <a href="industries.html#electrical" class="reveal reveal-delay-1 group flex items-start gap-5 bg-white rounded-2xl p-6 border border-brand-100 shadow-teal-sm hover:shadow-teal-lg hover:border-brand-300 hover:bg-brand-50 transition-all duration-300">
-          <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-900 flex items-center justify-center group-hover:bg-brand-500 transition-colors duration-300">
-            <svg class="w-5 h-5 text-brand-300 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center group-hover:bg-brand-500 transition-colors duration-300">
+            <svg class="w-5 h-5 text-brand-700 group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 10V3L4 14h7v7l9-11h-7z"/>
             </svg>
           </div>
@@ -1116,10 +1116,10 @@
   <!-- ═══════════════════════════════════════════════
        SECTION 8 — CLIENT PORTAL PROMO
   ══════════════════════════════════════════════════ -->
-  <section class="bg-brand-900 py-20 lg:py-28 overflow-hidden relative" aria-label="Client portal">
+  <section class="bg-brand-50 py-20 lg:py-28 overflow-hidden relative" aria-label="Client portal">
 
     <!-- Background grid -->
-    <div class="absolute inset-0 opacity-[0.04]" style="background-image: linear-gradient(#47857A 1px, transparent 1px), linear-gradient(90deg, #47857A 1px, transparent 1px); background-size: 48px 48px;"></div>
+    <div class="absolute inset-0 opacity-[0.08]" style="background-image: linear-gradient(#47857A 1px, transparent 1px), linear-gradient(90deg, #47857A 1px, transparent 1px); background-size: 48px 48px;"></div>
     <!-- Radial glow -->
     <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 60% 70% at 70% 50%, rgba(71,133,122,0.14) 0%, transparent 70%);"></div>
 
@@ -1129,7 +1129,7 @@
         <!-- Left: content -->
         <div>
           <div class="reveal mb-3">
-            <span class="inline-flex items-center gap-2 bg-brand-700/50 border border-brand-600/40 text-brand-300 text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full">
+            <span class="inline-flex items-center gap-2 bg-brand-500/15 border border-brand-500/30 text-brand-700 text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full">
               <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
               </svg>
@@ -1137,46 +1137,46 @@
             </span>
           </div>
 
-          <h2 class="reveal reveal-delay-1 font-serif text-brand-white leading-tight mb-5" style="font-size: clamp(1.875rem, 3.5vw, 2.75rem); letter-spacing: -0.03em;">
+          <h2 class="reveal reveal-delay-1 font-serif text-brand-ink leading-tight mb-5" style="font-size: clamp(1.875rem, 3.5vw, 2.75rem); letter-spacing: -0.03em;">
             Access Your Calibration<br/>Reports Online
           </h2>
-          <p class="reveal reveal-delay-1 text-brand-100/65 text-lg leading-relaxed mb-8">
+          <p class="reveal reveal-delay-1 text-brand-ink-light text-lg leading-relaxed mb-8">
             Download NABL certificates, search by instrument or date, and track your full calibration history — available 24/7 from any device.
           </p>
 
           <!-- Feature list -->
           <div class="reveal reveal-delay-2 space-y-3 mb-10">
             <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-brand-500/30 border border-brand-500/50 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-brand-300" viewBox="0 0 12 12" fill="none" stroke="currentColor">
+              <div class="w-5 h-5 rounded-full bg-brand-500/20 border border-brand-500/40 flex items-center justify-center flex-shrink-0">
+                <svg class="w-3 h-3 text-brand-500" viewBox="0 0 12 12" fill="none" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 6l3 3 5-5"/>
                 </svg>
               </div>
-              <span class="text-brand-100/70 text-sm">Download calibration certificates as PDF</span>
+              <span class="text-brand-ink-light text-sm">Download calibration certificates as PDF</span>
             </div>
             <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-brand-500/30 border border-brand-500/50 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-brand-300" viewBox="0 0 12 12" fill="none" stroke="currentColor">
+              <div class="w-5 h-5 rounded-full bg-brand-500/20 border border-brand-500/40 flex items-center justify-center flex-shrink-0">
+                <svg class="w-3 h-3 text-brand-500" viewBox="0 0 12 12" fill="none" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 6l3 3 5-5"/>
                 </svg>
               </div>
-              <span class="text-brand-100/70 text-sm">Search by instrument type, report ID or date</span>
+              <span class="text-brand-ink-light text-sm">Search by instrument type, report ID or date</span>
             </div>
             <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-brand-500/30 border border-brand-500/50 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-brand-300" viewBox="0 0 12 12" fill="none" stroke="currentColor">
+              <div class="w-5 h-5 rounded-full bg-brand-500/20 border border-brand-500/40 flex items-center justify-center flex-shrink-0">
+                <svg class="w-3 h-3 text-brand-500" viewBox="0 0 12 12" fill="none" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 6l3 3 5-5"/>
                 </svg>
               </div>
-              <span class="text-brand-100/70 text-sm">Full calibration history for each instrument</span>
+              <span class="text-brand-ink-light text-sm">Full calibration history for each instrument</span>
             </div>
             <div class="flex items-center gap-3">
-              <div class="w-5 h-5 rounded-full bg-brand-500/30 border border-brand-500/50 flex items-center justify-center flex-shrink-0">
-                <svg class="w-3 h-3 text-brand-300" viewBox="0 0 12 12" fill="none" stroke="currentColor">
+              <div class="w-5 h-5 rounded-full bg-brand-500/20 border border-brand-500/40 flex items-center justify-center flex-shrink-0">
+                <svg class="w-3 h-3 text-brand-500" viewBox="0 0 12 12" fill="none" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 6l3 3 5-5"/>
                 </svg>
               </div>
-              <span class="text-brand-100/70 text-sm">Your reports only — secure and private</span>
+              <span class="text-brand-ink-light text-sm">Your reports only — secure and private</span>
             </div>
           </div>
 
@@ -1188,7 +1188,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
               </svg>
             </a>
-            <span class="inline-flex items-center gap-2 bg-brand-700/40 border border-brand-600/30 text-brand-300 text-xs font-semibold px-3 py-2 rounded-lg">
+            <span class="inline-flex items-center gap-2 bg-brand-500/15 border border-brand-500/30 text-brand-600 text-xs font-semibold px-3 py-2 rounded-lg">
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
               </svg>
@@ -1201,13 +1201,13 @@
         <div class="reveal reveal-delay-2">
           <div class="relative">
             <!-- Browser chrome mockup -->
-            <div class="bg-brand-800 rounded-2xl border border-brand-700/60 overflow-hidden shadow-teal-xl">
+            <div class="bg-white rounded-2xl border border-brand-200 overflow-hidden shadow-teal-xl">
               <!-- Browser bar -->
-              <div class="flex items-center gap-2 px-4 py-3 bg-brand-700/40 border-b border-brand-700/40">
-                <div class="w-3 h-3 rounded-full bg-brand-600/60"></div>
-                <div class="w-3 h-3 rounded-full bg-brand-600/60"></div>
-                <div class="w-3 h-3 rounded-full bg-brand-600/60"></div>
-                <div class="flex-1 mx-4 bg-brand-700/60 rounded px-3 py-1 text-brand-100/40 text-xs font-mono">
+              <div class="flex items-center gap-2 px-4 py-3 bg-brand-50 border-b border-brand-100">
+                <div class="w-3 h-3 rounded-full bg-brand-300"></div>
+                <div class="w-3 h-3 rounded-full bg-brand-300"></div>
+                <div class="w-3 h-3 rounded-full bg-brand-300"></div>
+                <div class="flex-1 mx-4 bg-white border border-brand-100 rounded px-3 py-1 text-brand-ink/40 text-xs font-mono">
                   portal.germancalibration.com
                 </div>
               </div>
@@ -1216,53 +1216,53 @@
                 <!-- Header row -->
                 <div class="flex items-center justify-between mb-5">
                   <div>
-                    <div class="text-brand-white text-sm font-semibold mb-0.5">My Reports</div>
-                    <div class="text-brand-100/40 text-xs">12 calibration certificates</div>
+                    <div class="text-brand-ink text-sm font-semibold mb-0.5">My Reports</div>
+                    <div class="text-brand-ink-light/60 text-xs">12 calibration certificates</div>
                   </div>
-                  <div class="bg-brand-500/20 border border-brand-500/30 text-brand-300 text-xs px-3 py-1.5 rounded-lg">Download All</div>
+                  <div class="bg-brand-500 border border-brand-500 text-white text-xs px-3 py-1.5 rounded-lg">Download All</div>
                 </div>
                 <!-- Search bar -->
-                <div class="bg-brand-700/40 border border-brand-600/30 rounded-lg px-4 py-2.5 text-brand-100/30 text-xs mb-4 flex items-center gap-2">
+                <div class="bg-brand-50 border border-brand-200 rounded-lg px-4 py-2.5 text-brand-ink/30 text-xs mb-4 flex items-center gap-2">
                   <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                   Search by instrument or date...
                 </div>
                 <!-- Report rows -->
                 <div class="space-y-2.5">
-                  <div class="flex items-center justify-between bg-brand-700/30 rounded-xl px-4 py-3 border border-brand-600/20">
+                  <div class="flex items-center justify-between bg-brand-50 rounded-xl px-4 py-3 border border-brand-100"
                     <div class="flex items-center gap-3">
                       <div class="w-7 h-7 rounded-lg bg-brand-500/20 flex items-center justify-center">
                         <svg class="w-3.5 h-3.5 text-brand-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                       </div>
                       <div>
-                        <div class="text-brand-white text-xs font-medium">External Micrometer</div>
-                        <div class="text-brand-100/40 text-xs">12 Mar 2026 · CC-4038</div>
+                        <div class="text-brand-ink text-xs font-medium">External Micrometer</div>
+                        <div class="text-brand-ink-light/60 text-xs">12 Mar 2026 · CC-4038</div>
                       </div>
                     </div>
-                    <div class="text-brand-300 text-xs font-medium">PDF ↓</div>
+                    <div class="text-brand-500 text-xs font-medium">PDF ↓</div>
                   </div>
-                  <div class="flex items-center justify-between bg-brand-700/30 rounded-xl px-4 py-3 border border-brand-600/20">
+                  <div class="flex items-center justify-between bg-brand-50 rounded-xl px-4 py-3 border border-brand-100"
                     <div class="flex items-center gap-3">
                       <div class="w-7 h-7 rounded-lg bg-brand-500/20 flex items-center justify-center">
                         <svg class="w-3.5 h-3.5 text-brand-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                       </div>
                       <div>
-                        <div class="text-brand-white text-xs font-medium">Vernier Caliper</div>
-                        <div class="text-brand-100/40 text-xs">10 Mar 2026 · CC-4038</div>
+                        <div class="text-brand-ink text-xs font-medium">Vernier Caliper</div>
+                        <div class="text-brand-ink-light/60 text-xs">10 Mar 2026 · CC-4038</div>
                       </div>
                     </div>
-                    <div class="text-brand-300 text-xs font-medium">PDF ↓</div>
+                    <div class="text-brand-500 text-xs font-medium">PDF ↓</div>
                   </div>
-                  <div class="flex items-center justify-between bg-brand-700/30 rounded-xl px-4 py-3 border border-brand-600/20">
+                  <div class="flex items-center justify-between bg-brand-50 rounded-xl px-4 py-3 border border-brand-100"
                     <div class="flex items-center gap-3">
                       <div class="w-7 h-7 rounded-lg bg-brand-500/20 flex items-center justify-center">
                         <svg class="w-3.5 h-3.5 text-brand-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                       </div>
                       <div>
-                        <div class="text-brand-white text-xs font-medium">Pressure Gauge</div>
-                        <div class="text-brand-100/40 text-xs">05 Mar 2026 · CC-4038</div>
+                        <div class="text-brand-ink text-xs font-medium">Pressure Gauge</div>
+                        <div class="text-brand-ink-light/60 text-xs">05 Mar 2026 · CC-4038</div>
                       </div>
                     </div>
-                    <div class="text-brand-300 text-xs font-medium">PDF ↓</div>
+                    <div class="text-brand-500 text-xs font-medium">PDF ↓</div>
                   </div>
                 </div>
               </div>
@@ -1474,11 +1474,11 @@
   <!-- ═══════════════════════════════════════════════
        SECTION 10 — FOOTER
   ══════════════════════════════════════════════════ -->
-  <footer class="bg-brand-900 pt-16 pb-8" aria-label="Site footer">
+  <footer class="bg-brand-50 pt-16 pb-8" aria-label="Site footer">
     <div class="max-w-7xl mx-auto px-5 lg:px-8">
 
       <!-- Main footer grid -->
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-brand-800">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-brand-200">
 
         <!-- Column 1: Brand -->
         <div class="col-span-2 lg:col-span-1">
@@ -1487,64 +1487,64 @@
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
             <span style="display:none" class="items-center gap-2">
               <span class="w-8 h-8 bg-brand-500 rounded flex items-center justify-center text-brand-white font-serif text-sm font-bold">GC</span>
-              <span class="font-serif text-brand-white text-base">German Calibration</span>
+              <span class="font-serif text-brand-ink text-base">German Calibration</span>
             </span>
           </a>
-          <p class="text-brand-100/50 text-sm leading-relaxed mb-5">
+          <p class="text-brand-ink-light/70 text-sm leading-relaxed mb-5">
             Highly accurate &amp; reliable NABL accredited calibration laboratory in Rajkot, Gujarat.
           </p>
-          <div class="space-y-1.5 text-xs text-brand-100/40">
-            <div>NABL Certificate: <span class="text-brand-300 font-medium">CC-4038</span></div>
-            <div>Standard: <span class="text-brand-300 font-medium">ISO/IEC 17025:2017</span></div>
-            <div>Valid until: <span class="text-brand-300 font-medium">27 August 2029</span></div>
+          <div class="space-y-1.5 text-xs text-brand-ink-light/50">
+            <div>NABL Certificate: <span class="text-brand-500 font-medium">CC-4038</span></div>
+            <div>Standard: <span class="text-brand-500 font-medium">ISO/IEC 17025:2017</span></div>
+            <div>Valid until: <span class="text-brand-500 font-medium">27 August 2029</span></div>
           </div>
         </div>
 
         <!-- Column 2: Services -->
         <div>
-          <h4 class="text-brand-white text-sm font-semibold uppercase tracking-widest mb-5">Services</h4>
+          <h4 class="text-brand-ink text-sm font-semibold uppercase tracking-widest mb-5">Services</h4>
           <ul class="space-y-2.5">
-            <li><a href="services.html#dimensional" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors">Dimensional Calibration</a></li>
-            <li><a href="services.html#pressure" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors">Pressure Calibration</a></li>
-            <li><a href="services.html#onsite" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors">On-Site Calibration</a></li>
-            <li><a href="services.html#cmm" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors">Third Party Inspection</a></li>
-            <li><a href="services.html#repair" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors">Repair &amp; Maintenance</a></li>
-            <li><a href="services.html#training" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors">CMM Training</a></li>
+            <li><a href="services.html#dimensional" class="text-brand-ink-light/70 hover:text-brand-500 text-sm transition-colors">Dimensional Calibration</a></li>
+            <li><a href="services.html#pressure" class="text-brand-ink-light/70 hover:text-brand-500 text-sm transition-colors">Pressure Calibration</a></li>
+            <li><a href="services.html#onsite" class="text-brand-ink-light/70 hover:text-brand-500 text-sm transition-colors">On-Site Calibration</a></li>
+            <li><a href="services.html#cmm" class="text-brand-ink-light/70 hover:text-brand-500 text-sm transition-colors">Third Party Inspection</a></li>
+            <li><a href="services.html#repair" class="text-brand-ink-light/70 hover:text-brand-500 text-sm transition-colors">Repair &amp; Maintenance</a></li>
+            <li><a href="services.html#training" class="text-brand-ink-light/70 hover:text-brand-500 text-sm transition-colors">CMM Training</a></li>
           </ul>
         </div>
 
         <!-- Column 3: Quick Links -->
         <div>
-          <h4 class="text-brand-white text-sm font-semibold uppercase tracking-widest mb-5">Quick Links</h4>
+          <h4 class="text-brand-ink text-sm font-semibold uppercase tracking-widest mb-5">Quick Links</h4>
           <ul class="space-y-2.5">
-            <li><a href="accreditation.html" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors">Accreditation</a></li>
-            <li><a href="about.html" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors">About Us</a></li>
-            <li><a href="industries.html" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors">Industries</a></li>
-            <li><a href="brand items/Certificate CC-4038.pdf.pdf" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors" target="_blank" rel="noopener">Download Certificate</a></li>
-            <li><a href="brand items/Scop 4038 .pdf" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors" target="_blank" rel="noopener">Download Scope PDF</a></li>
-            <li><a href="https://nablwp.qci.org.in/CertificateScopenew?x=kaVU2dy+CC4XwknIk4p9iQ==&src=P" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors" target="_blank" rel="noopener">NABL Verification</a></li>
-            <li><a href="https://portal.germancalibration.com" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors" target="_blank" rel="noopener">Client Portal</a></li>
+            <li><a href="accreditation.html" class="text-brand-ink-light/70 hover:text-brand-500 text-sm transition-colors">Accreditation</a></li>
+            <li><a href="about.html" class="text-brand-ink-light/70 hover:text-brand-500 text-sm transition-colors">About Us</a></li>
+            <li><a href="industries.html" class="text-brand-ink-light/70 hover:text-brand-500 text-sm transition-colors">Industries</a></li>
+            <li><a href="brand items/Certificate CC-4038.pdf.pdf" class="text-brand-ink-light/70 hover:text-brand-500 text-sm transition-colors" target="_blank" rel="noopener">Download Certificate</a></li>
+            <li><a href="brand items/Scop 4038 .pdf" class="text-brand-ink-light/70 hover:text-brand-500 text-sm transition-colors" target="_blank" rel="noopener">Download Scope PDF</a></li>
+            <li><a href="https://nablwp.qci.org.in/CertificateScopenew?x=kaVU2dy+CC4XwknIk4p9iQ==&src=P" class="text-brand-ink-light/70 hover:text-brand-500 text-sm transition-colors" target="_blank" rel="noopener">NABL Verification</a></li>
+            <li><a href="https://portal.germancalibration.com" class="text-brand-ink-light/70 hover:text-brand-500 text-sm transition-colors" target="_blank" rel="noopener">Client Portal</a></li>
           </ul>
         </div>
 
         <!-- Column 4: Contact -->
         <div>
-          <h4 class="text-brand-white text-sm font-semibold uppercase tracking-widest mb-5">Contact</h4>
+          <h4 class="text-brand-ink text-sm font-semibold uppercase tracking-widest mb-5">Contact</h4>
           <ul class="space-y-4">
-            <li class="text-brand-100/50 text-sm leading-relaxed">
+            <li class="text-brand-ink-light/70 text-sm leading-relaxed">
               Plot No. 10B, Umakant Pandit,<br/>Udhyog Nagar 2, Rajkot,<br/>Gujarat, India
             </li>
             <li>
-              <a href="tel:+919276551009" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors">+91 92765 51009</a>
+              <a href="tel:+919276551009" class="text-brand-ink-light/70 hover:text-brand-500 text-sm transition-colors">+91 92765 51009</a>
             </li>
             <li>
-              <a href="mailto:lab@germancalibration.com" class="text-brand-100/50 hover:text-brand-300 text-sm transition-colors">lab@germancalibration.com</a>
+              <a href="mailto:lab@germancalibration.com" class="text-brand-ink-light/70 hover:text-brand-500 text-sm transition-colors">lab@germancalibration.com</a>
             </li>
-            <li class="text-brand-100/50 text-sm">
+            <li class="text-brand-ink-light/70 text-sm">
               Mon–Sat · 9:00 AM – 6:00 PM
             </li>
             <li>
-              <a href="https://maps.app.goo.gl/doezCLm5DbpFEQcc7?g_st=ac" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-brand-300 text-sm font-medium hover:text-brand-400 transition-colors">
+              <a href="https://maps.app.goo.gl/doezCLm5DbpFEQcc7?g_st=ac" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-brand-500 text-sm font-medium hover:text-brand-600 transition-colors">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                 View on Google Maps
               </a>
@@ -1556,10 +1556,10 @@
 
       <!-- Bottom bar -->
       <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-brand-100/35 text-xs text-center sm:text-left">
+        <p class="text-brand-ink-light/50 text-xs text-center sm:text-left">
           © 2026 German Calibration Lab LLP. All rights reserved.
         </p>
-        <p class="text-brand-100/25 text-xs text-center sm:text-right">
+        <p class="text-brand-ink-light/40 text-xs text-center sm:text-right">
           NABL Certificate: CC-4038 &nbsp;·&nbsp; ISO/IEC 17025:2017 &nbsp;·&nbsp; Valid till 27 Aug 2029
         </p>
       </div>
