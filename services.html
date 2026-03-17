@@ -287,6 +287,11 @@
     .hide-scrollbar::-webkit-scrollbar { display: none; }
     .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
+    /* ── Scroll offset: compensate for fixed header (64px) + sticky sub-nav (~52px) ── */
+    section[id] {
+      scroll-margin-top: 120px;
+    }
+
     /* ── prefers-reduced-motion ── */
     @media (prefers-reduced-motion: reduce) {
       .reveal { opacity: 1; transform: none; transition: none; }
@@ -1161,7 +1166,7 @@
             <span class="coe-badge w-fit" style="background:rgba(255,255,255,0.10); border-color:rgba(255,255,255,0.20); color:#f5d98a;">German Center of Excellence</span>
             <h3 class="font-serif text-2xl text-white" style="letter-spacing:-0.02em;">Inspection, repair or training?</h3>
             <p class="text-brand-200 text-sm">CMM inspection, instrument repair, or CMM programming training — speak to our CoE team.</p>
-            <a href="contact.html" class="inline-flex items-center gap-2 font-semibold text-sm px-6 py-3.5 rounded-md w-fit transition-colors" style="background:transparent; border: 1.5px solid rgba(251,254,253,0.35); color:#FBFEFD;">
+            <a href="contact.html" class="btn-primary w-fit" style="background:#FBFEFD; color:#2D5D54;">
               Contact CoE →
             </a>
           </div>
