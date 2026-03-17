@@ -224,32 +224,37 @@
       box-shadow: 0 2px 12px rgba(71,133,122,0.10);
     }
     .subnav-link {
+      position: relative;
       font-size: 0.8125rem;
       font-weight: 500;
       color: #4A6663;
       padding: 8px 12px;
-      border-bottom: 2px solid transparent;
       white-space: nowrap;
-      transition: color 0.2s, border-color 0.2s;
+      transition: color 0.2s;
       text-decoration: none;
       display: inline-block;
     }
-    .subnav-link:hover { color: #2D5D54; }
-
-    /* Lab links — teal active */
-    .subnav-group-lab .subnav-link.active {
-      color: #2D5D54;
-      border-bottom-color: #47857A;
-      font-weight: 600;
+    .subnav-link::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: 0;
+      width: 0; height: 2px;
+      transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* CoE links — amber active */
+    /* Lab links — teal underline */
+    .subnav-group-lab .subnav-link::after { background: #47857A; }
+    .subnav-group-lab .subnav-link:hover { color: #2D5D54; }
+    .subnav-group-lab .subnav-link:hover::after { width: 100%; }
+    .subnav-group-lab .subnav-link.active { color: #2D5D54; font-weight: 600; }
+    .subnav-group-lab .subnav-link.active::after { width: 100%; }
+
+    /* CoE links — amber underline */
+    .subnav-group-coe .subnav-link::after { background: #b47728; }
     .subnav-group-coe .subnav-link:hover { color: #7a4f0d; }
-    .subnav-group-coe .subnav-link.active {
-      color: #7a4f0d;
-      border-bottom-color: #b47728;
-      font-weight: 600;
-    }
+    .subnav-group-coe .subnav-link:hover::after { width: 100%; }
+    .subnav-group-coe .subnav-link.active { color: #7a4f0d; font-weight: 600; }
+    .subnav-group-coe .subnav-link.active::after { width: 100%; }
 
     /* ── Division separator ── */
     .division-sep {
