@@ -1,3 +1,9 @@
+# Tooling / session files
+.claude/
+.brainstorm/
+.playwright-mcp/
+.superpowers/
+
 # Internal planning and conversation files
 RESEARCH_Calibration_Website_Analysis.md
 brand_knowledge.md
