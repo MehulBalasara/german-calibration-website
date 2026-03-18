@@ -65,6 +65,62 @@
   </style>
 </head>
 <body class="bg-[#FBFEFD] font-sans text-brand-ink">
-  <!-- Cover page, tables go here -->
+  <!-- COVER PAGE -->
+  <div class="cover-page" style="min-height: 100vh; display: flex; flex-direction: column; position: relative; overflow: hidden;">
+
+    <!-- Teal accent band — top strip -->
+    <div style="background: #47857A; height: 8px; width: 100%;"></div>
+
+    <!-- Header: logo + contact block -->
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; padding: 40px 48px 0;">
+      <!-- Logo -->
+      <img src="german_logo.svg" alt="German Calibration Lab LLP" style="height: 72px;" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';" />
+      <span id="logo-fallback" style="display:none; font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: #0F1E1C;">German Calibration</span>
+
+      <!-- Contact block top-right -->
+      <div style="text-align: right; font-size: 9pt; color: #4A6663; line-height: 1.7;">
+        <div style="font-weight: 600; color: #0F1E1C;">GERMAN CALIBRATION LAB LLP</div>
+        <div>Plot no. 10B, 2 Umakant Pandit Udhyog Nagar</div>
+        <div>Near Ashok Garden, Rajkot – 360004</div>
+        <div>+91 92765 51009 &nbsp;·&nbsp; lab@germancalibration.com</div>
+      </div>
+    </div>
+
+    <!-- Central content -->
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 48px;">
+      <div style="text-align: center; max-width: 500px;">
+        <!-- Eyebrow -->
+        <div style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #2D5D54; margin-bottom: 16px;">
+          NABL Accredited Calibration Laboratory
+        </div>
+        <!-- Main title -->
+        <h1 style="font-family: 'DM Serif Display', serif; font-size: 3rem; color: #0F1E1C; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 24px;">
+          Calibration<br>Charges
+        </h1>
+        <!-- Divider -->
+        <div style="width: 64px; height: 3px; background: #47857A; margin: 0 auto 28px;"></div>
+        <!-- NABL badge -->
+        <span class="nabl-badge">
+          <svg style="width:12px;height:12px;" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
+            <path d="M6 0L7.854 4.146 12 4.618 9 7.54 9.708 12 6 9.854 2.292 12 3 7.54 0 4.618 4.146 4.146z"/>
+          </svg>
+          NABL Accredited · CC-4038
+        </span>
+        <div style="margin-top: 12px; font-size: 8.5pt; color: #4A6663;">
+          ISO/IEC 17025:2017 · Valid till 27 August 2029
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom teal band with tagline -->
+    <div style="background: #47857A; padding: 20px 48px; display: flex; justify-content: space-between; align-items: center;">
+      <div style="color: #FBFEFD; font-size: 9pt; font-weight: 500; letter-spacing: 0.02em;">
+        Precision Calibration · ILAC-MRA Recognised · Rajkot, Gujarat
+      </div>
+      <div style="color: rgba(251,254,253,0.75); font-size: 8.5pt;">
+        All charges exclusive of applicable GST
+      </div>
+    </div>
+  </div>
 </body>
 </html>
