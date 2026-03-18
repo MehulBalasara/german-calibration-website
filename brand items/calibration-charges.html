@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calibration Charges — German Calibration Lab LLP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#E6F2F0', 100: '#D8EAE7', 200: '#C2DDD9',
+              300: '#8BBDB7', 400: '#5E9E97', 500: '#47857A',
+              600: '#3A6E64', 700: '#2D5D54', 800: '#224845',
+              900: '#1A3832', ink: '#0F1E1C', 'ink-light': '#4A6663',
+              white: '#FBFEFD',
+            },
+          },
+          fontFamily: {
+            serif: ['"DM Serif Display"', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    /* NABL badge */
+    .nabl-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(71,133,122,0.12); border: 1px solid rgba(71,133,122,0.35);
+      color: #2D5D54; font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 4px;
+    }
+    /* Table styles */
+    .charges-table { width: 100%; border-collapse: collapse; font-size: 9pt; }
+    .charges-table th {
+      background: white; color: #2D5D54; font-weight: 600;
+      font-size: 8pt; letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 8px 10px; border-bottom: 2px solid #47857A; text-align: left;
+    }
+    .charges-table th.right { text-align: right; }
+    .charges-table td { padding: 6px 10px; border-bottom: 1px solid #E6F2F0; }
+    .charges-table tr:nth-child(even) td { background: #F0F7F5; }
+    .section-row td {
+      background: #47857A !important; color: #FBFEFD;
+      font-weight: 700; font-size: 8pt; letter-spacing: 0.05em;
+      text-transform: uppercase; padding: 5px 10px;
+    }
+    .charge-cell { text-align: right; font-weight: 600; color: #0F1E1C; }
+    .range-cell { color: #4A6663; }
+    .contact-cell { color: #2D5D54; font-style: italic; text-align: right; }
+    @media print {
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page-break { page-break-before: always; }
+      .no-print { display: none !important; }
+      a { color: inherit !important; text-decoration: none !important; }
+    }
+  </style>
+</head>
+<body class="bg-[#FBFEFD] font-sans text-brand-ink">
+  <!-- Cover page, tables go here -->
+</body>
+</html>
