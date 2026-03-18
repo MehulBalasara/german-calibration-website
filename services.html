@@ -104,12 +104,15 @@
 
     /* ── Header scroll state ── */
     #site-header {
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.25s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     }
     #site-header.scrolled {
       background-color: rgba(251,254,253,0.97);
       box-shadow: 0 1px 16px rgba(71,133,122,0.10);
       backdrop-filter: blur(8px);
+    }
+    #site-header.nav-hidden {
+      transform: translateY(-100%);
     }
 
     /* ── Nav link hover ── */
@@ -235,7 +238,10 @@
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(71,133,122,0.12);
-      transition: box-shadow 0.2s;
+      transition: top 0.25s ease, box-shadow 0.2s;
+    }
+    #services-subnav.subnav-at-top {
+      top: 0;
     }
     #services-subnav.elevated {
       box-shadow: 0 2px 12px rgba(71,133,122,0.10);
@@ -474,6 +480,8 @@
     <!-- ═══════════════════════════════════════════════
          STICKY SUB-NAV
     ══════════════════════════════════════════════════ -->
+    <!-- Sentinel: when this exits the top-64px zone, sub-nav is sticky → hide navbar -->
+    <div id="subnav-sentinel" aria-hidden="true" style="height:0;pointer-events:none;"></div>
     <nav id="services-subnav" aria-label="Services sections">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="subnav-inner">
@@ -1308,6 +1316,29 @@
     window.addEventListener('scroll', () => {
       header.classList.toggle('scrolled', window.scrollY > 60);
     }, { passive: true });
+
+    // ── Hide navbar when sub-nav goes sticky; show when sub-nav leaves ──
+    const subnavSentinel = document.getElementById('subnav-sentinel');
+    const subnavEl       = document.getElementById('services-subnav');
+    if (subnavSentinel && header) {
+      const navHideObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+            // Sentinel scrolled above the 64px threshold — sub-nav is now sticky
+            header.classList.add('nav-hidden');
+            if (subnavEl) subnavEl.classList.add('subnav-at-top');
+          } else if (entry.isIntersecting) {
+            // Sentinel back in view — sub-nav leaving sticky position
+            header.classList.remove('nav-hidden');
+            if (subnavEl) subnavEl.classList.remove('subnav-at-top');
+          }
+        });
+      }, {
+        threshold: 0,
+        rootMargin: '-64px 0px 0px 0px'
+      });
+      navHideObserver.observe(subnavSentinel);
+    }
 
     // ── Scroll reveal ──
     const revealObserver = new IntersectionObserver((entries) => {
