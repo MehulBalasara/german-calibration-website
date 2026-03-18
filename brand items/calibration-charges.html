@@ -61,6 +61,32 @@
       .page-break { page-break-before: always; }
       .no-print { display: none !important; }
       a { color: inherit !important; text-decoration: none !important; }
+
+      @page {
+        size: A4 portrait;
+        margin: 12mm 14mm 20mm;
+
+        @bottom-left {
+          content: "German Calibration Lab LLP · NABL CC-4038 · ISO/IEC 17025:2017";
+          font-family: 'Inter', sans-serif;
+          font-size: 7pt;
+          color: #4A6663;
+        }
+
+        @bottom-center {
+          content: "Page " counter(page) " of " counter(pages);
+          font-family: 'Inter', sans-serif;
+          font-size: 7pt;
+          color: #4A6663;
+        }
+
+        @bottom-right {
+          content: "+91 92765 51009 · lab@germancalibration.com";
+          font-family: 'Inter', sans-serif;
+          font-size: 7pt;
+          color: #4A6663;
+        }
+      }
     }
   </style>
 </head>
@@ -757,6 +783,92 @@
 
       </tbody>
     </table>
+  </div>
+
+  <!-- DIVISION 2: PRESSURE & ACOUSTICS -->
+  <div class="page-break" style="padding: 36px 48px 24px;">
+
+    <!-- Division header -->
+    <div style="margin-bottom: 20px; border-bottom: 2px solid #47857A; padding-bottom: 12px;">
+      <div style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #2D5D54; margin-bottom: 4px;">
+        Division 2
+      </div>
+      <h2 style="font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: #0F1E1C; letter-spacing: -0.02em;">
+        Pressure &amp; Acoustics Calibration
+      </h2>
+      <div style="font-size: 8.5pt; color: #4A6663; margin-top: 4px;">NABL Accredited · CC-4038 · ISO/IEC 17025:2017</div>
+    </div>
+
+    <table class="charges-table" style="margin-bottom: 28px;">
+      <thead>
+        <tr>
+          <th style="width: 32px;">No.</th>
+          <th>Instrument</th>
+          <th>Range / Notes</th>
+          <th class="right" style="width: 140px;">Charge (₹)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="section-row"><td colspan="4">Pressure Calibration</td></tr>
+        <tr>
+          <td style="font-weight:500;">1</td>
+          <td style="font-weight:500;">Pressure Gauge</td>
+          <td class="range-cell">Any Range</td>
+          <td class="charge-cell">450</td>
+        </tr>
+        <tr>
+          <td style="font-weight:500;">2</td>
+          <td style="font-weight:500;">Hydraulic Pressure</td>
+          <td class="range-cell">Up to 700 bar</td>
+          <td class="contact-cell">Contact for Quote</td>
+        </tr>
+        <tr>
+          <td style="font-weight:500;">3</td>
+          <td style="font-weight:500;">Pneumatic Pressure</td>
+          <td class="range-cell">—</td>
+          <td class="contact-cell">Contact for Quote</td>
+        </tr>
+        <tr>
+          <td style="font-weight:500;">4</td>
+          <td style="font-weight:500;">Vacuum</td>
+          <td class="range-cell">—</td>
+          <td class="contact-cell">Contact for Quote</td>
+        </tr>
+        <tr class="section-row"><td colspan="4">Acoustics Calibration</td></tr>
+        <tr>
+          <td style="font-weight:500;">5</td>
+          <td style="font-weight:500;">Sound Level Meter</td>
+          <td class="range-cell">1 kHz (94 dB / 114 dB)</td>
+          <td class="charge-cell">1,000</td>
+        </tr>
+        <tr>
+          <td style="font-weight:500;">6</td>
+          <td style="font-weight:500;">Other Acoustic Instruments</td>
+          <td class="range-cell">—</td>
+          <td class="contact-cell">Contact for Quote</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- On-site note -->
+    <div style="background: #E6F2F0; border-left: 3px solid #47857A; padding: 14px 18px; border-radius: 4px; margin-bottom: 32px;">
+      <div style="font-size: 8.5pt; font-weight: 600; color: #2D5D54; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em;">
+        On-Site Calibration
+      </div>
+      <div style="font-size: 9pt; color: #0F1E1C; line-height: 1.6;">
+        On-site calibration is also NABL accredited (CC-4038). Charges vary by location and instrument volume.
+        Contact us for a site visit quote.
+      </div>
+      <div style="margin-top: 10px; font-size: 8.5pt; color: #4A6663;">
+        +91 92765 51009 &nbsp;·&nbsp; lab@germancalibration.com
+      </div>
+    </div>
+
+    <!-- GST disclaimer -->
+    <div style="border-top: 1px solid #E6F2F0; padding-top: 10px; margin-top: 24px; font-size: 7.5pt; color: #4A6663; text-align: center;">
+      All charges in ₹ (Indian Rupees) · Exclusive of applicable GST · Charges subject to change without prior notice
+    </div>
+
   </div>
 </body>
 </html>
