@@ -61,6 +61,12 @@
       .page-break { page-break-before: always; }
       .no-print { display: none !important; }
       a { color: inherit !important; text-decoration: none !important; }
+      /* Prevent section headers from splitting across pages */
+      .section-row { page-break-inside: avoid; page-break-after: avoid; }
+      /* Keep instrument row with its first range row */
+      tr { page-break-inside: avoid; }
+      /* Ensure backgrounds print (belt + suspenders) */
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
 
       @page {
         size: A4 portrait;
