@@ -249,12 +249,14 @@
                   <input type="text" id="company" name="company" required aria-required="true"
                     placeholder="e.g. Acme Industries Ltd."
                     class="w-full px-4 py-3 bg-white border border-brand-200 rounded-xl text-brand-ink placeholder-brand-ink-light/50 text-sm focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/15 transition-all" />
+                  <p id="error-company" class="text-red-600 text-xs mt-1 hidden" aria-live="polite"></p>
                 </div>
                 <div>
                   <label for="contact" class="block text-brand-ink text-sm font-semibold mb-2">Contact Person <span class="text-brand-700">*</span></label>
                   <input type="text" id="contact" name="contact" required aria-required="true"
                     placeholder="Your name"
                     class="w-full px-4 py-3 bg-white border border-brand-200 rounded-xl text-brand-ink placeholder-brand-ink-light/50 text-sm focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/15 transition-all" />
+                  <p id="error-contact" class="text-red-600 text-xs mt-1 hidden" aria-live="polite"></p>
                 </div>
               </div>
 
@@ -265,12 +267,14 @@
                   <input type="email" id="email" name="email" required aria-required="true"
                     placeholder="you@company.com"
                     class="w-full px-4 py-3 bg-white border border-brand-200 rounded-xl text-brand-ink placeholder-brand-ink-light/50 text-sm focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/15 transition-all" />
+                  <p id="error-email" class="text-red-600 text-xs mt-1 hidden" aria-live="polite"></p>
                 </div>
                 <div>
                   <label for="phone" class="block text-brand-ink text-sm font-semibold mb-2">Phone Number <span class="text-brand-700">*</span></label>
                   <input type="tel" id="phone" name="phone" required aria-required="true"
                     placeholder="+91 98765 43210"
                     class="w-full px-4 py-3 bg-white border border-brand-200 rounded-xl text-brand-ink placeholder-brand-ink-light/50 text-sm focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/15 transition-all" />
+                  <p id="error-phone" class="text-red-600 text-xs mt-1 hidden" aria-live="polite"></p>
                 </div>
               </div>
 
@@ -582,6 +586,10 @@
         form.querySelectorAll('.border-red-400').forEach(el => {
           el.classList.remove('border-red-400', 'ring-2', 'ring-red-400/20');
         });
+        ['company', 'contact', 'email', 'phone'].forEach(id => {
+          const errEl = document.getElementById('error-' + id);
+          if (errEl) { errEl.textContent = ''; errEl.classList.add('hidden'); }
+        });
 
         // Validate required fields (non-empty)
         const required = form.querySelectorAll('[required]');
@@ -589,6 +597,8 @@
         required.forEach(field => {
           if (!field.value.trim()) {
             field.classList.add('border-red-400', 'ring-2', 'ring-red-400/20');
+            const errEl = document.getElementById('error-' + field.id);
+            if (errEl) { errEl.textContent = 'This field is required.'; errEl.classList.remove('hidden'); }
             valid = false;
           }
         });
@@ -597,6 +607,8 @@
         const emailField = document.getElementById('email');
         if (emailField && emailField.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value.trim())) {
           emailField.classList.add('border-red-400', 'ring-2', 'ring-red-400/20');
+          const errEl = document.getElementById('error-email');
+          if (errEl) { errEl.textContent = 'Please enter a valid email address.'; errEl.classList.remove('hidden'); }
           valid = false;
         }
 
