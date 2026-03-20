@@ -324,9 +324,9 @@
     .hide-scrollbar::-webkit-scrollbar { display: none; }
     .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-    /* ── Scroll offset: compensate for fixed header (64px) + sticky sub-nav (~52px) ── */
+    /* ── Scroll offset: sub-nav only (48px) — header is always hidden by the time any anchor lands ── */
     section[id] {
-      scroll-margin-top: 120px;
+      scroll-margin-top: 48px;
     }
 
     /* ── prefers-reduced-motion ── */

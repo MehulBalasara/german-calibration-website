@@ -45,7 +45,7 @@
       font-size: 8pt; letter-spacing: 0.06em; text-transform: uppercase;
       padding: 8px 10px; border-bottom: 2px solid #47857A; text-align: left;
     }
-    .charges-table th.right { text-align: right; }
+    .charges-table th.right { text-align: center; }
     .charges-table td { padding: 6px 10px; border-bottom: 1px solid #E6F2F0; }
     .charges-table tr:nth-child(even) td { background: #F0F7F5; }
     .section-row td {
@@ -53,20 +53,32 @@
       font-weight: 700; font-size: 8pt; letter-spacing: 0.05em;
       text-transform: uppercase; padding: 5px 10px;
     }
-    .charge-cell { text-align: right; font-weight: 600; color: #0F1E1C; }
+    .charge-cell { text-align: center; font-weight: 600; color: #0F1E1C; }
     .range-cell { color: #4A6663; }
-    .contact-cell { color: #2D5D54; font-style: italic; text-align: right; }
+    .contact-cell { color: #2D5D54; font-style: italic; text-align: center; }
+    /* No. and Instrument columns always white — range/charge columns alternate */
+    .charges-table tbody tr td:first-child:nth-last-child(4),
+    .charges-table tbody tr td:nth-child(2):nth-last-child(3) { background: white !important; }
     @media print {
       body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .page-break { page-break-before: always; }
       .no-print { display: none !important; }
       a { color: inherit !important; text-decoration: none !important; }
-      /* Prevent section headers from splitting across pages */
       .section-row { page-break-inside: avoid; page-break-after: avoid; }
-      /* Keep instrument row with its first range row */
       tr { page-break-inside: avoid; }
-      /* Ensure backgrounds print (belt + suspenders) */
       * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+      .charges-table th:nth-child(1),
+      .charges-table td:nth-child(1) { width: 32px; }
+      .charges-table th:nth-child(2),
+      .charges-table td:nth-child(2) { width: 48%; }
+      .charges-table th:nth-child(3),
+      .charges-table td:nth-child(3) { width: 26%; }
+      .charges-table th:nth-child(4),
+      .charges-table td:nth-child(4) { width: 100px; }
+
+      .charges-table td { padding: 4px 10px; }
+      .charges-table th { padding: 6px 10px; }
 
       @page {
         size: A4 portrait;
@@ -97,41 +109,33 @@
   </style>
 </head>
 <body class="bg-[#FBFEFD] font-sans text-brand-ink">
+
   <!-- COVER PAGE -->
   <div class="cover-page" style="min-height: 100vh; display: flex; flex-direction: column; position: relative; overflow: hidden;">
 
-    <!-- Teal accent band — top strip -->
     <div style="background: #47857A; height: 8px; width: 100%;"></div>
 
-    <!-- Header: logo + contact block -->
     <div style="display: flex; justify-content: space-between; align-items: flex-start; padding: 40px 48px 0;">
-      <!-- Logo -->
       <img src="german_logo.svg" alt="German Calibration Lab LLP" style="height: 72px;" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';" />
       <span id="logo-fallback" style="display:none; font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: #0F1E1C;">German Calibration</span>
-
-      <!-- Contact block top-right -->
       <div style="text-align: right; font-size: 9pt; color: #4A6663; line-height: 1.7;">
-        <div style="font-weight: 600; color: #0F1E1C;">GERMAN CALIBRATION LAB LLP</div>
+        <div style="font-weight: 700; font-size: 13pt; color: #2D5D54; letter-spacing: 0.04em;">GERMAN CALIBRATION LAB LLP</div>
         <div>Plot no. 10B, 2 Umakant Pandit Udhyog Nagar</div>
-        <div>Near Ashok Garden, Rajkot – 360004</div>
+        <div>Near Ashok Garden, Rajkot, Gujarat – 360004</div>
         <div>+91 92765 51009 &nbsp;·&nbsp; lab@germancalibration.com</div>
+        <div>www.germancalibration.com</div>
       </div>
     </div>
 
-    <!-- Central content -->
-    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 48px;">
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px 48px 52px;">
       <div style="text-align: center; max-width: 500px;">
-        <!-- Eyebrow -->
         <div style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #2D5D54; margin-bottom: 16px;">
           NABL Accredited Calibration Laboratory
         </div>
-        <!-- Main title -->
         <h1 style="font-family: 'DM Serif Display', serif; font-size: 3rem; color: #0F1E1C; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 24px;">
           Calibration<br>Charges
         </h1>
-        <!-- Divider -->
         <div style="width: 64px; height: 3px; background: #47857A; margin: 0 auto 28px;"></div>
-        <!-- NABL badge -->
         <span class="nabl-badge">
           <svg style="width:12px;height:12px;" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
             <path d="M6 0L7.854 4.146 12 4.618 9 7.54 9.708 12 6 9.854 2.292 12 3 7.54 0 4.618 4.146 4.146z"/>
@@ -139,12 +143,15 @@
           NABL Accredited · CC-4038
         </span>
         <div style="margin-top: 12px; font-size: 8.5pt; color: #4A6663;">
-          ISO/IEC 17025:2017 · Valid till 27 August 2029
+          ISO/IEC 17025:2017
+        </div>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 32px; margin-top: 28px;">
+          <img src="ilac-MRA.svg" alt="ILAC-MRA Recognition Symbol" style="height: 124px; width: auto;" />
+          <img src="nabl.svg" alt="NABL Accreditation Symbol" style="height: 124px; width: auto;" />
         </div>
       </div>
     </div>
 
-    <!-- Bottom teal band with tagline -->
     <div style="background: #47857A; padding: 20px 48px; display: flex; justify-content: space-between; align-items: center;">
       <div style="color: #FBFEFD; font-size: 9pt; font-weight: 500; letter-spacing: 0.02em;">
         Precision Calibration · ILAC-MRA Recognised · Rajkot, Gujarat
@@ -155,21 +162,23 @@
     </div>
   </div>
 
-  <!-- DIVISION 1: DIMENSIONAL CALIBRATION -->
+
+  <!-- ═══════════════════════════════════════════════════════════
+       INSTRUMENTS — Category 1
+       Sections: A · B · C · F (Bevel Protractor, Right Angle, Sine Bar) · G · H · I · J · K
+       ═══════════════════════════════════════════════════════════ -->
   <div class="page-break" style="padding: 36px 48px 24px;">
 
-    <!-- Division header -->
     <div style="margin-bottom: 20px; border-bottom: 2px solid #47857A; padding-bottom: 12px;">
       <div style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #2D5D54; margin-bottom: 4px;">
-        Division 1
+        Category 1
       </div>
       <h2 style="font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: #0F1E1C; letter-spacing: -0.02em;">
-        Dimensional Calibration
+        Instruments
       </h2>
       <div style="font-size: 8.5pt; color: #4A6663; margin-top: 4px;">NABL Accredited · CC-4038 · ISO/IEC 17025:2017</div>
     </div>
 
-    <!-- Table -->
     <table class="charges-table">
       <thead>
         <tr>
@@ -211,12 +220,12 @@
           <td class="range-cell">0–100 mm</td>
           <td class="charge-cell">500</td>
         </tr>
-        <tr><td class="range-cell">100–150 mm</td><td class="charge-cell">700</td></tr>
+        <tr><td class="range-cell">100–300 mm</td><td class="charge-cell">1000</td></tr>
 
-        <!-- 3. Vernier Caliper / Digital — 8 ranges -->
+        <!-- 3. Vernier Caliper — 8 ranges -->
         <tr>
           <td rowspan="8" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">3</td>
-          <td rowspan="8" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">Vernier Caliper / Digital</td>
+          <td rowspan="8" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">Vernier Caliper</td>
           <td class="range-cell">150 mm</td>
           <td class="charge-cell">225</td>
         </tr>
@@ -225,7 +234,7 @@
         <tr><td class="range-cell">450 mm</td><td class="charge-cell">450</td></tr>
         <tr><td class="range-cell">600 mm</td><td class="charge-cell">600</td></tr>
         <tr><td class="range-cell">1000 mm</td><td class="charge-cell">1,000</td></tr>
-        <tr><td class="range-cell">1500 mm</td><td class="charge-cell">3,000</td></tr>
+        <tr><td class="range-cell">1500 mm</td><td class="charge-cell">1,500</td></tr>
         <tr><td class="range-cell">2000 mm</td><td class="charge-cell">3,000</td></tr>
 
         <!-- 4. 2D Height Gauge — 3 ranges -->
@@ -238,13 +247,17 @@
         <tr><td class="range-cell">600 mm</td><td class="charge-cell">4,500</td></tr>
         <tr><td class="range-cell">1000 mm</td><td class="charge-cell">15,000</td></tr>
 
-        <!-- 5. Inside Caliper -->
+        <!-- 5. Height Gauge — 5 ranges -->
         <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">5</td>
-          <td style="font-weight: 500; color: #0F1E1C;">Inside Caliper</td>
-          <td class="range-cell">Any Range</td>
+          <td rowspan="5" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">5</td>
+          <td rowspan="5" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">Height Gauge</td>
+          <td class="range-cell">300 mm</td>
           <td class="charge-cell">400</td>
         </tr>
+        <tr><td class="range-cell">450 mm</td><td class="charge-cell">500</td></tr>
+        <tr><td class="range-cell">500 mm</td><td class="charge-cell">500</td></tr>
+        <tr><td class="range-cell">600 mm</td><td class="charge-cell">600</td></tr>
+        <tr><td class="range-cell">1000 mm</td><td class="charge-cell">1,000</td></tr>
 
         <!-- 6. Internal Dial Caliper — 2 ranges -->
         <tr>
@@ -259,9 +272,10 @@
         <tr>
           <td style="font-weight: 500; color: #0F1E1C;">7</td>
           <td style="font-weight: 500; color: #0F1E1C;">Pistol Caliper</td>
-          <td class="range-cell">Any Range</td>
-          <td class="charge-cell">800</td>
+          <td class="range-cell">—</td>
+          <td class="charge-cell">500</td>
         </tr>
+
 
         <!-- SECTION B — Depth Measurement -->
         <tr class="section-row"><td colspan="4">B — Depth Measurement</td></tr>
@@ -277,122 +291,64 @@
         <tr><td class="range-cell">100–200 mm</td><td class="charge-cell">400</td></tr>
         <tr><td class="range-cell">200–300 mm</td><td class="charge-cell">500</td></tr>
 
-        <!-- 9. Depth Caliper — 4 ranges -->
+        <!-- 9. Depth Caliper / Gauge — 6 ranges -->
         <tr>
-          <td rowspan="4" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">9</td>
-          <td rowspan="4" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">Depth Caliper</td>
+          <td rowspan="6" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">9</td>
+          <td rowspan="6" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">Depth Caliper / Gauge</td>
           <td class="range-cell">Up to 50 mm</td>
           <td class="charge-cell">250</td>
         </tr>
         <tr><td class="range-cell">50–100 mm</td><td class="charge-cell">300</td></tr>
         <tr><td class="range-cell">100–200 mm</td><td class="charge-cell">400</td></tr>
         <tr><td class="range-cell">200–300 mm</td><td class="charge-cell">500</td></tr>
-
-        <!-- 10. Depth Gauge -->
-        <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">10</td>
-          <td style="font-weight: 500; color: #0F1E1C;">Depth Gauge</td>
-          <td class="range-cell">600 mm</td>
-          <td class="charge-cell">600</td>
-        </tr>
-
+        <tr><td class="range-cell">450 mm</td><td class="charge-cell">550</td></tr>
+        <tr><td class="range-cell">600 mm</td><td class="charge-cell">600</td></tr>
 
         <!-- SECTION C — Dial & Comparative Instruments -->
         <tr class="section-row"><td colspan="4">C — Dial &amp; Comparative Instruments</td></tr>
 
-        <!-- 11. Plunger Type Dial Indicator — 7 variants grouped under one instrument name -->
+        <!-- 10. Plunger Type Dial Indicator — 8 variants -->
         <tr>
-          <td rowspan="7" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">11</td>
-          <td rowspan="7" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">Plunger Type Dial Indicator</td>
+          <td rowspan="8" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">10</td>
+          <td rowspan="8" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">Plunger Type Dial Indicator</td>
           <td class="range-cell">LC 0.001 mm — 0–25 mm</td>
           <td class="charge-cell">400</td>
         </tr>
-        <tr><td class="range-cell">LC 0.001&quot; — Any Range</td><td class="charge-cell">250</td></tr>
-        <tr><td class="range-cell">LC 0.0005 mm — Any Range</td><td class="charge-cell">200</td></tr>
-        <tr><td class="range-cell">LC 0.0005&quot; — Any Range</td><td class="charge-cell">400</td></tr>
-        <tr><td class="range-cell">LC 0.001 mm — Any Range</td><td class="charge-cell">250</td></tr>
-        <tr><td class="range-cell">LC 0.002 mm — Any Range</td><td class="charge-cell">250</td></tr>
-        <tr><td class="range-cell">LC 0.010 mm — Any Range</td><td class="charge-cell">180</td></tr>
+        <tr><td class="range-cell">LC 0.010 mm — 0–25 mm</td><td class="charge-cell">180</td></tr>
+        <tr><td class="range-cell">LC 0.001 mm</td><td class="charge-cell">250</td></tr>
+        <tr><td class="range-cell">LC 0.010 mm</td><td class="charge-cell">180</td></tr>
+        <tr><td class="range-cell">LC 0.0005 mm</td><td class="charge-cell">200</td></tr>
+        <tr><td class="range-cell">LC 0.002 mm</td><td class="charge-cell">250</td></tr>
+        <tr><td class="range-cell">LC 0.0005&quot;</td><td class="charge-cell">400</td></tr>
+        <tr><td class="range-cell">LC 0.001&quot;</td><td class="charge-cell">250</td></tr>
 
-        <!-- 12. Dial Calibration Tester -->
+        <!-- 11. Dial Calibration Tester -->
         <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">12</td>
+          <td style="font-weight: 500; color: #0F1E1C;">11</td>
           <td style="font-weight: 500; color: #0F1E1C;">Dial Calibration Tester</td>
-          <td class="range-cell">Any Range</td>
+          <td class="range-cell">—</td>
           <td class="charge-cell">4,500</td>
         </tr>
 
-        <!-- 13. Dial Snap Gauge -->
+        <!-- 12. Dial Snap Gauge -->
         <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">13</td>
+          <td style="font-weight: 500; color: #0F1E1C;">12</td>
           <td style="font-weight: 500; color: #0F1E1C;">Dial Snap Gauge</td>
-          <td class="range-cell">Any Range</td>
+          <td class="range-cell">—</td>
           <td class="charge-cell">500</td>
         </tr>
 
-        <!-- 14. Dial Thickness Gauge -->
+        <!-- 13. Dial Thickness Gauge -->
         <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">14</td>
+          <td style="font-weight: 500; color: #0F1E1C;">13</td>
           <td style="font-weight: 500; color: #0F1E1C;">Dial Thickness Gauge</td>
           <td class="range-cell">0–10 mm</td>
           <td class="charge-cell">200</td>
         </tr>
 
-        <!-- 15. Concentricity Gauge -->
+        <!-- 14. Bore Gauge — 10 ranges -->
         <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">15</td>
-          <td style="font-weight: 500; color: #0F1E1C;">Concentricity Gauge</td>
-          <td class="range-cell">Any Range</td>
-          <td class="charge-cell">150</td>
-        </tr>
-
-        <!-- SECTION D — Limit Gauges -->
-        <tr class="section-row"><td colspan="4">D — Limit Gauges</td></tr>
-
-        <!-- 16. Plug Gauge — 8 ranges -->
-        <tr>
-          <td rowspan="8" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">16</td>
-          <td rowspan="8" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">Plug Gauge</td>
-          <td class="range-cell">0–50 mm</td>
-          <td class="charge-cell">150</td>
-        </tr>
-        <tr><td class="range-cell">50–100 mm</td><td class="charge-cell">250</td></tr>
-        <tr><td class="range-cell">100–150 mm</td><td class="charge-cell">250</td></tr>
-        <tr><td class="range-cell">150–200 mm</td><td class="charge-cell">300</td></tr>
-        <tr><td class="range-cell">200–300 mm</td><td class="charge-cell">350</td></tr>
-        <tr><td class="range-cell">300–400 mm</td><td class="charge-cell">400</td></tr>
-        <tr><td class="range-cell">400–500 mm</td><td class="charge-cell">500</td></tr>
-        <tr><td class="range-cell">500–600 mm</td><td class="charge-cell">600</td></tr>
-
-        <!-- 17. Snap Gauge — 4 ranges -->
-        <tr>
-          <td rowspan="4" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">17</td>
-          <td rowspan="4" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">Snap Gauge</td>
-          <td class="range-cell">Up to 50 mm</td>
-          <td class="charge-cell">150</td>
-        </tr>
-        <tr><td class="range-cell">50–100 mm</td><td class="charge-cell">175</td></tr>
-        <tr><td class="range-cell">100–150 mm</td><td class="charge-cell">200</td></tr>
-        <tr><td class="range-cell">150–250 mm</td><td class="charge-cell">250</td></tr>
-
-        <!-- 18. Master Ring Gauge — 8 ranges -->
-        <tr>
-          <td rowspan="8" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">18</td>
-          <td rowspan="8" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">Master Ring Gauge</td>
-          <td class="range-cell">0–50 mm</td>
-          <td class="charge-cell">200</td>
-        </tr>
-        <tr><td class="range-cell">50–100 mm</td><td class="charge-cell">250</td></tr>
-        <tr><td class="range-cell">100–150 mm</td><td class="charge-cell">275</td></tr>
-        <tr><td class="range-cell">150–200 mm</td><td class="charge-cell">300</td></tr>
-        <tr><td class="range-cell">200–300 mm</td><td class="charge-cell">350</td></tr>
-        <tr><td class="range-cell">300–400 mm</td><td class="charge-cell">400</td></tr>
-        <tr><td class="range-cell">400–500 mm</td><td class="charge-cell">450</td></tr>
-        <tr><td class="range-cell">500–600 mm</td><td class="charge-cell">500</td></tr>
-
-        <!-- 19. Bore Gauge — 10 ranges -->
-        <tr>
-          <td rowspan="10" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">19</td>
+          <td rowspan="10" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">14</td>
           <td rowspan="10" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">Bore Gauge</td>
           <td class="range-cell">6–10 mm</td>
           <td class="charge-cell">325</td>
@@ -407,46 +363,347 @@
         <tr><td class="range-cell">250–450 mm</td><td class="charge-cell">450</td></tr>
         <tr><td class="range-cell">400–800 mm</td><td class="charge-cell">1,000</td></tr>
 
-        <!-- 20. Multi Gauge -->
+
+        <!-- SECTION F — Form & Angle (Instruments: Bevel Protractor, Right Angle, Sine Bar) -->
+        <tr class="section-row"><td colspan="4">F — Form &amp; Angle</td></tr>
+
+        <!-- 15. Bevel Protractor -->
         <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">20</td>
-          <td style="font-weight: 500; color: #0F1E1C;">Multi Gauge</td>
-          <td class="range-cell">Any Range</td>
+          <td style="font-weight: 500; color: #0F1E1C;">15</td>
+          <td style="font-weight: 500; color: #0F1E1C;">Bevel Protractor</td>
+          <td class="range-cell">—</td>
+          <td class="charge-cell">350</td>
+        </tr>
+
+        <!-- 16. Right Angle -->
+        <tr>
+          <td style="font-weight: 500; color: #0F1E1C;">16</td>
+          <td style="font-weight: 500; color: #0F1E1C;">Right Angle</td>
+          <td class="range-cell">—</td>
           <td class="charge-cell">400</td>
         </tr>
 
-        <!-- 21. PCD Gauge -->
+        <!-- 17. Sine Bar — 2 ranges -->
+        <tr>
+          <td rowspan="2" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">17</td>
+          <td rowspan="2" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">Sine Bar</td>
+          <td class="range-cell">100 mm</td>
+          <td class="charge-cell">550</td>
+        </tr>
+        <tr><td class="range-cell">300 mm</td><td class="charge-cell">750</td></tr>
+
+
+        <!-- SECTION G — Reference Standards & Miscellaneous -->
+        <tr class="section-row"><td colspan="4">G — Reference Standards &amp; Miscellaneous</td></tr>
+
+        <!-- 18. Gauge Block / Slip Gauge -->
+        <tr>
+          <td style="font-weight: 500; color: #0F1E1C;">18</td>
+          <td style="font-weight: 500; color: #0F1E1C;">Gauge Block / Slip Gauge</td>
+          <td class="range-cell">Per piece (0–100 mm)</td>
+          <td class="charge-cell">70</td>
+        </tr>
+
+        <!-- 19. Height Master -->
+        <tr>
+          <td style="font-weight: 500; color: #0F1E1C;">19</td>
+          <td style="font-weight: 500; color: #0F1E1C;">Height Master</td>
+          <td class="range-cell">—</td>
+          <td class="charge-cell">150</td>
+        </tr>
+
+        <!-- 20. Micrometer Master -->
+        <tr>
+          <td style="font-weight: 500; color: #0F1E1C;">20</td>
+          <td style="font-weight: 500; color: #0F1E1C;">Micrometer Master</td>
+          <td class="range-cell">—</td>
+          <td class="charge-cell">100</td>
+        </tr>
+
+        <!-- 21. Measuring Scale -->
         <tr>
           <td style="font-weight: 500; color: #0F1E1C;">21</td>
-          <td style="font-weight: 500; color: #0F1E1C;">PCD Gauge</td>
-          <td class="range-cell">Any Range</td>
+          <td style="font-weight: 500; color: #0F1E1C;">Measuring Scale</td>
+          <td class="range-cell">—</td>
+          <td class="charge-cell">300</td>
+        </tr>
+
+        <!-- 22. Magnetic V Block -->
+        <tr>
+          <td style="font-weight: 500; color: #0F1E1C;">22</td>
+          <td style="font-weight: 500; color: #0F1E1C;">Magnetic V Block</td>
+          <td class="range-cell">—</td>
+          <td class="charge-cell">400</td>
+        </tr>
+
+        <!-- 23. Bench Center -->
+        <tr>
+          <td style="font-weight: 500; color: #0F1E1C;">23</td>
+          <td style="font-weight: 500; color: #0F1E1C;">Bench Center</td>
+          <td class="range-cell">—</td>
+          <td class="charge-cell">2,500</td>
+        </tr>
+
+        <!-- 24. Combination Set -->
+        <tr>
+          <td style="font-weight: 500; color: #0F1E1C;">24</td>
+          <td style="font-weight: 500; color: #0F1E1C;">Combination Set</td>
+          <td class="range-cell">—</td>
+          <td class="charge-cell">700</td>
+        </tr>
+
+        <!-- 25. Spirit Level -->
+        <tr>
+          <td style="font-weight: 500; color: #0F1E1C;">25</td>
+          <td style="font-weight: 500; color: #0F1E1C;">Spirit Level</td>
+          <td class="range-cell">—</td>
+          <td class="charge-cell">2,000</td>
+        </tr>
+
+        <!-- 26. Surface Roughness Tester -->
+        <tr>
+          <td style="font-weight: 500; color: #0F1E1C;">26</td>
+          <td style="font-weight: 500; color: #0F1E1C;">Surface Roughness Tester</td>
+          <td class="range-cell">—</td>
+          <td class="charge-cell">3,000</td>
+        </tr>
+
+        <!-- 27. Surface Roughness Master -->
+        <tr>
+          <td style="font-weight: 500; color: #0F1E1C;">27</td>
+          <td style="font-weight: 500; color: #0F1E1C;">Surface Roughness Master</td>
+          <td class="range-cell">—</td>
+          <td class="charge-cell">3,000</td>
+        </tr>
+
+        <!-- 28. Coating Thickness Tester -->
+        <tr>
+          <td style="font-weight: 500; color: #0F1E1C;">28</td>
+          <td style="font-weight: 500; color: #0F1E1C;">Coating Thickness Tester</td>
+          <td class="range-cell">—</td>
           <td class="charge-cell">1,000</td>
         </tr>
 
-        <!-- 22. Taper Plug Gauge (plain — NOT Taper Thread Plug Gauge) -->
+        <!-- 29. Multi Gauge -->
         <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">22</td>
+          <td style="font-weight: 500; color: #0F1E1C;">29</td>
+          <td style="font-weight: 500; color: #0F1E1C;">Multi Gauge</td>
+          <td class="range-cell">—</td>
+          <td class="charge-cell">400</td>
+        </tr>
+
+        <!-- 30. Thread Wire Unit -->
+        <tr>
+          <td style="font-weight: 500; color: #0F1E1C;">30</td>
+          <td style="font-weight: 500; color: #0F1E1C;">Thread Wire Unit</td>
+          <td class="range-cell">—</td>
+          <td class="charge-cell">4,500</td>
+        </tr>
+
+
+        <!-- SECTION H — Vision & Optical -->
+        <tr class="section-row"><td colspan="4">H — Vision &amp; Optical</td></tr>
+
+        <!-- 31. Vision Measuring Systems -->
+        <tr>
+          <td style="font-weight: 500; color: #0F1E1C;">31</td>
+          <td style="font-weight: 500; color: #0F1E1C;">Vision Measuring Systems</td>
+          <td class="range-cell">—</td>
+          <td class="charge-cell">5,000</td>
+        </tr>
+
+        <!-- 32. Lux Meter -->
+        <tr>
+          <td style="font-weight: 500; color: #0F1E1C;">32</td>
+          <td style="font-weight: 500; color: #0F1E1C;">Lux Meter</td>
+          <td class="range-cell">—</td>
+          <td class="charge-cell">10,000</td>
+        </tr>
+
+
+        <!-- SECTION I — Environmental -->
+        <tr class="section-row"><td colspan="4">I — Environmental</td></tr>
+
+        <!-- 33. Digital Infrared Thermometer -->
+        <tr>
+          <td style="font-weight: 500; color: #0F1E1C;">33</td>
+          <td style="font-weight: 500; color: #0F1E1C;">Digital Infrared Thermometer</td>
+          <td class="range-cell">—</td>
+          <td class="charge-cell">1,500</td>
+        </tr>
+
+        <!-- 34. Hygrometer -->
+        <tr>
+          <td style="font-weight: 500; color: #0F1E1C;">34</td>
+          <td style="font-weight: 500; color: #0F1E1C;">Hygrometer</td>
+          <td class="range-cell">—</td>
+          <td class="charge-cell">1,500</td>
+        </tr>
+
+
+        <!-- SECTION J — Torque -->
+        <tr class="section-row"><td colspan="4">J — Torque</td></tr>
+
+        <!-- 35. Torque Wrench -->
+        <tr>
+          <td style="font-weight: 500; color: #0F1E1C;">35</td>
+          <td style="font-weight: 500; color: #0F1E1C;">Torque Wrench</td>
+          <td class="range-cell">—</td>
+          <td class="charge-cell">1,000</td>
+        </tr>
+
+
+        <!-- SECTION K — Pressure & Acoustics -->
+        <tr class="section-row"><td colspan="4">K — Pressure &amp; Acoustics</td></tr>
+
+        <!-- 36. Pressure Gauge -->
+        <tr>
+          <td style="font-weight: 500; color: #0F1E1C;">36</td>
+          <td style="font-weight: 500; color: #0F1E1C;">Pressure Gauge</td>
+          <td class="range-cell">—</td>
+          <td class="charge-cell">450</td>
+        </tr>
+
+        <!-- 37. Sound Level Meter -->
+        <tr>
+          <td style="font-weight: 500; color: #0F1E1C;">37</td>
+          <td style="font-weight: 500; color: #0F1E1C;">Sound Level Meter</td>
+          <td class="range-cell">94 dB / 114 dB</td>
+          <td class="charge-cell">1,000</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       GAUGES — Category 2
+       Sections: D · E · F (Radius, Pitch, Feeler, Thickness, Keyway, Concentricity, OD Master, Measuring Pin)
+       ═══════════════════════════════════════════════════════════ -->
+  <div class="page-break" style="padding: 36px 48px 24px;">
+
+    <div style="margin-bottom: 20px; border-bottom: 2px solid #47857A; padding-bottom: 12px;">
+      <div style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #2D5D54; margin-bottom: 4px;">
+        Category 2
+      </div>
+      <h2 style="font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: #0F1E1C; letter-spacing: -0.02em;">
+        Gauges
+      </h2>
+      <div style="font-size: 8.5pt; color: #4A6663; margin-top: 4px;">NABL Accredited · CC-4038 · ISO/IEC 17025:2017</div>
+    </div>
+
+    <table class="charges-table">
+      <thead>
+        <tr>
+          <th style="width: 32px;">No.</th>
+          <th>Gauge</th>
+          <th>Range</th>
+          <th class="right" style="width: 100px;">Charge (₹)</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- SECTION D — Limit Gauges -->
+        <tr class="section-row"><td colspan="4">D — Limit Gauges</td></tr>
+
+        <!-- 1. Plug Gauge — 8 ranges -->
+        <tr>
+          <td rowspan="8" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">1</td>
+          <td rowspan="8" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">Plug Gauge</td>
+          <td class="range-cell">0–50 mm</td>
+          <td class="charge-cell">150</td>
+        </tr>
+        <tr><td class="range-cell">50–100 mm</td><td class="charge-cell">250</td></tr>
+        <tr><td class="range-cell">100–150 mm</td><td class="charge-cell">250</td></tr>
+        <tr><td class="range-cell">150–200 mm</td><td class="charge-cell">300</td></tr>
+        <tr><td class="range-cell">200–300 mm</td><td class="charge-cell">350</td></tr>
+        <tr><td class="range-cell">300–400 mm</td><td class="charge-cell">400</td></tr>
+        <tr><td class="range-cell">400–500 mm</td><td class="charge-cell">500</td></tr>
+        <tr><td class="range-cell">500–600 mm</td><td class="charge-cell">600</td></tr>
+
+        <!-- 2. Snap Gauge — 4 ranges -->
+        <tr>
+          <td rowspan="4" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">2</td>
+          <td rowspan="4" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">Snap Gauge</td>
+          <td class="range-cell">Up to 50 mm</td>
+          <td class="charge-cell">150</td>
+        </tr>
+        <tr><td class="range-cell">50–100 mm</td><td class="charge-cell">175</td></tr>
+        <tr><td class="range-cell">100–150 mm</td><td class="charge-cell">200</td></tr>
+        <tr><td class="range-cell">150–250 mm</td><td class="charge-cell">250</td></tr>
+
+        <!-- 3. Master Ring Gauge — 8 ranges -->
+        <tr>
+          <td rowspan="8" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">3</td>
+          <td rowspan="8" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">Master Ring Gauge</td>
+          <td class="range-cell">0–50 mm</td>
+          <td class="charge-cell">200</td>
+        </tr>
+        <tr><td class="range-cell">50–100 mm</td><td class="charge-cell">250</td></tr>
+        <tr><td class="range-cell">100–150 mm</td><td class="charge-cell">275</td></tr>
+        <tr><td class="range-cell">150–200 mm</td><td class="charge-cell">300</td></tr>
+        <tr><td class="range-cell">200–300 mm</td><td class="charge-cell">350</td></tr>
+        <tr><td class="range-cell">300–400 mm</td><td class="charge-cell">400</td></tr>
+        <tr><td class="range-cell">400–500 mm</td><td class="charge-cell">450</td></tr>
+        <tr><td class="range-cell">500–600 mm</td><td class="charge-cell">500</td></tr>
+
+        <!-- 4. PCD Gauge -->
+        <tr>
+          <td style="font-weight: 500; color: #0F1E1C;">4</td>
+          <td style="font-weight: 500; color: #0F1E1C;">PCD Gauge</td>
+          <td class="range-cell">—</td>
+          <td class="charge-cell">1,000</td>
+        </tr>
+
+        <!-- 5. Taper Plug Gauge -->
+        <tr>
+          <td style="font-weight: 500; color: #0F1E1C;">5</td>
           <td style="font-weight: 500; color: #0F1E1C;">Taper Plug Gauge</td>
-          <td class="range-cell">Any Range</td>
+          <td class="range-cell">—</td>
           <td class="charge-cell">500</td>
         </tr>
 
-        <!-- 23. Taper Ring Gauge (plain — NOT Taper Thread Ring Gauge) -->
+        <!-- 6. Taper Ring Gauge -->
         <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">23</td>
+          <td style="font-weight: 500; color: #0F1E1C;">6</td>
           <td style="font-weight: 500; color: #0F1E1C;">Taper Ring Gauge</td>
-          <td class="range-cell">Any Range</td>
+          <td class="range-cell">—</td>
           <td class="charge-cell">500</td>
         </tr>
 
-
-        <!-- SECTION E — Thread Gauges -->
-        <tr class="section-row"><td colspan="4">E — Thread Gauges</td></tr>
-
-        <!-- 24. Thread Plug Gauge — Standard — 10 ranges -->
+        <!-- 7. Concentricity Gauge — moved from Instruments Section C -->
         <tr>
-          <td rowspan="10" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">24</td>
-          <td rowspan="10" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">Thread Plug Gauge — Standard</td>
+          <td style="font-weight: 500; color: #0F1E1C;">7</td>
+          <td style="font-weight: 500; color: #0F1E1C;">Concentricity Gauge</td>
+          <td class="range-cell">—</td>
+          <td class="charge-cell">150</td>
+        </tr>
+
+        <!-- 8. OD Master — moved from Instruments Section G -->
+        <tr>
+          <td style="font-weight: 500; color: #0F1E1C;">8</td>
+          <td style="font-weight: 500; color: #0F1E1C;">OD Master</td>
+          <td class="range-cell">—</td>
+          <td class="charge-cell">250</td>
+        </tr>
+
+        <!-- 9. Measuring Pin — moved from Instruments Section G -->
+        <tr>
+          <td style="font-weight: 500; color: #0F1E1C;">9</td>
+          <td style="font-weight: 500; color: #0F1E1C;">Measuring Pin</td>
+          <td class="range-cell">Per piece</td>
+          <td class="charge-cell">50</td>
+        </tr>
+
+
+        <!-- SECTION E — Thread & Spline Gauges -->
+        <tr class="section-row"><td colspan="4">E — Thread &amp; Spline Gauges</td></tr>
+
+        <!-- 10. Thread Plug Gauge — Effective Pitch Diameter — 10 ranges -->
+        <tr>
+          <td rowspan="10" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">10</td>
+          <td rowspan="10" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">Thread Plug Gauge — Effective Pitch Diameter</td>
           <td class="range-cell">Up to 25 mm</td>
           <td class="charge-cell">250</td>
         </tr>
@@ -460,9 +717,9 @@
         <tr><td class="range-cell">200–225 mm</td><td class="charge-cell">750</td></tr>
         <tr><td class="range-cell">250–350 mm</td><td class="charge-cell">800</td></tr>
 
-        <!-- 25. Thread Plug Gauge — Major Dia — 8 ranges -->
+        <!-- 11. Thread Plug Gauge — Major Dia — 8 ranges -->
         <tr>
-          <td rowspan="8" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">25</td>
+          <td rowspan="8" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">11</td>
           <td rowspan="8" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">Thread Plug Gauge — Major Dia</td>
           <td class="range-cell">Up to 25 mm</td>
           <td class="charge-cell">300</td>
@@ -475,10 +732,10 @@
         <tr><td class="range-cell">200–225 mm</td><td class="charge-cell">800</td></tr>
         <tr><td class="range-cell">225–250 mm</td><td class="charge-cell">800</td></tr>
 
-        <!-- 26. Thread Ring Gauge — Standard — 10 ranges (incl. 100–125mm at ₹450) -->
+        <!-- 12. Thread Ring Gauge — Effective Pitch Diameter — 10 ranges -->
         <tr>
-          <td rowspan="10" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">26</td>
-          <td rowspan="10" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">Thread Ring Gauge — Standard</td>
+          <td rowspan="10" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">12</td>
+          <td rowspan="10" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">Thread Ring Gauge — Effective Pitch Diameter</td>
           <td class="range-cell">Up to 25 mm</td>
           <td class="charge-cell">275</td>
         </tr>
@@ -489,12 +746,12 @@
         <tr><td class="range-cell">125–150 mm</td><td class="charge-cell">475</td></tr>
         <tr><td class="range-cell">150–175 mm</td><td class="charge-cell">500</td></tr>
         <tr><td class="range-cell">175–200 mm</td><td class="charge-cell">500</td></tr>
-        <tr><td class="range-cell">200–225 mm</td><td class="charge-cell">525</td></tr>
+        <tr><td class="range-cell">200–300 mm</td><td class="charge-cell">550</td></tr>
         <tr><td class="range-cell">300–400 mm</td><td class="charge-cell">600</td></tr>
 
-        <!-- 27. Thread Ring Gauge — Minor Dia — 5 ranges (incl. 100–125mm at ₹500) -->
+        <!-- 13. Thread Ring Gauge — Minor Dia — 5 ranges -->
         <tr>
-          <td rowspan="5" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">27</td>
+          <td rowspan="5" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">13</td>
           <td rowspan="5" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">Thread Ring Gauge — Minor Dia</td>
           <td class="range-cell">Up to 25 mm</td>
           <td class="charge-cell">325</td>
@@ -504,360 +761,98 @@
         <tr><td class="range-cell">75–100 mm</td><td class="charge-cell">450</td></tr>
         <tr><td class="range-cell">100–125 mm</td><td class="charge-cell">500</td></tr>
 
-        <!-- 28. Taper Thread Plug Gauge — Standard -->
+        <!-- 14. Taper Thread Plug Gauge -->
         <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">28</td>
-          <td style="font-weight: 500; color: #0F1E1C;">Taper Thread Plug Gauge — Standard</td>
-          <td class="range-cell">Any Range</td>
+          <td style="font-weight: 500; color: #0F1E1C;">14</td>
+          <td style="font-weight: 500; color: #0F1E1C;">Taper Thread Plug Gauge</td>
+          <td class="range-cell">—</td>
           <td class="charge-cell">550</td>
         </tr>
 
-        <!-- 29. Taper Thread Plug Gauge — 1/8–27 NPT -->
+        <!-- 15. Taper Thread Ring Gauge -->
         <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">29</td>
-          <td style="font-weight: 500; color: #0F1E1C;">Taper Thread Plug Gauge — 1/8–27 NPT</td>
-          <td class="range-cell">—</td>
-          <td class="charge-cell">3,620</td>
-        </tr>
-
-        <!-- 30. Taper Thread Ring Gauge -->
-        <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">30</td>
+          <td style="font-weight: 500; color: #0F1E1C;">15</td>
           <td style="font-weight: 500; color: #0F1E1C;">Taper Thread Ring Gauge</td>
-          <td class="range-cell">Any Range</td>
+          <td class="range-cell">—</td>
           <td class="charge-cell">550</td>
         </tr>
 
-        <!-- 31. Spline Plug Gauge -->
+        <!-- 16. Spline Plug Gauge -->
         <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">31</td>
+          <td style="font-weight: 500; color: #0F1E1C;">16</td>
           <td style="font-weight: 500; color: #0F1E1C;">Spline Plug Gauge</td>
-          <td class="range-cell">Any Range</td>
-          <td class="charge-cell">350</td>
-        </tr>
-
-        <!-- 32. Spline Ring Gauge -->
-        <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">32</td>
-          <td style="font-weight: 500; color: #0F1E1C;">Spline Ring Gauge</td>
-          <td class="range-cell">Any Range</td>
-          <td class="charge-cell">350</td>
-        </tr>
-
-        <!-- 33. Thread Wire Unit -->
-        <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">33</td>
-          <td style="font-weight: 500; color: #0F1E1C;">Thread Wire Unit</td>
           <td class="range-cell">—</td>
-          <td class="charge-cell">4,500</td>
+          <td class="charge-cell">350</td>
         </tr>
 
-        <!-- 34. Thread Inspection Charges -->
+        <!-- 17. Spline Ring Gauge -->
         <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">34</td>
+          <td style="font-weight: 500; color: #0F1E1C;">17</td>
+          <td style="font-weight: 500; color: #0F1E1C;">Spline Ring Gauge</td>
+          <td class="range-cell">—</td>
+          <td class="charge-cell">350</td>
+        </tr>
+
+        <!-- 18. Thread Inspection Charges -->
+        <tr>
+          <td style="font-weight: 500; color: #0F1E1C;">18</td>
           <td style="font-weight: 500; color: #0F1E1C;">Thread Inspection Charges</td>
           <td class="range-cell">—</td>
           <td class="charge-cell">500</td>
         </tr>
 
-        <!-- SECTION F — Form & Angle -->
+
+        <!-- SECTION F — Form & Angle (Gauges: Radius, Pitch, Feeler, Thickness, Keyway) -->
         <tr class="section-row"><td colspan="4">F — Form &amp; Angle</td></tr>
 
-        <!-- 35. Bevel Protractor -->
+        <!-- 19. Radius Gauge — 4 rows -->
         <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">35</td>
-          <td style="font-weight: 500; color: #0F1E1C;">Bevel Protractor</td>
-          <td class="range-cell">Any Range</td>
-          <td class="charge-cell">350</td>
-        </tr>
-
-        <!-- 36. Right Angle -->
-        <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">36</td>
-          <td style="font-weight: 500; color: #0F1E1C;">Right Angle</td>
-          <td class="range-cell">Any Range</td>
-          <td class="charge-cell">400</td>
-        </tr>
-
-        <!-- 37. Sine Bar — 2 ranges -->
-        <tr>
-          <td rowspan="2" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">37</td>
-          <td rowspan="2" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">Sine Bar</td>
-          <td class="range-cell">100 mm</td>
-          <td class="charge-cell">550</td>
-        </tr>
-        <tr><td class="range-cell">300 mm</td><td class="charge-cell">750</td></tr>
-
-        <!-- 38. Radius Gauge — 4 rows -->
-        <tr>
-          <td rowspan="4" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">38</td>
+          <td rowspan="4" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">19</td>
           <td rowspan="4" style="vertical-align: top; font-weight: 500; color: #0F1E1C; padding-top: 8px;">Radius Gauge</td>
-          <td class="range-cell">Any Range</td>
-          <td class="charge-cell">400</td>
+          <td class="range-cell">1–7</td>
+          <td class="charge-cell">750</td>
         </tr>
-        <tr><td class="range-cell">1–7 mm</td><td class="charge-cell">750</td></tr>
-        <tr><td class="range-cell">7.5–15 mm</td><td class="charge-cell">750</td></tr>
-        <tr><td class="range-cell">15–25 mm</td><td class="charge-cell">750</td></tr>
+        <tr><td class="range-cell">7.5–15 mm</td><td class="charge-cell">800</td></tr>
+        <tr><td class="range-cell">15–25 mm</td><td class="charge-cell">850</td></tr>
+        <tr><td class="range-cell">25–40 mm</td><td class="charge-cell">900</td></tr>
 
-        <!-- 39. Pitch Gauge -->
+        <!-- 20. Pitch Gauge -->
         <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">39</td>
+          <td style="font-weight: 500; color: #0F1E1C;">20</td>
           <td style="font-weight: 500; color: #0F1E1C;">Pitch Gauge</td>
-          <td class="range-cell">Any Range</td>
+          <td class="range-cell">—</td>
           <td class="charge-cell">350</td>
         </tr>
 
-        <!-- 40. Feeler Gauge -->
+        <!-- 21. Feeler Gauge -->
         <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">40</td>
+          <td style="font-weight: 500; color: #0F1E1C;">21</td>
           <td style="font-weight: 500; color: #0F1E1C;">Feeler Gauge</td>
-          <td class="range-cell">Any Range</td>
+          <td class="range-cell">—</td>
           <td class="charge-cell">700</td>
         </tr>
 
-        <!-- 41. Thickness Gauge -->
+        <!-- 22. Thickness Gauge -->
         <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">41</td>
+          <td style="font-weight: 500; color: #0F1E1C;">22</td>
           <td style="font-weight: 500; color: #0F1E1C;">Thickness Gauge</td>
-          <td class="range-cell">Any Range</td>
+          <td class="range-cell">—</td>
           <td class="charge-cell">350</td>
         </tr>
 
-        <!-- 42. Keyway Checking Gauge -->
+        <!-- 23. Keyway Checking Gauge -->
         <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">42</td>
+          <td style="font-weight: 500; color: #0F1E1C;">23</td>
           <td style="font-weight: 500; color: #0F1E1C;">Keyway Checking Gauge</td>
-          <td class="range-cell">Any Range</td>
+          <td class="range-cell">—</td>
           <td class="charge-cell">500</td>
         </tr>
 
-        <!-- SECTION G — Reference Standards & Miscellaneous -->
-        <tr class="section-row"><td colspan="4">G — Reference Standards &amp; Miscellaneous</td></tr>
-
-        <!-- 43. Gauge Block / Slip Gauge -->
-        <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">43</td>
-          <td style="font-weight: 500; color: #0F1E1C;">Gauge Block / Slip Gauge</td>
-          <td class="range-cell">Per piece (0–100 mm set)</td>
-          <td class="charge-cell">70</td>
-        </tr>
-
-        <!-- 44. Height Master -->
-        <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">44</td>
-          <td style="font-weight: 500; color: #0F1E1C;">Height Master</td>
-          <td class="range-cell">—</td>
-          <td class="charge-cell">150</td>
-        </tr>
-
-        <!-- 45. Micrometer Master -->
-        <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">45</td>
-          <td style="font-weight: 500; color: #0F1E1C;">Micrometer Master</td>
-          <td class="range-cell">—</td>
-          <td class="charge-cell">100</td>
-        </tr>
-
-        <!-- 46. OD Master -->
-        <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">46</td>
-          <td style="font-weight: 500; color: #0F1E1C;">OD Master</td>
-          <td class="range-cell">—</td>
-          <td class="charge-cell">250</td>
-        </tr>
-
-        <!-- 47. Measuring Pin -->
-        <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">47</td>
-          <td style="font-weight: 500; color: #0F1E1C;">Measuring Pin</td>
-          <td class="range-cell">Per piece</td>
-          <td class="charge-cell">50</td>
-        </tr>
-
-        <!-- 48. Measuring Scale -->
-        <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">48</td>
-          <td style="font-weight: 500; color: #0F1E1C;">Measuring Scale</td>
-          <td class="range-cell">Any Range</td>
-          <td class="charge-cell">300</td>
-        </tr>
-
-        <!-- 49. Magnetic V Block -->
-        <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">49</td>
-          <td style="font-weight: 500; color: #0F1E1C;">Magnetic V Block</td>
-          <td class="range-cell">Any Range</td>
-          <td class="charge-cell">400</td>
-        </tr>
-
-        <!-- 50. Bench Center -->
-        <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">50</td>
-          <td style="font-weight: 500; color: #0F1E1C;">Bench Center</td>
-          <td class="range-cell">—</td>
-          <td class="charge-cell">2,500</td>
-        </tr>
-
-        <!-- 51. Combination Set -->
-        <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">51</td>
-          <td style="font-weight: 500; color: #0F1E1C;">Combination Set</td>
-          <td class="range-cell">Any Range</td>
-          <td class="charge-cell">700</td>
-        </tr>
-
-        <!-- 52. Spirit Level -->
-        <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">52</td>
-          <td style="font-weight: 500; color: #0F1E1C;">Spirit Level</td>
-          <td class="range-cell">Any Range</td>
-          <td class="charge-cell">2,000</td>
-        </tr>
-
-        <!-- 53. Surface Roughness Tester -->
-        <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">53</td>
-          <td style="font-weight: 500; color: #0F1E1C;">Surface Roughness Tester</td>
-          <td class="range-cell">—</td>
-          <td class="charge-cell">3,000</td>
-        </tr>
-
-        <!-- 54. Surface Roughness Master -->
-        <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">54</td>
-          <td style="font-weight: 500; color: #0F1E1C;">Surface Roughness Master</td>
-          <td class="range-cell">—</td>
-          <td class="charge-cell">3,000</td>
-        </tr>
-
-        <!-- 55. Coating Thickness Tester -->
-        <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">55</td>
-          <td style="font-weight: 500; color: #0F1E1C;">Coating Thickness Tester</td>
-          <td class="range-cell">—</td>
-          <td class="charge-cell">1,000</td>
-        </tr>
-
-        <!-- SECTION H — Vision & Optical -->
-        <tr class="section-row"><td colspan="4">H — Vision &amp; Optical</td></tr>
-
-        <!-- 56. Vision Measuring Systems -->
-        <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">56</td>
-          <td style="font-weight: 500; color: #0F1E1C;">Vision Measuring Systems</td>
-          <td class="range-cell">—</td>
-          <td class="charge-cell">5,000</td>
-        </tr>
-
-        <!-- 57. Lux Meter -->
-        <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">57</td>
-          <td style="font-weight: 500; color: #0F1E1C;">Lux Meter</td>
-          <td class="range-cell">—</td>
-          <td class="charge-cell">10,000</td>
-        </tr>
-
-        <!-- SECTION I — Environmental -->
-        <tr class="section-row"><td colspan="4">I — Environmental</td></tr>
-
-        <!-- 58. Digital Infrared Thermometer -->
-        <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">58</td>
-          <td style="font-weight: 500; color: #0F1E1C;">Digital Infrared Thermometer</td>
-          <td class="range-cell">—</td>
-          <td class="charge-cell">1,500</td>
-        </tr>
-
-        <!-- 59. Hygrometer -->
-        <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">59</td>
-          <td style="font-weight: 500; color: #0F1E1C;">Hygrometer</td>
-          <td class="range-cell">—</td>
-          <td class="charge-cell">1,500</td>
-        </tr>
-
-        <!-- SECTION J — Torque -->
-        <tr class="section-row"><td colspan="4">J — Torque</td></tr>
-
-        <!-- 60. Torque Wrench -->
-        <tr>
-          <td style="font-weight: 500; color: #0F1E1C;">60</td>
-          <td style="font-weight: 500; color: #0F1E1C;">Torque Wrench</td>
-          <td class="range-cell">—</td>
-          <td class="charge-cell">1,000</td>
-        </tr>
-
-      </tbody>
-    </table>
-  </div>
-
-  <!-- DIVISION 2: PRESSURE & ACOUSTICS -->
-  <div class="page-break" style="padding: 36px 48px 24px;">
-
-    <!-- Division header -->
-    <div style="margin-bottom: 20px; border-bottom: 2px solid #47857A; padding-bottom: 12px;">
-      <div style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #2D5D54; margin-bottom: 4px;">
-        Division 2
-      </div>
-      <h2 style="font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: #0F1E1C; letter-spacing: -0.02em;">
-        Pressure &amp; Acoustics Calibration
-      </h2>
-      <div style="font-size: 8.5pt; color: #4A6663; margin-top: 4px;">NABL Accredited · CC-4038 · ISO/IEC 17025:2017</div>
-    </div>
-
-    <table class="charges-table" style="margin-bottom: 28px;">
-      <thead>
-        <tr>
-          <th style="width: 32px;">No.</th>
-          <th>Instrument</th>
-          <th>Range / Notes</th>
-          <th class="right" style="width: 140px;">Charge (₹)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="section-row"><td colspan="4">Pressure Calibration</td></tr>
-        <tr>
-          <td style="font-weight:500;">1</td>
-          <td style="font-weight:500;">Pressure Gauge</td>
-          <td class="range-cell">Any Range</td>
-          <td class="charge-cell">450</td>
-        </tr>
-        <tr>
-          <td style="font-weight:500;">2</td>
-          <td style="font-weight:500;">Hydraulic Pressure</td>
-          <td class="range-cell">Up to 700 bar</td>
-          <td class="contact-cell">Contact for Quote</td>
-        </tr>
-        <tr>
-          <td style="font-weight:500;">3</td>
-          <td style="font-weight:500;">Pneumatic Pressure</td>
-          <td class="range-cell">—</td>
-          <td class="contact-cell">Contact for Quote</td>
-        </tr>
-        <tr>
-          <td style="font-weight:500;">4</td>
-          <td style="font-weight:500;">Vacuum</td>
-          <td class="range-cell">—</td>
-          <td class="contact-cell">Contact for Quote</td>
-        </tr>
-        <tr class="section-row"><td colspan="4">Acoustics Calibration</td></tr>
-        <tr>
-          <td style="font-weight:500;">5</td>
-          <td style="font-weight:500;">Sound Level Meter</td>
-          <td class="range-cell">1 kHz (94 dB / 114 dB)</td>
-          <td class="charge-cell">1,000</td>
-        </tr>
-        <tr>
-          <td style="font-weight:500;">6</td>
-          <td style="font-weight:500;">Other Acoustic Instruments</td>
-          <td class="range-cell">—</td>
-          <td class="contact-cell">Contact for Quote</td>
-        </tr>
       </tbody>
     </table>
 
     <!-- On-site note -->
-    <div style="background: #E6F2F0; border-left: 3px solid #47857A; padding: 14px 18px; border-radius: 4px; margin-bottom: 32px;">
+    <div style="background: #E6F2F0; border-left: 3px solid #47857A; padding: 14px 18px; border-radius: 4px; margin-top: 28px; margin-bottom: 16px;">
       <div style="font-size: 8.5pt; font-weight: 600; color: #2D5D54; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em;">
         On-Site Calibration
       </div>
@@ -866,12 +861,29 @@
         Contact us for a site visit quote.
       </div>
       <div style="margin-top: 10px; font-size: 8.5pt; color: #4A6663;">
-        +91 92765 51009 &nbsp;·&nbsp; lab@germancalibration.com
+        +91 92765 51009 &nbsp;·&nbsp; lab@germancalibration.com &nbsp;·&nbsp; www.germancalibration.com
       </div>
     </div>
 
+    <!-- Conditions notes -->
+    <div style="display: flex; gap: 12px; margin-top: 16px; margin-bottom: 4px;">
+
+      <!-- Instrument condition -->
+      <div style="flex: 1; background: #E6F2F0; border-left: 3px solid #47857A; padding: 10px 14px; border-radius: 4px;">
+        <div style="font-size: 8pt; font-weight: 600; color: #2D5D54; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.05em;">Instrument Condition</div>
+        <div style="font-size: 8.5pt; color: #0F1E1C; line-height: 1.5;">Instruments received in damaged or non-working condition will be returned without calibration. Repair and restoration services are available through our German Center of Excellence — calibration can proceed once the instrument is restored, subject to mutual agreement.</div>
+      </div>
+
+      <!-- Out-of-scope -->
+      <div style="flex: 1; background: #E6F2F0; border-left: 3px solid #47857A; padding: 10px 14px; border-radius: 4px;">
+        <div style="font-size: 8pt; font-weight: 600; color: #2D5D54; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.05em;">Instruments Not Listed</div>
+        <div style="font-size: 8.5pt; color: #0F1E1C; line-height: 1.5;">Instruments not listed above may be calibrated on request. Contact us for scope confirmation and charges.</div>
+      </div>
+
+    </div>
+
     <!-- GST disclaimer -->
-    <div style="border-top: 1px solid #E6F2F0; padding-top: 10px; margin-top: 24px; font-size: 7.5pt; color: #4A6663; text-align: center;">
+    <div style="border-top: 1px solid #E6F2F0; padding-top: 10px; margin-top: 16px; font-size: 7.5pt; color: #4A6663; text-align: center;">
       All charges in ₹ (Indian Rupees) · Exclusive of applicable GST · Charges subject to change without prior notice
     </div>
 
