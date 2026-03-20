@@ -228,7 +228,118 @@
       </div>
     </section>
 
-    <!-- sections 2–3 added in Tasks 4–6 -->
+    <!-- ═══════════════════════════════════════════════
+         SECTION 2 — FORM + CONTACT PANEL
+    ════════════════════════════════════════════════ -->
+    <section class="bg-brand-white py-16 lg:py-24" aria-label="Contact and quote request">
+      <div class="max-w-7xl mx-auto px-5 lg:px-8">
+        <div class="grid lg:grid-cols-5 gap-10 lg:gap-16">
+
+          <!-- LEFT: Quote form (3/5) -->
+          <div class="lg:col-span-3">
+
+            <p class="text-brand-700 text-xs font-semibold uppercase tracking-widest mb-3">Request a Quote</p>
+
+            <form novalidate id="quote-form" name="quote-request" class="reveal space-y-5">
+
+              <!-- Row 1: Company + Contact Person -->
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="company" class="block text-brand-ink text-sm font-semibold mb-2">Company Name <span class="text-brand-700">*</span></label>
+                  <input type="text" id="company" name="company" required aria-required="true"
+                    placeholder="e.g. Acme Industries Ltd."
+                    class="w-full px-4 py-3 bg-white border border-brand-200 rounded-xl text-brand-ink placeholder-brand-ink-light/50 text-sm focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/15 transition-all" />
+                </div>
+                <div>
+                  <label for="contact" class="block text-brand-ink text-sm font-semibold mb-2">Contact Person <span class="text-brand-700">*</span></label>
+                  <input type="text" id="contact" name="contact" required aria-required="true"
+                    placeholder="Your name"
+                    class="w-full px-4 py-3 bg-white border border-brand-200 rounded-xl text-brand-ink placeholder-brand-ink-light/50 text-sm focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/15 transition-all" />
+                </div>
+              </div>
+
+              <!-- Row 2: Email + Phone -->
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="email" class="block text-brand-ink text-sm font-semibold mb-2">Email Address <span class="text-brand-700">*</span></label>
+                  <input type="email" id="email" name="email" required aria-required="true"
+                    placeholder="you@company.com"
+                    class="w-full px-4 py-3 bg-white border border-brand-200 rounded-xl text-brand-ink placeholder-brand-ink-light/50 text-sm focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/15 transition-all" />
+                </div>
+                <div>
+                  <label for="phone" class="block text-brand-ink text-sm font-semibold mb-2">Phone Number <span class="text-brand-700">*</span></label>
+                  <input type="tel" id="phone" name="phone" required aria-required="true"
+                    placeholder="+91 98765 43210"
+                    class="w-full px-4 py-3 bg-white border border-brand-200 rounded-xl text-brand-ink placeholder-brand-ink-light/50 text-sm focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/15 transition-all" />
+                </div>
+              </div>
+
+              <!-- Row 3: Instrument Type + Quantity (optional) -->
+              <div class="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="instrument" class="block text-brand-ink text-sm font-semibold mb-2">Instrument Type(s) <span class="text-brand-ink-light font-normal">(optional)</span></label>
+                  <input type="text" id="instrument" name="instrument"
+                    placeholder="e.g. Micrometers, Calipers"
+                    class="w-full px-4 py-3 bg-white border border-brand-200 rounded-xl text-brand-ink placeholder-brand-ink-light/50 text-sm focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/15 transition-all" />
+                </div>
+                <div>
+                  <label for="quantity" class="block text-brand-ink text-sm font-semibold mb-2">Approx. Quantity <span class="text-brand-ink-light font-normal">(optional)</span></label>
+                  <input type="text" id="quantity" name="quantity"
+                    placeholder="e.g. 25 instruments"
+                    class="w-full px-4 py-3 bg-white border border-brand-200 rounded-xl text-brand-ink placeholder-brand-ink-light/50 text-sm focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/15 transition-all" />
+                </div>
+              </div>
+
+              <!-- Row 4: Preferred Service (optional select) -->
+              <div>
+                <label for="service" class="block text-brand-ink text-sm font-semibold mb-2">Preferred Service <span class="text-brand-ink-light font-normal">(optional)</span></label>
+                <select id="service" name="service"
+                  class="w-full px-4 py-3 bg-white border border-brand-200 rounded-xl text-brand-ink text-sm focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/15 transition-all appearance-none"
+                  style="background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234A6663'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E&quot;); background-repeat: no-repeat; background-position: right 14px center; background-size: 16px;">
+                  <option value="">Select a service...</option>
+                  <option value="lab">Lab Calibration</option>
+                  <option value="onsite">On-Site Calibration</option>
+                  <option value="cmm">Third Party Inspection / CMM</option>
+                  <option value="repair">Repair &amp; Maintenance</option>
+                  <option value="training">CMM Training</option>
+                  <option value="other">Other / Not sure</option>
+                </select>
+              </div>
+
+              <!-- Row 5: Additional Notes (optional textarea) -->
+              <div>
+                <label for="message" class="block text-brand-ink text-sm font-semibold mb-2">Additional Notes <span class="text-brand-ink-light font-normal">(optional)</span></label>
+                <textarea id="message" name="message" rows="4"
+                  placeholder="Any specific requirements, urgency, or questions..."
+                  class="w-full px-4 py-3 bg-white border border-brand-200 rounded-xl text-brand-ink placeholder-brand-ink-light/50 text-sm focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/15 transition-all resize-none"></textarea>
+              </div>
+
+              <!-- Submit -->
+              <button type="submit" class="w-full btn-primary justify-center py-3.5 text-base rounded-xl">
+                Send Quote Request
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                </svg>
+              </button>
+
+              <!-- Success message (hidden by default) -->
+              <div id="form-success" class="hidden bg-brand-50 border border-brand-200 rounded-xl px-5 py-4 text-brand-700 text-sm font-medium text-center">
+                Thank you! We've received your request and will be in touch within one business day.
+              </div>
+
+            </form>
+          </div>
+
+          <!-- RIGHT: Contact panel placeholder — added in Task 5 -->
+          <div class="lg:col-span-2">
+            <!-- contact panel -->
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- section 3 added in Task 6 -->
   </main>
 
   <!-- ═══════════════════════════════════════════════
