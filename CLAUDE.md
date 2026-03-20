@@ -38,7 +38,7 @@
 ```
 German Website/
 ├── index.html              ✅ DONE (light theme, master branch)
-├── services.html           ← NEXT TO BUILD
+├── services.html           ✅ DONE
 ├── accreditation.html      ← after services
 ├── about.html
 ├── industries.html
@@ -254,11 +254,11 @@ window.addEventListener('scroll', () => { header.classList.toggle('scrolled', wi
 | Page | Status | Notes |
 |---|---|---|
 | `index.html` | ✅ Done | Light theme, all contrast fixes applied |
-| `services.html` | 🔲 Next | Spec: `docs/services-page-plan.md` |
+| `services.html` | ✅ Done | Both divisions, sticky sub-nav with logo, all sections |
 | `accreditation.html` | 🔲 Pending | |
 | `about.html` | 🔲 Pending | |
 | `industries.html` | 🔲 Pending | |
-| `contact.html` | 🔲 Pending | |
+| `contact.html` | ✅ Done | Contact hub, quote form, panel, Google Maps embed |
 
 **Homepage pending** (waiting for NABL logo files — do not block services page on this):
 - Remove client names from meta description + hero subheadline
