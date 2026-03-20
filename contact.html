@@ -529,7 +529,86 @@
   </footer>
 
   <script>
-    /* JS added in Task 7 */
+    // ── Mobile menu toggle ──
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconMenu   = document.getElementById('icon-menu');
+    const iconClose  = document.getElementById('icon-close');
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', isOpen);
+        iconMenu.classList.toggle('hidden', isOpen);
+        iconClose.classList.toggle('hidden', !isOpen);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+          mobileMenu.classList.remove('open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          iconMenu.classList.remove('hidden');
+          iconClose.classList.add('hidden');
+        }
+      });
+    }
+
+    // ── Header scroll effect ──
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // ── Scroll reveal ──
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // ── Form validation ──
+    const form       = document.getElementById('quote-form');
+    const successMsg = document.getElementById('form-success');
+
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Clear previous error states
+        form.querySelectorAll('.border-red-400').forEach(el => {
+          el.classList.remove('border-red-400', 'ring-2', 'ring-red-400/20');
+        });
+
+        // Validate required fields (non-empty)
+        const required = form.querySelectorAll('[required]');
+        let valid = true;
+        required.forEach(field => {
+          if (!field.value.trim()) {
+            field.classList.add('border-red-400', 'ring-2', 'ring-red-400/20');
+            valid = false;
+          }
+        });
+
+        // Validate email format
+        const emailField = document.getElementById('email');
+        if (emailField && emailField.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value.trim())) {
+          emailField.classList.add('border-red-400', 'ring-2', 'ring-red-400/20');
+          valid = false;
+        }
+
+        if (!valid) return;
+
+        // Show success — fade form, show message
+        form.style.opacity = '0.4';
+        form.style.pointerEvents = 'none';
+        successMsg.classList.remove('hidden');
+        successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    }
   </script>
 </body>
 </html>
