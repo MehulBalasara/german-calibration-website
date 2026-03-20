@@ -237,7 +237,6 @@
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(71,133,122,0.12);
       transition: box-shadow 0.2s;
-      will-change: transform;
     }
     #services-subnav.subnav-at-top {
       /* top stays 56px — position controlled via JS transform */
@@ -1371,11 +1370,12 @@
           if (subnavSentinel && subnavEl) {
             const sentinelTop = subnavSentinel.getBoundingClientRect().top;
             const navH = header.offsetHeight;
-            // pushAmount: 0 when sub-nav just touches navbar, navH when fully pushed off
+            // pushAmount: 0 = sub-nav just touching navbar, navH = navbar fully gone
             const pushAmount = Math.max(0, Math.min(navH, navH - sentinelTop));
-            const t = pushAmount > 0 ? `translateY(-${pushAmount}px)` : '';
-            header.style.transform = t;
-            subnavEl.style.transform = t;
+            // Only navbar uses transform — sub-nav uses top so it un-sticks naturally
+            // at the bottom of the page without being pulled up by a stale transform
+            header.style.transform = pushAmount > 0 ? `translateY(-${pushAmount}px)` : '';
+            subnavEl.style.top = `${navH - pushAmount}px`;
             // logo fades in once navbar is fully gone
             subnavEl.classList.toggle('subnav-at-top', pushAmount >= navH);
           }
