@@ -104,15 +104,13 @@
 
     /* ── Header scroll state ── */
     #site-header {
-      transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease, box-shadow 0.3s ease;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      will-change: transform;
     }
     #site-header.scrolled {
       background-color: rgba(251,254,253,0.97);
       box-shadow: 0 1px 16px rgba(71,133,122,0.10);
       backdrop-filter: blur(8px);
-    }
-    #site-header.nav-hidden {
-      transform: translateY(-100%);
     }
 
     /* ── Nav link hover ── */
@@ -239,9 +237,10 @@
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(71,133,122,0.12);
       transition: box-shadow 0.2s;
+      will-change: transform;
     }
     #services-subnav.subnav-at-top {
-      top: 0; /* instant — navbar covers this snap, then slides up to reveal */
+      /* top stays 56px — position controlled via JS transform */
     }
     #services-subnav.elevated {
       box-shadow: 0 2px 12px rgba(71,133,122,0.10);
@@ -1346,14 +1345,29 @@
     const subnavSentinel  = document.getElementById('subnav-sentinel');
     const subnavEl        = document.getElementById('services-subnav');
 
+    let ticking = false;
     function updateNavbarState() {
-      // scrolled glass effect
-      header.classList.toggle('scrolled', window.scrollY > 60);
-      // hide navbar when sub-nav is sticky (sentinel has passed navbar height threshold)
-      if (subnavSentinel) {
-        const isSticky = subnavSentinel.getBoundingClientRect().top <= header.offsetHeight;
-        header.classList.toggle('nav-hidden', isSticky);
-        if (subnavEl) subnavEl.classList.toggle('subnav-at-top', isSticky);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          // scrolled glass effect
+          header.classList.toggle('scrolled', window.scrollY > 60);
+
+          // push-scroll: sub-nav physically pushes navbar off the top
+          if (subnavSentinel && subnavEl) {
+            const sentinelTop = subnavSentinel.getBoundingClientRect().top;
+            const navH = header.offsetHeight;
+            // pushAmount: 0 when sub-nav just touches navbar, navH when fully pushed off
+            const pushAmount = Math.max(0, Math.min(navH, navH - sentinelTop));
+            const t = pushAmount > 0 ? `translateY(-${pushAmount}px)` : '';
+            header.style.transform = t;
+            subnavEl.style.transform = t;
+            // logo fades in once navbar is fully gone
+            subnavEl.classList.toggle('subnav-at-top', pushAmount >= navH);
+          }
+
+          ticking = false;
+        });
+        ticking = true;
       }
     }
 
