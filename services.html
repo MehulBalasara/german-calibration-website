@@ -247,27 +247,39 @@
     }
 
     /* ── Sub-nav logo (visible only when header is hidden) ── */
+    /* Logo pinned outside the scroll container — always visible when navbar hides */
     .subnav-logo {
       flex-shrink: 0;
       display: flex;
       align-items: center;
+      height: 48px;
+      padding-left: 4px;
       opacity: 0;
-      transition: opacity 0.25s ease;
+      width: 0;
+      overflow: hidden;
+      transition: opacity 0.25s ease, width 0.25s ease;
       text-decoration: none;
     }
     .subnav-logo-sep {
       flex-shrink: 0;
       align-self: center;
-      width: 1px;
+      width: 0;
       height: 14px;
       background: rgba(71,133,122,0.22);
-      margin: 0 12px 0 8px;
+      margin: 0;
       opacity: 0;
-      transition: opacity 0.25s ease;
+      transition: opacity 0.25s ease, width 0.25s ease, margin 0.25s ease;
     }
-    #services-subnav.subnav-at-top .subnav-logo,
+    #services-subnav.subnav-at-top .subnav-logo {
+      opacity: 1;
+      width: auto;
+      overflow: visible;
+      padding-left: 4px;
+    }
     #services-subnav.subnav-at-top .subnav-logo-sep {
       opacity: 1;
+      width: 1px;
+      margin: 0 12px 0 8px;
     }
 
     /* ── Sub-nav inner scroll container ── */
@@ -275,6 +287,7 @@
       display: flex;
       align-items: center;
       overflow-x: auto;
+      flex: 1;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
       scroll-snap-type: x proximity;
@@ -506,14 +519,16 @@
     <!-- Sentinel: when this exits the top-64px zone, sub-nav is sticky → hide navbar -->
     <div id="subnav-sentinel" aria-hidden="true" style="height:0;pointer-events:none;"></div>
     <nav id="services-subnav" aria-label="Services sections">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="subnav-inner">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
 
-          <!-- Home logo — slides in when header hides -->
-          <a href="index.html" class="subnav-logo" aria-label="Go to homepage">
-            <img src="brand items/german_logo.svg" alt="German Calibration" style="height:24px;width:auto;">
-          </a>
-          <span class="subnav-logo-sep" aria-hidden="true"></span>
+        <!-- Home logo — pinned left, always visible when navbar hides -->
+        <a href="index.html" class="subnav-logo" aria-label="Go to homepage">
+          <img src="brand items/german_logo.svg" alt="German Calibration" style="height:24px;width:auto;">
+        </a>
+        <span class="subnav-logo-sep" aria-hidden="true"></span>
+
+        <!-- Scrollable links only -->
+        <div class="subnav-inner">
 
           <!-- GCL links -->
           <a href="#dimensional" class="subnav-link" data-section="dimensional">Dimensional</a>
