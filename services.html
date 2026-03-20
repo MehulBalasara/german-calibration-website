@@ -247,6 +247,30 @@
       box-shadow: 0 2px 12px rgba(71,133,122,0.10);
     }
 
+    /* ── Sub-nav logo (visible only when header is hidden) ── */
+    .subnav-logo {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      text-decoration: none;
+    }
+    .subnav-logo-sep {
+      flex-shrink: 0;
+      align-self: center;
+      width: 1px;
+      height: 14px;
+      background: rgba(71,133,122,0.22);
+      margin: 0 12px 0 8px;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    #services-subnav.subnav-at-top .subnav-logo,
+    #services-subnav.subnav-at-top .subnav-logo-sep {
+      opacity: 1;
+    }
+
     /* ── Sub-nav inner scroll container ── */
     .subnav-inner {
       display: flex;
@@ -485,6 +509,12 @@
     <nav id="services-subnav" aria-label="Services sections">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="subnav-inner">
+
+          <!-- Home logo — slides in when header hides -->
+          <a href="index.html" class="subnav-logo" aria-label="Go to homepage">
+            <img src="brand items/german_logo.svg" alt="German Calibration" style="height:24px;width:auto;">
+          </a>
+          <span class="subnav-logo-sep" aria-hidden="true"></span>
 
           <!-- GCL links -->
           <a href="#dimensional" class="subnav-link" data-section="dimensional">Dimensional</a>
