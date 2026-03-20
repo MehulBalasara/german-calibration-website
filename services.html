@@ -1423,8 +1423,21 @@
     const subnavLinks = document.querySelectorAll('.subnav-link[data-section]');
     const sections    = document.querySelectorAll('section[id]');
 
+    // Don't auto-scroll sub-nav while user is manually swiping it
+    let userSwipingSubnav = false;
+    let userSwipeTimer;
+    if (subnavInner) {
+      subnavInner.addEventListener('touchstart', () => {
+        userSwipingSubnav = true;
+        clearTimeout(userSwipeTimer);
+      }, { passive: true });
+      subnavInner.addEventListener('touchend', () => {
+        userSwipeTimer = setTimeout(() => { userSwipingSubnav = false; }, 1500);
+      }, { passive: true });
+    }
+
     function scrollActiveTabIntoView(activeTab) {
-      if (!subnavInner) return;
+      if (!subnavInner || userSwipingSubnav) return;
       const tabLeft  = activeTab.offsetLeft;
       const tabWidth = activeTab.offsetWidth;
       const navWidth = subnavInner.offsetWidth;
